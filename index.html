@@ -81,17 +81,39 @@ nav {
   z-index: 100;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
-  padding: 0 20px;
+  padding: 0;
 }
 
-.nav-inner {
-  max-width: 1100px;
+.nav-scroll {
+  position: relative;
+  max-width: 1140px;
   margin: 0 auto;
+}
+
+.nav-scroll::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--bg));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.nav-scroll.scrolled-end::after { opacity: 0; }
+
+.nav-inner {
   display: flex;
   gap: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
 }
 
 .nav-inner::-webkit-scrollbar { display: none; }
@@ -110,6 +132,7 @@ nav {
   border-top: none;
   border-left: none;
   border-right: none;
+  scroll-snap-align: start;
 }
 
 .nav-tab:hover { color: var(--text); }
@@ -549,7 +572,8 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 @media (max-width: 600px) {
   header { padding: 30px 16px 20px; }
   header h1 { font-size: 1.6em; }
-  .nav-tab { padding: 12px 14px; font-size: 0.82em; }
+  .nav-tab { padding: 10px 12px; font-size: 0.78em; }
+  .nav-scroll::after { width: 30px; }
   .card-header { padding: 16px; gap: 12px; }
   .card-icon { width: 42px; height: 42px; font-size: 1.3em; }
   .card-content { padding: 0 16px 16px; }
@@ -695,13 +719,15 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 </header>
 
 <nav>
-  <div class="nav-inner">
-    <button class="nav-tab active" data-tab="main">Основные жертвы</button>
-    <button class="nav-tab" data-tab="special">Особые жертвы</button>
-    <button class="nav-tab" data-tab="calendar">Календарь</button>
-    <button class="nav-tab" data-tab="compare">Сравнение</button>
-    <button class="nav-tab" data-tab="distribution">Распределение</button>
-    <button class="nav-tab" data-tab="principles">Принципы</button>
+  <div class="nav-scroll" id="navScroll">
+    <div class="nav-inner" id="navInner">
+      <button class="nav-tab active" data-tab="main">Основные жертвы</button>
+      <button class="nav-tab" data-tab="special">Особые жертвы</button>
+      <button class="nav-tab" data-tab="calendar">Календарь</button>
+      <button class="nav-tab" data-tab="compare">Сравнение</button>
+      <button class="nav-tab" data-tab="distribution">Распределение</button>
+      <button class="nav-tab" data-tab="principles">Принципы</button>
+    </div>
   </div>
 </nav>
 
@@ -1454,12 +1480,26 @@ td:first-child { font-weight: 600; white-space: nowrap; }
 
 <script>
 // Tab navigation
+const navInner = document.getElementById('navInner');
+const navScroll = document.getElementById('navScroll');
+
+// Hide right fade when scrolled to the end
+function checkNavScroll() {
+  const atEnd = navInner.scrollLeft + navInner.clientWidth >= navInner.scrollWidth - 5;
+  navScroll.classList.toggle('scrolled-end', atEnd);
+}
+navInner.addEventListener('scroll', checkNavScroll);
+window.addEventListener('resize', checkNavScroll);
+checkNavScroll();
+
 document.querySelectorAll('.nav-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById(tab.dataset.tab).classList.add('active');
+    // Scroll active tab into view
+    tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   });
 });
 
