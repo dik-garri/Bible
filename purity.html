@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Чистота и нечистота в Пятикнижии Моисея</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #faf6f0;
+  --bg-card: #fff;
+  --text: #2c1810;
+  --text-muted: #6b5b4f;
+  --accent: #b8860b;
+  --accent-light: #d4a940;
+  --border: #e0d5c8;
+  --shadow: 0 2px 8px rgba(44,24,16,0.08);
+  --shadow-hover: 0 4px 16px rgba(44,24,16,0.14);
+  --radius: 12px;
+  --food: #27ae60;
+  --food-bg: #eef9f2;
+  --body: #2c3e80;
+  --body-bg: #eef0f7;
+  --discharge: #7b2d8e;
+  --discharge-bg: #f5eef7;
+  --death: #c0392b;
+  --death-bg: #fdf0ee;
+  --leprosy: #d4a017;
+  --leprosy-bg: #fdf8eb;
+  --camp: #1a7a5a;
+  --camp-bg: #ecf5f0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  background: linear-gradient(180deg, #f5ece0 0%, var(--bg) 100%);
+}
+
+header h1 {
+  font-size: 2.2em;
+  color: var(--text);
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+/* === NAV TABS === */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+}
+
+.nav-scroll {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.nav-scroll::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, var(--bg));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.nav-scroll.scrolled-end::after { opacity: 0; }
+
+.nav-inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.nav-inner::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+  padding: 14px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.88em;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  scroll-snap-align: start;
+}
+
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* === SECTIONS === */
+.section {
+  display: none;
+  padding: 40px 0 60px;
+  animation: fadeIn 0.3s ease;
+}
+
+.section.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+  font-size: 1.6em;
+  color: var(--text);
+  margin-bottom: 8px;
+  font-weight: normal;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 0.95em;
+  max-width: 700px;
+}
+
+/* === CARDS === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover { box-shadow: var(--shadow-hover); }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6em;
+  flex-shrink: 0;
+}
+
+.card-info { flex: 1; }
+
+.card-info h3 {
+  font-size: 1.15em;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  margin-bottom: 2px;
+}
+
+.card-info .hebrew {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.card-info .card-summary {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.card-chevron {
+  font-size: 1.2em;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.card.open .card-chevron { transform: rotate(180deg); }
+
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.card.open .card-body { max-height: 5000px; }
+
+.card-content {
+  padding: 0 24px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.card-content h4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 20px 0 8px;
+}
+
+.card-content h4:first-child { margin-top: 16px; }
+
+.card-content p, .card-content li {
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.card-content ul, .card-content ol {
+  padding-left: 20px;
+  margin: 4px 0;
+}
+
+.card-content li { margin-bottom: 4px; }
+
+.ref {
+  color: var(--accent);
+  white-space: nowrap;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.ref:hover { text-decoration: underline; }
+
+.ritual-steps {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+}
+
+.ritual-steps li {
+  counter-increment: step;
+  padding-left: 32px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.ritual-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 0.75em;
+  font-family: sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 4px;
+}
+
+.quote {
+  background: #f8f4ed;
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-style: italic;
+  font-size: 0.93em;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Card colors */
+.card--food .card-icon { background: var(--food-bg); color: var(--food); }
+.card--food .card-info h3 { color: var(--food); }
+.card--food .ritual-steps li::before { background: var(--food); }
+
+.card--body .card-icon { background: var(--body-bg); color: var(--body); }
+.card--body .card-info h3 { color: var(--body); }
+.card--body .ritual-steps li::before { background: var(--body); }
+
+.card--discharge .card-icon { background: var(--discharge-bg); color: var(--discharge); }
+.card--discharge .card-info h3 { color: var(--discharge); }
+.card--discharge .ritual-steps li::before { background: var(--discharge); }
+
+.card--death .card-icon { background: var(--death-bg); color: var(--death); }
+.card--death .card-info h3 { color: var(--death); }
+.card--death .ritual-steps li::before { background: var(--death); }
+
+.card--leprosy .card-icon { background: var(--leprosy-bg); color: var(--leprosy); }
+.card--leprosy .card-info h3 { color: var(--leprosy); }
+.card--leprosy .ritual-steps li::before { background: var(--leprosy); }
+
+.card--camp .card-icon { background: var(--camp-bg); color: var(--camp); }
+.card--camp .card-info h3 { color: var(--camp); }
+.card--camp .ritual-steps li::before { background: var(--camp); }
+
+/* === TABLE === */
+.compare-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.compare-table th {
+  background: var(--text);
+  color: #fff;
+  padding: 12px 14px;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.compare-table th:hover { background: #3d2a1e; }
+
+.compare-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table tbody tr:nth-child(even) { background: #fdf9f4; }
+
+/* === PRINCIPLES === */
+.principle-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 18px;
+}
+
+.principle-card h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.principle-card p {
+  font-size: 0.95em;
+  line-height: 1.7;
+}
+
+.principle-verse {
+  color: var(--accent);
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.principle-verse:hover { text-decoration: underline; }
+
+/* === GRADIENT BARS === */
+.gradient-bar {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 32px;
+  margin: 12px 0 18px;
+  box-shadow: var(--shadow);
+}
+
+.gradient-bar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.72em;
+  font-family: sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+.gradient-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-bottom: 24px;
+  font-size: 0.85em;
+}
+
+.gradient-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gradient-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* === MODAL === */
+.verse-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44,24,16,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.verse-overlay.visible { display: flex; }
+
+.verse-modal {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  max-width: 650px;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(44,24,16,0.25);
+}
+
+.verse-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  background: #f8f4ed;
+}
+
+.verse-modal-header h3 {
+  font-family: -apple-system, sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.verse-modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verse-modal-close:hover { background: #ccc; }
+
+.verse-modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+.verse-line { margin-bottom: 6px; }
+
+.verse-num {
+  display: inline-block;
+  width: 28px;
+  font-family: sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.verse-loading, .verse-error {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 20px 0;
+}
+
+.verse-error { color: var(--death); }
+
+/* === BACK LINK === */
+.back-link {
+  display: inline-block;
+  margin: 20px;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.9em;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link:hover { text-decoration: underline; }
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5em; }
+  .card-header { padding: 16px; gap: 12px; }
+  .card-icon { width: 42px; height: 42px; font-size: 1.3em; }
+  .card-content { padding: 0 16px 16px; }
+  .section { padding: 24px 0 40px; }
+  .section-title { font-size: 1.3em; }
+  .principle-card { padding: 16px; }
+  .verse-modal { max-height: 90vh; margin: 10px; }
+  .verse-modal-header { padding: 14px 16px; }
+  .verse-modal-body { padding: 16px; }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back-link">&larr; Жертвы в Пятикнижии</a>
+
+<header>
+  <div class="container">
+    <h1>Чистота и нечистота в Пятикнижии Моисея</h1>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-scroll" id="navScroll">
+    <div class="nav-inner" id="navInner">
+      <button class="nav-tab active" data-tab="food">Пища</button>
+      <button class="nav-tab" data-tab="body">Тело</button>
+      <button class="nav-tab" data-tab="leprosy">Проказа</button>
+      <button class="nav-tab" data-tab="death">Мёртвое тело</button>
+      <button class="nav-tab" data-tab="camp">Стан</button>
+      <button class="nav-tab" data-tab="summary">Сводная таблица</button>
+      <button class="nav-tab" data-tab="principles">Принципы</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ======================== ПИЩА ======================== -->
+<div class="section active" id="food">
+  <h2 class="section-title">Чистые и нечистые животные</h2>
+  <p class="section-desc">Левит 11; Второзаконие 14. Какие животные пригодны в пищу для народа, избранного быть святым.</p>
+
+  <div class="cards-grid">
+
+    <!-- Сухопутные -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F404;</div>
+        <div class="card-info">
+          <h3>Сухопутные животные</h3>
+          <span class="hebrew">Левит 11:2&ndash;8; Второзаконие 14:4&ndash;8</span>
+          <p class="card-summary">Два обязательных признака: раздвоенные копыта + жуёт жвачку.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Критерии чистоты</h4>
+          <p>Оба признака обязательны одновременно:</p>
+          <ul>
+            <li><strong>Раздвоенные копыта</strong> с глубоким разрезом</li>
+            <li><strong>Жуёт жвачку</strong></li>
+          </ul>
+          <div class="quote">&laquo;Всякий скот, у которого раздвоены копыта и на копытах глубокий разрез, и который жуёт жвачку, ешьте&raquo; <span class="ref">Лев. 11:3</span></div>
+
+          <h4>Примеры нечистых (один признак без другого)</h4>
+          <ul>
+            <li><strong>Верблюд</strong> &mdash; жуёт жвачку, но копыта не раздвоены <span class="ref">Лев. 11:4</span></li>
+            <li><strong>Тушканчик</strong> &mdash; жуёт жвачку, но копыта не раздвоены <span class="ref">Лев. 11:5</span></li>
+            <li><strong>Заяц</strong> &mdash; жуёт жвачку, но копыта не раздвоены <span class="ref">Лев. 11:6</span></li>
+            <li><strong>Свинья</strong> &mdash; копыта раздвоены, но не жуёт жвачки <span class="ref">Лев. 11:7</span></li>
+          </ul>
+
+          <h4>Чистые (Втор. 14:4&ndash;5)</h4>
+          <p>Волы, овцы, козы, олень, серна, буйвол, лань, зубр, орикс, камелопард.</p>
+
+          <h4>Запрет</h4>
+          <div class="quote">&laquo;Мяса их не ешьте и к трупам их не прикасайтесь; нечисты они для вас&raquo; <span class="ref">Лев. 11:8</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Водные -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F41F;</div>
+        <div class="card-info">
+          <h3>Водные животные</h3>
+          <span class="hebrew">Левит 11:9&ndash;12; Второзаконие 14:9&ndash;10</span>
+          <p class="card-summary">Два признака: плавники (перья) и чешуя.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Критерии</h4>
+          <ul>
+            <li><strong>Чистые:</strong> имеющие <strong>перья (плавники) и чешую</strong> &mdash; в морях или реках <span class="ref">Лев. 11:9</span></li>
+            <li><strong>Нечистые:</strong> всё без плавников и чешуи &mdash; &laquo;скверны для вас&raquo; <span class="ref">Лев. 11:10&ndash;12</span></li>
+          </ul>
+          <div class="quote">&laquo;Они должны быть скверны для вас: мяса их не ешьте и трупов их гнушайтесь&raquo; <span class="ref">Лев. 11:11</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Птицы -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F985;</div>
+        <div class="card-info">
+          <h3>Птицы</h3>
+          <span class="hebrew">Левит 11:13&ndash;19; Второзаконие 14:11&ndash;18</span>
+          <p class="card-summary">Перечень нечистых видов. Все остальные птицы чисты.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Нечистые птицы (около 20 видов)</h4>
+          <p>Орёл, гриф, морской орёл, коршун, сокол, ворон (все породы), страус, сова, чайка, ястреб (все породы), филин, рыболов, ибис, лебедь, пеликан, сип, цапля, зуй (все породы), удод, нетопырь <span class="ref">Лев. 11:13&ndash;19</span>.</p>
+
+          <h4>Чистые</h4>
+          <div class="quote">&laquo;Всякую птицу чистую ешьте&raquo; <span class="ref">Втор. 14:20</span></div>
+          <p>Конкретный перечень чистых не дан &mdash; только список запрещённых.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Насекомые -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F997;</div>
+        <div class="card-info">
+          <h3>Крылатые насекомые</h3>
+          <span class="hebrew">Левит 11:20&ndash;23</span>
+          <p class="card-summary">Все нечисты, кроме четырёх видов саранчовых.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Общее правило</h4>
+          <p>Все крылатые пресмыкающиеся, ходящие на четырёх ногах, <strong>скверны</strong> <span class="ref">Лев. 11:20</span>.</p>
+
+          <h4>Исключения (чистые)</h4>
+          <p>Насекомые с голенями для прыгания <span class="ref">Лев. 11:21</span>:</p>
+          <ul>
+            <li><strong>Саранча</strong> с её породою</li>
+            <li><strong>Солам</strong> с её породою</li>
+            <li><strong>Харгол</strong> с её породою</li>
+            <li><strong>Хагаб</strong> с её породою</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Пресмыкающиеся -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F98E;</div>
+        <div class="card-info">
+          <h3>Пресмыкающиеся и осквернение от трупов</h3>
+          <span class="hebrew">Левит 11:29&ndash;43</span>
+          <p class="card-summary">Все скверны. Труп оскверняет предметы, пищу и людей.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Нечистые пресмыкающиеся</h4>
+          <p>Крот, мышь, ящерица, анака, хамелеон, летаа, хомет, тиншемет <span class="ref">Лев. 11:29&ndash;30</span>. Запрет на всё ползающее на чреве, четвероногих и многоножных <span class="ref">Лев. 11:42</span>.</p>
+
+          <h4>Осквернение предметов от трупа</h4>
+          <ul>
+            <li>Деревянный сосуд, одежда, кожа &mdash; в воду, нечисты <strong>до вечера</strong> <span class="ref">Лев. 11:32</span></li>
+            <li>Глиняный сосуд &mdash; <strong>разбить</strong> <span class="ref">Лев. 11:33</span></li>
+            <li>Пища/питьё в осквернённом сосуде &mdash; нечисты <span class="ref">Лев. 11:34</span></li>
+            <li>Печь, очаг &mdash; <strong>разломать</strong> <span class="ref">Лев. 11:35</span></li>
+            <li>Источник, колодец &mdash; <strong>остаются чистыми</strong> <span class="ref">Лев. 11:36</span></li>
+            <li>Сухое семя для посева &mdash; <strong>чисто</strong>; мокрое &mdash; нечисто <span class="ref">Лев. 11:37&ndash;38</span></li>
+          </ul>
+
+          <h4>Мертвечина чистых животных</h4>
+          <p>Если чистое животное умерло само: прикоснувшийся &mdash; нечист до вечера; кто ест или несёт &mdash; омыть одежды <span class="ref">Лев. 11:39&ndash;40</span>. Мертвечину можно отдать иноземцу <span class="ref">Втор. 14:21</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Обоснование -->
+    <div class="card card--food">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2728;</div>
+        <div class="card-info">
+          <h3>Богословское основание</h3>
+          <span class="hebrew">Левит 11:44&ndash;47; Второзаконие 14:1&ndash;2</span>
+          <p class="card-summary">&laquo;Будьте святы, ибо Я свят&raquo; &mdash; святость Бога как причина пищевых законов.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="quote">&laquo;Ибо Я &mdash; Господь Бог ваш: <strong>освящайтесь и будьте святы, ибо Я свят</strong>; и не оскверняйте душ ваших каким-либо животным, ползающим по земле, ибо Я &mdash; Господь, выведший вас из земли Египетской, чтобы быть вашим Богом&raquo; <span class="ref">Лев. 11:44&ndash;45</span></div>
+          <div class="quote">&laquo;Ибо ты народ святой у Господа Бога твоего, и тебя избрал Господь, чтобы ты был собственным Его народом из всех народов, которые на земле&raquo; <span class="ref">Втор. 14:2</span></div>
+          <p>Цель: &laquo;чтобы <strong>отличать нечистое от чистого</strong>, и животных, которых можно есть, от животных, которых есть не должно&raquo; <span class="ref">Лев. 11:46&ndash;47</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ТЕЛО ======================== -->
+<div class="section" id="body">
+  <h2 class="section-title">Нечистота тела</h2>
+  <p class="section-desc">Левит 12; 15. Роды и телесные истечения &mdash; временная нечистота, связанная с потерей жизненной силы.</p>
+
+  <div class="cards-grid">
+
+    <!-- Роды -->
+    <div class="card card--body">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F476;</div>
+        <div class="card-info">
+          <h3>Очищение после родов</h3>
+          <span class="hebrew">Левит 12</span>
+          <p class="card-summary">40 дней при рождении мальчика, 80 &mdash; при рождении девочки.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Сроки нечистоты</h4>
+          <ul>
+            <li><strong>Мальчик:</strong> 7 дней нечистоты + 33 дня очищения от кровей = <strong>40 дней</strong> <span class="ref">Лев. 12:2&ndash;4</span></li>
+            <li><strong>Девочка:</strong> 14 дней нечистоты + 66 дней очищения = <strong>80 дней</strong> <span class="ref">Лев. 12:5</span></li>
+          </ul>
+          <p>На <strong>8-й день</strong> &mdash; обрезание мальчика <span class="ref">Лев. 12:3</span>.</p>
+
+          <h4>Ограничения</h4>
+          <ul>
+            <li>Не прикасаться ни к чему <strong>священному</strong></li>
+            <li>Не входить в <strong>святилище</strong></li>
+          </ul>
+
+          <h4>Жертва очищения</h4>
+          <ul>
+            <li><strong>Обычная:</strong> однолетний агнец (всесожжение) + голубь/горлица (за грех) <span class="ref">Лев. 12:6</span></li>
+            <li><strong>Бедная:</strong> два голубя/горлицы (всесожжение + за грех) <span class="ref">Лев. 12:8</span></li>
+          </ul>
+          <div class="quote">&laquo;И очистит её священник, и она будет чиста от течения кровей её&raquo; <span class="ref">Лев. 12:7</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мужское истечение -->
+    <div class="card card--discharge">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4A7;</div>
+        <div class="card-info">
+          <h3>Патологическое истечение у мужчины</h3>
+          <span class="hebrew">зав &mdash; Левит 15:2&ndash;15</span>
+          <p class="card-summary">Нечистота на всё время истечения + 7 дней после. Жертва на 8-й день.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Передача нечистоты</h4>
+          <ul>
+            <li>Постель, на которой лежит &mdash; нечиста <span class="ref">Лев. 15:4</span></li>
+            <li>Вещь, на которой сидит &mdash; нечиста <span class="ref">Лев. 15:4</span></li>
+            <li>Прикосновение к его телу &mdash; нечист до вечера <span class="ref">Лев. 15:7</span></li>
+            <li>Плевок на чистого &mdash; нечист до вечера <span class="ref">Лев. 15:8</span></li>
+            <li>Глиняный сосуд &mdash; <strong>разбить</strong>; деревянный &mdash; вымыть <span class="ref">Лев. 15:12</span></li>
+          </ul>
+
+          <h4>Очищение</h4>
+          <ol class="ritual-steps">
+            <li>7 дней после прекращения истечения</li>
+            <li>Омыть одежды, омыть тело <strong>живой водой</strong> (проточной)</li>
+            <li>На <strong>8-й день</strong>: две горлицы или два голубя</li>
+            <li>Одна птица &mdash; жертва за грех, другая &mdash; всесожжение <span class="ref">Лев. 15:13&ndash;15</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Излияние семени -->
+    <div class="card card--discharge">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F6BF;</div>
+        <div class="card-info">
+          <h3>Излияние семени</h3>
+          <span class="hebrew">Левит 15:16&ndash;18</span>
+          <p class="card-summary">Краткая нечистота: до вечера. Жертва не требуется.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Правила</h4>
+          <ul>
+            <li>Омыть водою всё тело &mdash; нечист <strong>до вечера</strong> <span class="ref">Лев. 15:16</span></li>
+            <li>Одежда/кожа, на которую попало &mdash; вымыть, нечиста до вечера <span class="ref">Лев. 15:17</span></li>
+            <li>При супружеской близости &mdash; оба омываются, нечисты <strong>до вечера</strong> <span class="ref">Лев. 15:18</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Менструация -->
+    <div class="card card--discharge">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F319;</div>
+        <div class="card-info">
+          <h3>Менструация</h3>
+          <span class="hebrew">ниддá &mdash; Левит 15:19&ndash;24</span>
+          <p class="card-summary">7 дней нечистоты. Жертва не требуется.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Срок и передача</h4>
+          <ul>
+            <li>Женщина нечиста <strong>7 дней</strong> <span class="ref">Лев. 15:19</span></li>
+            <li>Всё, на чём ляжет или сядет &mdash; нечисто <span class="ref">Лев. 15:20</span></li>
+            <li>Прикосновение к её постели/вещам &mdash; омыть одежды, нечист до вечера <span class="ref">Лев. 15:21&ndash;23</span></li>
+            <li>Муж, переспавший с ней &mdash; нечист <strong>7 дней</strong> <span class="ref">Лев. 15:24</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Женское патологическое -->
+    <div class="card card--discharge">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4A7;</div>
+        <div class="card-info">
+          <h3>Патологическое кровотечение у женщины</h3>
+          <span class="hebrew">Левит 15:25&ndash;30</span>
+          <p class="card-summary">Как патологическое мужское: всё время + 7 дней + жертва на 8-й день.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Когда это происходит</h4>
+          <p>Кровотечение <strong>вне времени</strong> обычного очищения, или если длится <strong>дольше обычного</strong> <span class="ref">Лев. 15:25</span>.</p>
+
+          <h4>Очищение</h4>
+          <ol class="ritual-steps">
+            <li>7 дней после прекращения кровотечения <span class="ref">Лев. 15:28</span></li>
+            <li>На <strong>8-й день</strong>: две горлицы или два голубя <span class="ref">Лев. 15:29</span></li>
+            <li>Одна &mdash; жертва за грех, другая &mdash; всесожжение <span class="ref">Лев. 15:30</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Цель -->
+    <div class="card card--body">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x26A0;</div>
+        <div class="card-info">
+          <h3>Цель закона об истечениях</h3>
+          <span class="hebrew">Левит 15:31&ndash;33</span>
+          <p class="card-summary">Предохранить от осквернения жилища Господа среди народа.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="quote">&laquo;Так <strong>предохраняйте</strong> сынов Израилевых от нечистоты их, чтоб они <strong>не умерли</strong> в нечистоте своей, <strong>оскверняя жилище Моё</strong>, которое среди них&raquo; <span class="ref">Лев. 15:31</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ПРОКАЗА ======================== -->
+<div class="section" id="leprosy">
+  <h2 class="section-title">Проказа (цараат)</h2>
+  <p class="section-desc">Левит 13&ndash;14. Диагностика и очищение поражений на теле, одежде и в доме. Священник &mdash; определитель ритуальной чистоты, не врач.</p>
+
+  <div class="cards-grid">
+
+    <!-- Диагностика -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F50D;</div>
+        <div class="card-info">
+          <h3>Диагностика проказы на теле</h3>
+          <span class="hebrew">Левит 13:1&ndash;46</span>
+          <p class="card-summary">Священник осматривает язву: цвет волос, глубина, распространение.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Признаки проказы</h4>
+          <ul>
+            <li>Волос на язве <strong>изменился в белый</strong> <span class="ref">Лев. 13:3</span></li>
+            <li>Язва <strong>углублена в кожу</strong> <span class="ref">Лев. 13:3</span></li>
+            <li>Язва <strong>распространяется</strong> по коже <span class="ref">Лев. 13:7&ndash;8</span></li>
+          </ul>
+
+          <h4>Процедура</h4>
+          <ol class="ritual-steps">
+            <li>Привести к священнику для осмотра <span class="ref">Лев. 13:2</span></li>
+            <li>Если диагноз неясен &mdash; карантин на <strong>7 дней</strong> <span class="ref">Лев. 13:4</span></li>
+            <li>Повторный осмотр; при необходимости &mdash; ещё <strong>7 дней</strong> <span class="ref">Лев. 13:5</span></li>
+            <li>Решение: <strong>чист</strong> (омыть одежды) или <strong>нечист</strong> <span class="ref">Лев. 13:6&ndash;8</span></li>
+          </ol>
+
+          <h4>Парадокс</h4>
+          <p>Если проказа покрыла <strong>всё тело</strong> &mdash; человек объявляется <strong>чистым</strong>: &laquo;всё превратилось в белое: он чист&raquo; <span class="ref">Лев. 13:12&ndash;13</span>. Но если появится живое мясо &mdash; снова нечист <span class="ref">Лев. 13:14&ndash;15</span>.</p>
+
+          <h4>Частные случаи</h4>
+          <ul>
+            <li>Проказа на месте <strong>нарыва</strong> или <strong>ожога</strong> <span class="ref">Лев. 13:18&ndash;28</span></li>
+            <li><strong>Паршивость</strong> на голове/бороде (жёлтый тонкий волос) <span class="ref">Лев. 13:29&ndash;37</span></li>
+            <li><strong>Лишай</strong> (бледно-белые пятна) &mdash; чист <span class="ref">Лев. 13:38&ndash;39</span></li>
+            <li><strong>Плешивость</strong> сама по себе &mdash; чиста <span class="ref">Лев. 13:40&ndash;41</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Жизнь прокажённого -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F6AB;</div>
+        <div class="card-info">
+          <h3>Жизнь прокажённого</h3>
+          <span class="hebrew">Левит 13:45&ndash;46</span>
+          <p class="card-summary">Разодранная одежда, непокрытая голова, крик &laquo;Нечист!&raquo; Жилище &mdash; вне стана.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Требования</h4>
+          <ul>
+            <li><strong>Разодрать одежду</strong></li>
+            <li><strong>Не покрывать голову</strong></li>
+            <li><strong>Закрыть уста</strong> (до уст)</li>
+            <li>Кричать: &laquo;<strong>Нечист! Нечист!</strong>&raquo;</li>
+            <li>Жить <strong>отдельно, вне стана</strong></li>
+          </ul>
+          <div class="quote">&laquo;Во все дни, доколе на нём язва, он должен быть нечист, нечист он; он должен жить отдельно, вне стана жилище его&raquo; <span class="ref">Лев. 13:46</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ритуал двух птиц -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F54A;</div>
+        <div class="card-info">
+          <h3>Ритуал очищения &mdash; две птицы</h3>
+          <span class="hebrew">Левит 14:1&ndash;9</span>
+          <p class="card-summary">Священник выходит за стан. Одна птица закалывается, вторая отпускается на свободу.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Этап 1: Вне стана (день 1)</h4>
+          <ol class="ritual-steps">
+            <li>Священник выходит за стан к исцелившемуся <span class="ref">Лев. 14:3</span></li>
+            <li>Берутся <strong>две живые чистые птицы</strong>, кедровое дерево, червлёная нить, иссоп <span class="ref">Лев. 14:4</span></li>
+            <li>Одна птица <strong>закалывается</strong> над глиняным сосудом с живой водой <span class="ref">Лев. 14:5</span></li>
+            <li>Живая птица, кедр, нить и иссоп <strong>омачиваются в крови</strong> <span class="ref">Лев. 14:6</span></li>
+            <li>Очищаемый <strong>кропится семь раз</strong> &mdash; объявляется чистым <span class="ref">Лев. 14:7</span></li>
+            <li>Живая птица <strong>отпускается в поле</strong> <span class="ref">Лев. 14:7</span></li>
+          </ol>
+
+          <h4>Промежуточный период</h4>
+          <ul>
+            <li><strong>День 1:</strong> Омыть одежды, остричь все волосы, омыться &rarr; входит в стан, но <strong>вне шатра 7 дней</strong> <span class="ref">Лев. 14:8</span></li>
+            <li><strong>День 7:</strong> Обривает все волосы (голову, бороду, брови), омывает одежды и тело <span class="ref">Лев. 14:9</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Жертвы 8-го дня -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3DB;</div>
+        <div class="card-info">
+          <h3>Жертвы на восьмой день</h3>
+          <span class="hebrew">Левит 14:10&ndash;32</span>
+          <p class="card-summary">Кровь и елей на ухо, палец руки и ноги &mdash; полное посвящение Богу.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Жертвы</h4>
+          <ul>
+            <li><strong>Повинности</strong> (овен) &mdash; кровь на правое ухо, правый большой палец руки и ноги <span class="ref">Лев. 14:12&ndash;14</span></li>
+            <li><strong>Елей</strong> (1 лог) &mdash; кропление 7 раз пред Господом; затем на те же места + голову <span class="ref">Лев. 14:15&ndash;18</span></li>
+            <li><strong>За грех</strong> (овца) &mdash; очищение от нечистоты <span class="ref">Лев. 14:19</span></li>
+            <li><strong>Всесожжение</strong> + хлебное приношение <span class="ref">Лев. 14:20</span></li>
+          </ul>
+
+          <h4>Жертва бедного</h4>
+          <p>Овен повинности остаётся без изменения; вместо овцы и агнца &mdash; <strong>горлицы/голуби</strong>; вместо 3/10 ефы &mdash; <strong>1/10 ефы</strong> <span class="ref">Лев. 14:21&ndash;32</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Одежда -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F9E5;</div>
+        <div class="card-info">
+          <h3>Проказа на одежде</h3>
+          <span class="hebrew">Левит 13:47&ndash;59</span>
+          <p class="card-summary">Зеленоватые/красноватые пятна на шерсти, льне или коже. Стирка или сожжение.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Процедура</h4>
+          <ol class="ritual-steps">
+            <li>Показать священнику &rarr; карантин <strong>7 дней</strong> <span class="ref">Лев. 13:50</span></li>
+            <li>Если распространилось &rarr; &laquo;проказа едкая&raquo; &rarr; <strong>сжечь</strong> <span class="ref">Лев. 13:51&ndash;52</span></li>
+            <li>Если не распространилось &rarr; <strong>омыть</strong> &rarr; ещё 7 дней <span class="ref">Лев. 13:53&ndash;54</span></li>
+            <li>Вид не изменился &rarr; <strong>сжечь</strong> <span class="ref">Лев. 13:55</span></li>
+            <li>Побледнело &rarr; <strong>оторвать</strong> участок <span class="ref">Лев. 13:56</span></li>
+            <li>Появилось снова &rarr; <strong>сжечь</strong> <span class="ref">Лев. 13:57</span></li>
+            <li>Сошло после стирки &rarr; <strong>постирать вторично</strong> &rarr; чисто <span class="ref">Лев. 13:58</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Дом -->
+    <div class="card card--leprosy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3E0;</div>
+        <div class="card-info">
+          <h3>Проказа в доме</h3>
+          <span class="hebrew">Левит 14:33&ndash;53</span>
+          <p class="card-summary">Только в земле Ханаанской. Ремонт, выламывание камней или разрушение дома.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Процедура</h4>
+          <ol class="ritual-steps">
+            <li>Хозяин сообщает священнику <span class="ref">Лев. 14:35</span></li>
+            <li>Священник приказывает <strong>опорожнить дом</strong> <span class="ref">Лев. 14:36</span></li>
+            <li>Осмотр: зеленоватые/красноватые ямины на стенах &rarr; карантин <strong>7 дней</strong> <span class="ref">Лев. 14:37&ndash;38</span></li>
+            <li>Распространилась &rarr; <strong>выломать камни</strong>, оскоблить, заново обмазать <span class="ref">Лев. 14:40&ndash;42</span></li>
+            <li>Вернулась &rarr; <strong>разломать весь дом</strong>, вынести за город <span class="ref">Лев. 14:43&ndash;45</span></li>
+            <li>Не вернулась &rarr; <strong>ритуал двух птиц</strong> (как при очищении человека) <span class="ref">Лев. 14:49&ndash;53</span></li>
+          </ol>
+
+          <h4>Осквернение от дома</h4>
+          <ul>
+            <li>Кто входит в запертый дом &mdash; нечист <strong>до вечера</strong> <span class="ref">Лев. 14:46</span></li>
+            <li>Кто спит или ест в нём &mdash; вымыть одежды <span class="ref">Лев. 14:47</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== МЁРТВОЕ ТЕЛО ======================== -->
+<div class="section" id="death">
+  <h2 class="section-title">Осквернение мёртвым телом</h2>
+  <p class="section-desc">Числа 19; 5:1&ndash;4; 9:6&ndash;14. Самая тяжёлая форма ритуальной нечистоты &mdash; 7 дней. Очищение через пепел рыжей телицы.</p>
+
+  <div class="cards-grid">
+
+    <!-- Рыжая телица -->
+    <div class="card card--death">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F404;</div>
+        <div class="card-info">
+          <h3>Рыжая телица &mdash; приготовление очистительной воды</h3>
+          <span class="hebrew">Числа 19:1&ndash;10</span>
+          <p class="card-summary">Уникальный ритуал: телица сжигается за станом, пепел хранится для воды очищения.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Требования к телице</h4>
+          <ul>
+            <li><strong>Рыжая</strong> (красная)</li>
+            <li><strong>Без порока</strong>, без недостатка</li>
+            <li><strong>Не носила ярма</strong> <span class="ref">Чис. 19:2</span></li>
+          </ul>
+
+          <h4>Ритуал</h4>
+          <ol class="ritual-steps">
+            <li>Передаётся <strong>Елеазару</strong> (не первосвященнику) <span class="ref">Чис. 19:3</span></li>
+            <li>Выводится <strong>за стан</strong> и закалывается <span class="ref">Чис. 19:3</span></li>
+            <li>Елеазар кропит кровью <strong>к передней стороне скинии</strong> семь раз <span class="ref">Чис. 19:4</span></li>
+            <li>Телица <strong>сжигается целиком</strong>: кожа, мясо, кровь <span class="ref">Чис. 19:5</span></li>
+            <li>В огонь бросаются <strong>кедр, иссоп, червлёная нить</strong> <span class="ref">Чис. 19:6</span></li>
+            <li><strong>Пепел</strong> собирается, хранится <strong>вне стана на чистом месте</strong> <span class="ref">Чис. 19:9</span></li>
+          </ol>
+
+          <h4>Парадокс</h4>
+          <p>Все участники (священник, сжигавший, собиравший пепел) становятся <strong>нечисты до вечера</strong>, хотя производят средство очищения <span class="ref">Чис. 19:7&ndash;10</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Источники -->
+    <div class="card card--death">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2620;</div>
+        <div class="card-info">
+          <h3>Источники осквернения мёртвым</h3>
+          <span class="hebrew">Числа 19:11&ndash;16</span>
+          <p class="card-summary">Прикосновение к телу, кости, гробу. Нахождение в шатре с умершим. 7 дней нечистоты.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Что оскверняет</h4>
+          <ul>
+            <li>Прикосновение к <strong>мёртвому телу</strong> человека <span class="ref">Чис. 19:11</span></li>
+            <li>Вход в <strong>шатёр</strong>, где умер человек <span class="ref">Чис. 19:14</span></li>
+            <li><strong>Открытый сосуд</strong> в шатре умершего <span class="ref">Чис. 19:15</span></li>
+            <li>Прикосновение к <strong>убитому мечом</strong> на поле <span class="ref">Чис. 19:16</span></li>
+            <li>Прикосновение к <strong>кости человеческой</strong> <span class="ref">Чис. 19:16</span></li>
+            <li>Прикосновение ко <strong>гробу</strong> <span class="ref">Чис. 19:16</span></li>
+          </ul>
+          <p>Срок: <strong>7 дней</strong> для всех случаев.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Процедура очищения -->
+    <div class="card card--death">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4A7;</div>
+        <div class="card-info">
+          <h3>Процедура очищения</h3>
+          <span class="hebrew">Числа 19:17&ndash;22</span>
+          <p class="card-summary">Окропление очистительной водой с иссопом в 3-й и 7-й день.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Шаги очищения</h4>
+          <ol class="ritual-steps">
+            <li>Пепел телицы засыпается в сосуд <span class="ref">Чис. 19:17</span></li>
+            <li>Заливается <strong>живой (проточной) водой</strong> <span class="ref">Чис. 19:17</span></li>
+            <li><strong>Чистый человек</strong> берёт иссоп, омачивает в воде <span class="ref">Чис. 19:18</span></li>
+            <li>Кропит шатёр, сосуды и людей <span class="ref">Чис. 19:18</span></li>
+            <li>Окропление в <strong>3-й</strong> и <strong>7-й день</strong> <span class="ref">Чис. 19:19</span></li>
+            <li>В 7-й день: омыть одежды, омыть тело &rarr; к <strong>вечеру чист</strong> <span class="ref">Чис. 19:19</span></li>
+          </ol>
+
+          <h4>Наказание за неочищение</h4>
+          <div class="quote">&laquo;Если же кто будет нечист и не очистит себя, то <strong>истребится</strong> человек тот из среды народа, ибо он <strong>осквернил святилище Господа</strong>&raquo; <span class="ref">Чис. 19:20</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Вторая Пасха -->
+    <div class="card card--death">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F56F;</div>
+        <div class="card-info">
+          <h3>Нечистые и Пасха</h3>
+          <span class="hebrew">Числа 9:6&ndash;14</span>
+          <p class="card-summary">Вторая Пасха &mdash; через месяц &mdash; для нечистых и находящихся в дальней дороге.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <p>Люди, нечистые от мёртвого тела, пришли к Моисею с вопросом: не лишены ли они Пасхи? <span class="ref">Чис. 9:6&ndash;7</span></p>
+          <div class="quote">&laquo;Если кто из вас или из потомков ваших будет нечист от прикосновения к мёртвому телу, или будет в дальней дороге, то и он должен совершить Пасху Господню; <strong>в четырнадцатый день второго месяца</strong> вечером&raquo; <span class="ref">Чис. 9:10&ndash;11</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- После войны -->
+    <div class="card card--death">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2694;</div>
+        <div class="card-info">
+          <h3>Очищение после войны</h3>
+          <span class="hebrew">Числа 31:19&ndash;24</span>
+          <p class="card-summary">Воины и военная добыча: огонь для металлов, вода для остального.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Правила</h4>
+          <ul>
+            <li>Воины и пленные: очищение в <strong>3-й и 7-й день</strong> <span class="ref">Чис. 31:19</span></li>
+            <li>Золото, серебро, медь, железо, олово, свинец &mdash; <strong>через огонь + очистительная вода</strong> <span class="ref">Чис. 31:22&ndash;23</span></li>
+            <li>Всё, что не выдерживает огня &mdash; <strong>через воду</strong> <span class="ref">Чис. 31:23</span></li>
+            <li>Одежды вымыть в <strong>7-й день</strong> <span class="ref">Чис. 31:24</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== СТАН ======================== -->
+<div class="section" id="camp">
+  <h2 class="section-title">Чистота стана</h2>
+  <p class="section-desc">Числа 5:1&ndash;4; Второзаконие 23:10&ndash;15. Стан свят, потому что Бог ходит среди него.</p>
+
+  <div class="cards-grid">
+
+    <!-- Высылка -->
+    <div class="card card--camp">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F6AA;</div>
+        <div class="card-info">
+          <h3>Три категории высылаемых за стан</h3>
+          <span class="hebrew">Числа 5:1&ndash;4</span>
+          <p class="card-summary">Прокажённые, имеющие истечение, осквернённые мёртвым.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="quote">&laquo;Повели сынам Израилевым выслать из стана всех <strong>прокажённых</strong>, и всех <strong>имеющих истечение</strong>, и всех <strong>осквернившихся от мёртвого</strong>&raquo; <span class="ref">Чис. 5:2</span></div>
+          <div class="quote">&laquo;Чтобы не оскверняли они станов своих, <strong>среди которых Я живу</strong>&raquo; <span class="ref">Чис. 5:3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ночное осквернение -->
+    <div class="card card--camp">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F303;</div>
+        <div class="card-info">
+          <h3>Ночное осквернение</h3>
+          <span class="hebrew">Второзаконие 23:10&ndash;11</span>
+          <p class="card-summary">Выйти из стана до вечера, омыться &mdash; после заката можно вернуться.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="quote">&laquo;Если у тебя будет кто нечист от случившегося ему ночью, то он должен <strong>выйти вон из стана</strong> и не входить в стан, а при наступлении вечера должен <strong>омыть тело своё водою</strong>, и по захождении солнца может войти в стан&raquo; <span class="ref">Втор. 23:10&ndash;11</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Физическая чистота -->
+    <div class="card card--camp">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3D5;</div>
+        <div class="card-info">
+          <h3>Физическая чистота стана</h3>
+          <span class="hebrew">Второзаконие 23:12&ndash;14</span>
+          <p class="card-summary">Отхожее место вне стана, лопатка для закапывания. Бог ходит среди стана.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="quote">&laquo;Ибо Господь Бог твой <strong>ходит среди стана</strong> твоего, чтобы избавлять тебя и предавать врагов твоих в руки твои, а посему <strong>стан твой должен быть свят</strong>, чтобы Он не увидел у тебя чего срамного и не отступил от тебя&raquo; <span class="ref">Втор. 23:14</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Священники -->
+    <div class="card card--camp">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3DB;</div>
+        <div class="card-info">
+          <h3>Чистота священников</h3>
+          <span class="hebrew">Левит 22:3&ndash;8; Исход 30:17&ndash;21</span>
+          <p class="card-summary">Нечистый священник не смеет есть святынь. Омовение рук и ног &mdash; &laquo;чтобы не умереть&raquo;.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Запрет на святыни при нечистоте</h4>
+          <div class="quote">&laquo;Если кто из всего потомства вашего в роды ваши, имея на себе нечистоту, приступит к святыням, &mdash; <strong>истребится душа та от лица Моего</strong>&raquo; <span class="ref">Лев. 22:3</span></div>
+          <p>Виды осквернения: проказа, истечение, мёртвое тело, излияние семени, нечистый гад, нечистый человек <span class="ref">Лев. 22:4&ndash;6</span>.</p>
+
+          <h4>Медный умывальник</h4>
+          <p>Между скинией и жертвенником &mdash; медный умывальник для омовения рук и ног <span class="ref">Исх. 30:18&ndash;19</span>.</p>
+          <div class="quote">&laquo;Когда они должны входить в скинию собрания, пусть они омываются водою, <strong>чтобы им не умереть</strong>&raquo; <span class="ref">Исх. 30:20</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- До Синая -->
+    <div class="card card--camp">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4DC;</div>
+        <div class="card-info">
+          <h3>Чистота до Синая</h3>
+          <span class="hebrew">Бытие 7:2; 8:20; Исход 19:10&ndash;15</span>
+          <p class="card-summary">Ной уже различал чистых и нечистых. Перед Синаем &mdash; освящение и омовение.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Ной и ковчег</h4>
+          <div class="quote">&laquo;Всякого скота <strong>чистого</strong> возьми по семи&hellip; а из скота <strong>нечистого</strong> по два&raquo; <span class="ref">Быт. 7:2</span></div>
+          <p>После потопа Ной принёс во всесожжение &laquo;из всякого скота <strong>чистого</strong> и из всех птиц <strong>чистых</strong>&raquo; <span class="ref">Быт. 8:20</span>. Критерии не объяснены &mdash; Ной уже их знал.</p>
+
+          <h4>Перед богоявлением на Синае</h4>
+          <div class="quote">&laquo;Пойди к народу, и <strong>освяти</strong> его сегодня и завтра; пусть <strong>вымоют одежды</strong> свои&raquo; <span class="ref">Исх. 19:10</span></div>
+          <div class="quote">&laquo;Будьте готовы к третьему дню; <strong>не прикасайтесь к женам</strong>&raquo; <span class="ref">Исх. 19:15</span></div>
+          <p>Ритуальная чистота &mdash; условие для встречи с Богом.</p>
+
+          <h4>Назорей и мёртвое тело</h4>
+          <p>Назорей не должен подходить к мёртвому телу, даже отца или матери <span class="ref">Чис. 6:6&ndash;7</span>. Если кто-то умрёт внезапно: остричь голову в 7-й день, жертвы на 8-й день, <strong>все прежние дни пропали</strong> <span class="ref">Чис. 6:9&ndash;12</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== СВОДНАЯ ТАБЛИЦА ======================== -->
+<div class="section" id="summary">
+  <h2 class="section-title">Сводная таблица</h2>
+  <p class="section-desc">Все виды нечистоты: источник, срок, способ очищения и требуемая жертва. Нажмите на заголовок для сортировки.</p>
+
+  <div class="compare-wrap">
+    <table class="compare-table" id="compareTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Источник &#8597;</th>
+          <th onclick="sortTable(1)">Срок &#8597;</th>
+          <th onclick="sortTable(2)">Очищение &#8597;</th>
+          <th onclick="sortTable(3)">Жертва &#8597;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Труп нечистого животного</td>
+          <td>До вечера</td>
+          <td>Омыть одежды</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Мертвечина чистого животного</td>
+          <td>До вечера</td>
+          <td>Омыть одежды, омыться</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Излияние семени</td>
+          <td>До вечера</td>
+          <td>Омыть тело водой</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Ночное осквернение</td>
+          <td>До вечера</td>
+          <td>Выйти из стана, омыться</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Менструация</td>
+          <td>7 дней</td>
+          <td>Ожидание</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Роды (мальчик)</td>
+          <td>7 + 33 = 40 дней</td>
+          <td>Ожидание</td>
+          <td>Агнец + голубь</td>
+        </tr>
+        <tr>
+          <td>Роды (девочка)</td>
+          <td>14 + 66 = 80 дней</td>
+          <td>Ожидание</td>
+          <td>Агнец + голубь</td>
+        </tr>
+        <tr>
+          <td>Патологическое истечение (муж.)</td>
+          <td>Всё время + 7 дн.</td>
+          <td>Живая вода, одежды</td>
+          <td>2 горлицы/голубя</td>
+        </tr>
+        <tr>
+          <td>Патологическое кровотечение (жен.)</td>
+          <td>Всё время + 7 дн.</td>
+          <td>Живая вода, одежды</td>
+          <td>2 горлицы/голубя</td>
+        </tr>
+        <tr>
+          <td>Мёртвое тело человека</td>
+          <td>7 дней</td>
+          <td>Очистительная вода (3-й, 7-й день)</td>
+          <td>Рыжая телица (общинная)</td>
+        </tr>
+        <tr>
+          <td>Проказа на теле</td>
+          <td>Пока не исцелится</td>
+          <td>Ритуал двух птиц + жертвы</td>
+          <td>Овен + овца + всесожж. + хлебное + елей</td>
+        </tr>
+        <tr>
+          <td>Проказа на одежде</td>
+          <td>7&ndash;14 дней</td>
+          <td>Стирка или сожжение</td>
+          <td>Нет</td>
+        </tr>
+        <tr>
+          <td>Проказа в доме</td>
+          <td>7+ дней</td>
+          <td>Ремонт / разрушение + две птицы</td>
+          <td>Нет</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:40px;font-weight:normal;font-size:1.2em;">Градация нечистоты</h3>
+  <div class="gradient-bar" style="margin-top:16px;">
+    <div class="gradient-bar-segment" style="flex:3;background:#78b87a;">До вечера</div>
+    <div class="gradient-bar-segment" style="flex:2;background:#d4a017;">7 дней</div>
+    <div class="gradient-bar-segment" style="flex:2;background:#c0392b;">40&ndash;80 дн.</div>
+    <div class="gradient-bar-segment" style="flex:3;background:#2c1810;">Пока не исцелится</div>
+  </div>
+  <div class="gradient-legend">
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#78b87a;"></div> Лёгкая: трупы животных, семя</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#d4a017;"></div> Средняя: менструация, мёртвый человек</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#c0392b;"></div> Тяжёлая: роды, истечения</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#2c1810;"></div> Неопределённая: проказа</div>
+  </div>
+
+  <h3 style="margin-top:24px;font-weight:normal;font-size:1.2em;">Средства очищения</h3>
+  <div class="gradient-bar" style="margin-top:16px;">
+    <div class="gradient-bar-segment" style="flex:4;background:#2980b9;">Вода</div>
+    <div class="gradient-bar-segment" style="flex:3;background:#c0392b;">Кровь</div>
+    <div class="gradient-bar-segment" style="flex:2;background:#7f8c8d;">Огонь</div>
+    <div class="gradient-bar-segment" style="flex:1;background:#d4a017;">Елей</div>
+  </div>
+  <div class="gradient-legend">
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#2980b9;"></div> Вода: омовение, живая вода, очистительная вода</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#c0392b;"></div> Кровь: жертвы за грех, кровь птицы, рыжая телица</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#7f8c8d;"></div> Огонь: сожжение одежды/дома, металлы после войны</div>
+    <div class="gradient-legend-item"><div class="gradient-legend-dot" style="background:#d4a017;"></div> Елей: помазание при очищении от проказы</div>
+  </div>
+</div>
+
+<!-- ======================== ПРИНЦИПЫ ======================== -->
+<div class="section" id="principles">
+  <h2 class="section-title">Богословские принципы</h2>
+  <p class="section-desc">Ключевые идеи, объединяющие законы о чистоте и нечистоте в Пятикнижии.</p>
+
+  <div class="principle-card">
+    <h3>1. Святость Бога &mdash; основание закона о чистоте</h3>
+    <p>Законы о чистоте &mdash; не гигиенические правила, а отражение святости Бога, требующей святости народа. &laquo;Освящайтесь и <strong>будьте святы, ибо Я свят</strong>&raquo; <span class="principle-verse">Лев. 11:44</span>.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>2. Присутствие Бога в стане</h3>
+    <p>Центральная причина всех законов о чистоте: Бог <strong>обитает среди</strong> Своего народа. Нечистота оскверняет Его жилище. &laquo;Стан твой должен быть свят, чтобы Он не увидел у тебя чего срамного и не отступил от тебя&raquo; <span class="principle-verse">Втор. 23:14</span>.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>3. Различение &mdash; обязанность священника</h3>
+    <p>&laquo;Чтобы вы могли <strong>отличать священное от несвященного и нечистое от чистого</strong>, и научать сынов Израилевых всем уставам&raquo; <span class="principle-verse">Лев. 10:10&ndash;11</span>. Священник &mdash; хранитель границ между чистым и нечистым.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>4. Нечистота связана со смертью и распадом</h3>
+    <p>Все основные источники нечистоты связаны с <strong>потерей жизненной силы</strong>: смерть (трупы), болезнь (проказа), истечения тела (кровь, семя). Чистота ассоциируется с <strong>жизнью и целостностью</strong>, нечистота &mdash; со смертью и разрушением.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>5. Очищение требует крови и воды</h3>
+    <p>Два главных средства: <strong>кровь</strong> (жертвы за грех, кровь птицы, рыжей телицы) и <strong>вода</strong> (омовение, живая вода, очистительная вода). Кровь &mdash; для серьёзных форм; вода &mdash; для лёгких. Часто действуют вместе <span class="principle-verse">Чис. 19:17&ndash;19</span>.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>6. Градация нечистоты</h3>
+    <p>Нечистота не одинакова: от <strong>лёгкой</strong> (до вечера: труп животного, семя) через <strong>среднюю</strong> (7 дней: менструация, мёртвый человек) к <strong>тяжёлой</strong> (длительной: проказа, патологические истечения). Отказ от очищения &mdash; <strong>истребление из народа</strong> <span class="principle-verse">Чис. 19:13</span>.</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>7. Нечистота передаётся, но не наследуется</h3>
+    <p>Нечистота передаётся через <strong>контакт</strong> (прикосновение, нахождение рядом), но она <strong>временна</strong> &mdash; каждый может очиститься. Ни один вид нечистоты не является постоянным состоянием (кроме случая отказа от очищения).</p>
+  </div>
+
+  <div class="principle-card">
+    <h3>8. Святость Израиля &mdash; отделённость от народов</h3>
+    <p>Пищевые законы прямо связаны с избранничеством: &laquo;Ибо ты народ святой у Господа Бога твоего, и тебя избрал Господь, чтобы ты был <strong>собственным Его народом</strong> из всех народов&raquo; <span class="principle-verse">Втор. 14:2</span>. Мертвечину можно отдать иноземцу <span class="principle-verse">Втор. 14:21</span>, но Израиль соблюдает более высокий стандарт.</p>
+  </div>
+</div>
+
+</main>
+
+<!-- Verse modal overlay -->
+<div class="verse-overlay" id="verseOverlay">
+  <div class="verse-modal">
+    <div class="verse-modal-header">
+      <h3 id="verseModalTitle">Загрузка...</h3>
+      <button class="verse-modal-close" id="verseModalClose">&times;</button>
+    </div>
+    <div class="verse-modal-body" id="verseModalBody"></div>
+  </div>
+</div>
+
+<script>
+// Tab navigation
+const navInner = document.getElementById('navInner');
+const navScroll = document.getElementById('navScroll');
+
+function checkNavScroll() {
+  const atEnd = navInner.scrollLeft + navInner.clientWidth >= navInner.scrollWidth - 5;
+  navScroll.classList.toggle('scrolled-end', atEnd);
+}
+navInner.addEventListener('scroll', checkNavScroll);
+window.addEventListener('resize', checkNavScroll);
+checkNavScroll();
+
+document.querySelectorAll('.nav-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+    tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+});
+
+// Card toggle
+function toggleCard(header) {
+  const card = header.closest('.card');
+  card.classList.toggle('open');
+}
+
+// Table sort
+let sortDir = {};
+function sortTable(colIndex) {
+  const table = document.getElementById('compareTable');
+  const tbody = table.querySelector('tbody');
+  const rows = Array.from(tbody.querySelectorAll('tr'));
+
+  sortDir[colIndex] = !sortDir[colIndex];
+  const dir = sortDir[colIndex] ? 1 : -1;
+
+  rows.sort((a, b) => {
+    const aText = a.cells[colIndex].textContent.trim();
+    const bText = b.cells[colIndex].textContent.trim();
+    return dir * aText.localeCompare(bText, 'ru');
+  });
+
+  rows.forEach(row => tbody.appendChild(row));
+}
+
+// ========== BIBLE VERSE LOOKUP ==========
+
+const BOOK_MAP = {
+  'Быт': 'gn', 'Бытие': 'gn',
+  'Исх': 'ex', 'Исход': 'ex',
+  'Лев': 'lv', 'Левит': 'lv',
+  'Чис': 'nm', 'Числа': 'nm',
+  'Втор': 'dt', 'Второзаконие': 'dt',
+  'Нав': 'js', 'Суд': 'jud', 'Руфь': 'rt',
+  '1 Цар': '1sm', '2 Цар': '2sm', '3 Цар': '1kgs', '4 Цар': '2kgs',
+  '1 Пар': '1ch', '2 Пар': '2ch',
+  'Езд': 'ezr', 'Неем': 'ne', 'Есф': 'et',
+  'Иов': 'job', 'Пс': 'ps', 'Притч': 'prv', 'Еккл': 'ec', 'Песн': 'so',
+  'Ис': 'is', 'Иер': 'jr', 'Плач': 'lm',
+  'Иез': 'ez', 'Дан': 'dn',
+  'Ос': 'ho', 'Иоил': 'jl', 'Ам': 'am', 'Авд': 'ob',
+  'Ион': 'jn', 'Мих': 'mi', 'Наум': 'na', 'Авв': 'hk', 'Соф': 'zp',
+  'Агг': 'hg', 'Зах': 'zc', 'Мал': 'ml'
+};
+
+const BOOK_FULL_NAME = {
+  'gn': 'Бытие', 'ex': 'Исход', 'lv': 'Левит', 'nm': 'Числа', 'dt': 'Второзаконие',
+  'js': 'И. Навин', 'jud': 'Судьи', 'rt': 'Руфь',
+  '1sm': '1 Царств', '2sm': '2 Царств', '1kgs': '3 Царств', '2kgs': '4 Царств',
+  '1ch': '1 Паралипоменон', '2ch': '2 Паралипоменон',
+  'ezr': 'Ездра', 'ne': 'Неемия', 'et': 'Есфирь',
+  'job': 'Иов', 'ps': 'Псалмы', 'prv': 'Притчи', 'ec': 'Екклесиаст', 'so': 'Песнь Песней',
+  'is': 'Исаия', 'jr': 'Иеремия', 'lm': 'Плач Иеремии',
+  'ez': 'Иезекииль', 'dn': 'Даниил',
+  'ho': 'Осия', 'jl': 'Иоиль', 'am': 'Амос', 'ob': 'Авдий',
+  'jn': 'Иона', 'mi': 'Михей', 'na': 'Наум', 'hk': 'Аввакум',
+  'zp': 'Софония', 'hg': 'Аггей', 'zc': 'Захария', 'ml': 'Малахия'
+};
+
+const bookCache = {};
+
+async function loadBook(fileId) {
+  if (bookCache[fileId]) return bookCache[fileId];
+  try {
+    const resp = await fetch(`synodal/${fileId}.json`);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    bookCache[fileId] = data;
+    return data;
+  } catch(e) {
+    console.error(`Failed to load ${fileId}:`, e);
+    return null;
+  }
+}
+
+function parseRef(text) {
+  text = text.replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
+  if (text.includes(';')) {
+    return text.split(';').flatMap(part => parseRef(part.trim())).filter(Boolean);
+  }
+  text = text.replace(/^ср\.\s*/, '');
+
+  const m = text.match(/^(.+?)\s+(\d+):(.+)$/);
+  if (!m) {
+    const mc = text.match(/^(.+?)\s+(\d+)$/);
+    if (mc) {
+      const bookAbbr = mc[1].replace(/\.$/, '').trim();
+      const fileId = BOOK_MAP[bookAbbr];
+      if (fileId) return [{ fileId, chapter: parseInt(mc[2]), verses: null }];
+    }
+    return [];
+  }
+
+  const bookAbbr = m[1].replace(/\.$/, '').trim();
+  const chapter = parseInt(m[2]);
+  const verseSpec = m[3].trim();
+  const fileId = BOOK_MAP[bookAbbr];
+  if (!fileId) return [];
+
+  const verses = parseVerses(verseSpec);
+  return [{ fileId, chapter, verses }];
+}
+
+function parseVerses(spec) {
+  const verses = [];
+  const parts = spec.split(/,\s*/);
+  for (const part of parts) {
+    const rangeMatch = part.match(/^(\d+)\s*[–—\-]\s*(\d+)$/);
+    if (rangeMatch) {
+      const start = parseInt(rangeMatch[1]);
+      const end = parseInt(rangeMatch[2]);
+      for (let i = start; i <= end; i++) verses.push(i);
+    } else {
+      const num = parseInt(part);
+      if (!isNaN(num)) verses.push(num);
+    }
+  }
+  return verses.length > 0 ? verses : null;
+}
+
+// Modal
+const overlay = document.getElementById('verseOverlay');
+const modalTitle = document.getElementById('verseModalTitle');
+const modalBody = document.getElementById('verseModalBody');
+const modalClose = document.getElementById('verseModalClose');
+
+function showModal() { overlay.classList.add('visible'); document.body.style.overflow = 'hidden'; }
+function hideModal() { overlay.classList.remove('visible'); document.body.style.overflow = ''; }
+
+modalClose.addEventListener('click', hideModal);
+overlay.addEventListener('click', (e) => { if (e.target === overlay) hideModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideModal(); });
+
+async function openVerseModal(refText) {
+  const refs = parseRef(refText);
+  if (refs.length === 0) return;
+
+  const titles = refs.map(r => {
+    const name = BOOK_FULL_NAME[r.fileId] || r.fileId;
+    if (!r.verses) return `${name} ${r.chapter}`;
+    if (r.verses.length === 1) return `${name} ${r.chapter}:${r.verses[0]}`;
+    const min = Math.min(...r.verses);
+    const max = Math.max(...r.verses);
+    const isConsecutive = r.verses.every((v, i) => i === 0 || v === r.verses[i-1] + 1);
+    if (isConsecutive) return `${name} ${r.chapter}:${min}–${max}`;
+    return `${name} ${r.chapter}:${r.verses.join(', ')}`;
+  });
+  modalTitle.textContent = titles.join('; ');
+  modalBody.innerHTML = '<div class="verse-loading">Загрузка...</div>';
+  showModal();
+
+  let html = '';
+  for (const ref of refs) {
+    const data = await loadBook(ref.fileId);
+    if (!data) {
+      html += '<div class="verse-error">Не удалось загрузить книгу</div>';
+      continue;
+    }
+    const chapterData = data[ref.chapter - 1];
+    if (!chapterData) {
+      html += `<div class="verse-error">Глава ${ref.chapter} не найдена</div>`;
+      continue;
+    }
+
+    if (refs.length > 1) {
+      const name = BOOK_FULL_NAME[ref.fileId] || ref.fileId;
+      html += `<div style="font-weight:600;color:var(--accent);margin:12px 0 6px;font-family:sans-serif;font-size:0.85em;">${name} ${ref.chapter}</div>`;
+    }
+
+    const verseNums = ref.verses || chapterData.map((_, i) => i + 1);
+    for (const vn of verseNums) {
+      const vText = chapterData[vn - 1];
+      if (vText !== undefined) {
+        html += `<div class="verse-line"><span class="verse-num">${vn}</span>${vText}</div>`;
+      }
+    }
+  }
+
+  modalBody.innerHTML = html || '<div class="verse-error">Стихи не найдены</div>';
+}
+
+// Make all refs clickable
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('.ref, .principle-verse');
+  if (!el) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const text = el.textContent.trim();
+  if (text) openVerseModal(text);
+});
+</script>
+
+</body>
+</html>
