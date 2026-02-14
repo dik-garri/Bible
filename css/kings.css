@@ -1,0 +1,132 @@
+/* Kings and Prophets color variables */
+:root {
+  --united: #b8860b;
+  --united-bg: #fdf8eb;
+  --israel: #c0392b;
+  --israel-bg: #fdf0ee;
+  --judah: #2c3e80;
+  --judah-bg: #eef0f7;
+  --prophets: #27ae60;
+  --prophets-bg: #eef9f2;
+  --exile: #7b2d8e;
+  --exile-bg: #f5eef7;
+}
+
+/* Card color overrides */
+.card--united .card-icon { background: var(--united-bg); color: var(--united); }
+.card--united .card-info h3 { color: var(--united); }
+.card--united .ritual-steps li::before { background: var(--united); }
+
+.card--israel .card-icon { background: var(--israel-bg); color: var(--israel); }
+.card--israel .card-info h3 { color: var(--israel); }
+.card--israel .ritual-steps li::before { background: var(--israel); }
+
+.card--judah .card-icon { background: var(--judah-bg); color: var(--judah); }
+.card--judah .card-info h3 { color: var(--judah); }
+.card--judah .ritual-steps li::before { background: var(--judah); }
+
+.card--prophets .card-icon { background: var(--prophets-bg); color: var(--prophets); }
+.card--prophets .card-info h3 { color: var(--prophets); }
+.card--prophets .ritual-steps li::before { background: var(--prophets); }
+
+.card--exile .card-icon { background: var(--exile-bg); color: var(--exile); }
+.card--exile .card-info h3 { color: var(--exile); }
+.card--exile .ritual-steps li::before { background: var(--exile); }
+
+/* King table */
+.king-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  margin: 12px 0;
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.king-table th {
+  background: var(--text);
+  color: #fff;
+  padding: 8px 10px;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.king-table th:first-child { text-align: left; }
+
+.king-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.92em;
+}
+
+.king-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.king-table tbody tr:hover td { background: #fdf8eb; }
+
+.king-table--israel th { background: var(--israel); }
+.king-table--judah th { background: var(--judah); }
+.king-table--united th { background: var(--united); }
+.king-table--prophets th { background: var(--prophets); }
+
+/* King evaluation badges */
+.badge-good {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  background: #eef9f2;
+  color: #27ae60;
+}
+
+.badge-bad {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  background: #fdf0ee;
+  color: #c0392b;
+}
+
+.badge-mixed {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  background: #fdf3ec;
+  color: #d35400;
+}
+
+/* Dynasty indicator */
+.dynasty {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  font-family: -apple-system, sans-serif;
+}
+
+/* Comparison table */
+.kings-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.kings-compare th:hover { background: #3d2a1e; }
+
+@media (max-width: 600px) {
+  .king-table th, .king-table td { padding: 5px 6px; font-size: 0.82em; }
+}

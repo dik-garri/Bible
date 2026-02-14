@@ -28,13 +28,26 @@
 - [x] Тематические стили: `css/covenants.css` (4 цветовых категории)
 - [x] Карточка на `index.html`
 
+### Хронология книги Бытие
+- [x] Текстовый анализ: `Хронология_Бытие_анализ.md`
+- [x] Интерактивная страница: `genesis-timeline.html` (6 вкладок, 10 карточек)
+- [x] Тематические стили: `css/genesis-timeline.css` (4 цветовых категории)
+- [x] Карточка на `index.html`
+
+### Цари и пророки
+- [x] Текстовый анализ: `Цари_и_пророки_анализ.md`
+- [x] Интерактивная страница: `kings.html` (6 вкладок, 13 карточек)
+- [x] Тематические стили: `css/kings.css` (5 цветовых категорий)
+- [x] Карточка на `index.html`
+
 ### Инфраструктура
-- [x] Стартовая страница-хаб: `index.html` (5 тем)
+- [x] Стартовая страница-хаб: `index.html` (7 тем)
 - [x] Рефакторинг: общие CSS/JS вынесены в `css/shared.css`, `js/shared.js`
-- [x] Тематические стили: `css/sacrifices.css`, `css/purity.css`, `css/feasts.css`, `css/tabernacle.css`, `css/covenants.css`
+- [x] Тематические стили: `css/sacrifices.css`, `css/purity.css`, `css/feasts.css`, `css/tabernacle.css`, `css/covenants.css`, `css/genesis-timeline.css`, `css/kings.css`
 - [x] Документация: CLAUDE.md, README.md, TODO.md, PROGRESS.md
 
 ## Планы (TODO.md)
 
 Приоритетные темы: Священство, Благословения и проклятия.
 Дополнительные: Пророчества, Обеты, Странствования, Имена Бога, Законы о ближнем.
+
