@@ -1,0 +1,62 @@
+/* Covenant color variables */
+:root {
+  --noah: #2980b9;
+  --noah-bg: #edf4fb;
+  --abraham: #b8860b;
+  --abraham-bg: #fdf8eb;
+  --sinai: #c0392b;
+  --sinai-bg: #fdf0ee;
+  --moab: #27ae60;
+  --moab-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--noah .card-icon { background: var(--noah-bg); color: var(--noah); }
+.card--noah .card-info h3 { color: var(--noah); }
+.card--noah .ritual-steps li::before { background: var(--noah); }
+
+.card--abraham .card-icon { background: var(--abraham-bg); color: var(--abraham); }
+.card--abraham .card-info h3 { color: var(--abraham); }
+.card--abraham .ritual-steps li::before { background: var(--abraham); }
+
+.card--sinai .card-icon { background: var(--sinai-bg); color: var(--sinai); }
+.card--sinai .card-info h3 { color: var(--sinai); }
+.card--sinai .ritual-steps li::before { background: var(--sinai); }
+
+.card--moab .card-icon { background: var(--moab-bg); color: var(--moab); }
+.card--moab .card-info h3 { color: var(--moab); }
+.card--moab .ritual-steps li::before { background: var(--moab); }
+
+/* Covenant comparison table dark header */
+.cov-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.cov-compare th:hover { background: #3d2a1e; }
+
+/* Covenant structure highlight */
+.cov-structure {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  margin: 10px 0;
+  font-size: 0.92em;
+}
+
+.cov-structure dt {
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.cov-structure dd {
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .cov-structure { grid-template-columns: 1fr; gap: 2px 0; }
+  .cov-structure dt { margin-top: 8px; }
+}
