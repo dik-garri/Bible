@@ -1,0 +1,136 @@
+/* Conquest color variables */
+:root {
+  --prepare: #2c3e80;
+  --prepare-bg: #eef0f7;
+  --crossing: #1a8a7d;
+  --crossing-bg: #eaf6f5;
+  --battle: #c0392b;
+  --battle-bg: #fdf0ee;
+  --land: #27ae60;
+  --land-bg: #eef9f2;
+  --covenant: #b8860b;
+  --covenant-bg: #fdf8eb;
+}
+
+/* Card color overrides */
+.card--prepare .card-icon { background: var(--prepare-bg); color: var(--prepare); }
+.card--prepare .card-info h3 { color: var(--prepare); }
+.card--prepare .ritual-steps li::before { background: var(--prepare); }
+
+.card--crossing .card-icon { background: var(--crossing-bg); color: var(--crossing); }
+.card--crossing .card-info h3 { color: var(--crossing); }
+.card--crossing .ritual-steps li::before { background: var(--crossing); }
+
+.card--battle .card-icon { background: var(--battle-bg); color: var(--battle); }
+.card--battle .card-info h3 { color: var(--battle); }
+.card--battle .ritual-steps li::before { background: var(--battle); }
+
+.card--land .card-icon { background: var(--land-bg); color: var(--land); }
+.card--land .card-info h3 { color: var(--land); }
+.card--land .ritual-steps li::before { background: var(--land); }
+
+.card--covenant .card-icon { background: var(--covenant-bg); color: var(--covenant); }
+.card--covenant .card-info h3 { color: var(--covenant); }
+.card--covenant .ritual-steps li::before { background: var(--covenant); }
+
+/* Conquest comparison table */
+.conquest-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.conquest-compare th:hover { background: #3d2a1e; }
+
+/* Campaign badges */
+.badge-central {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--battle-bg);
+  color: var(--battle);
+}
+
+.badge-south {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--crossing-bg);
+  color: var(--crossing);
+}
+
+.badge-north {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--prepare-bg);
+  color: var(--prepare);
+}
+
+/* Campaign route diagram */
+.campaign-route {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85em;
+}
+
+.campaign-step {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+}
+
+.campaign-step--central { background: var(--battle-bg); color: var(--battle); }
+.campaign-step--south { background: var(--crossing-bg); color: var(--crossing); }
+.campaign-step--north { background: var(--prepare-bg); color: var(--prepare); }
+
+.campaign-arrow {
+  font-size: 1.4em;
+  color: var(--text-muted);
+  padding: 0 6px;
+}
+
+/* Tribe allotment list */
+.tribe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.88em;
+}
+
+.tribe-item {
+  background: var(--land-bg);
+  color: var(--land);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.tribe-item--half {
+  background: var(--crossing-bg);
+  color: var(--crossing);
+}
+
+@media (max-width: 600px) {
+  .campaign-route { font-size: 0.75em; }
+  .campaign-step { padding: 6px 10px; min-width: 70px; }
+  .tribe-grid { grid-template-columns: 1fr 1fr; }
+}
