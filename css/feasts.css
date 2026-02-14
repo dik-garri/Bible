@@ -1,0 +1,107 @@
+/* Feast color variables */
+:root {
+  --sabbath: #2c3e80;
+  --sabbath-bg: #eef0f7;
+  --newmoon: #6b5b4f;
+  --newmoon-bg: #f5f0eb;
+  --passover: #c0392b;
+  --passover-bg: #fdf0ee;
+  --firstfruits: #27ae60;
+  --firstfruits-bg: #eef9f2;
+  --pentecost: #d4a017;
+  --pentecost-bg: #fdf8eb;
+  --trumpets: #d35400;
+  --trumpets-bg: #fdf3ec;
+  --atonement: #7b2d8e;
+  --atonement-bg: #f5eef7;
+  --tabernacles: #1a7a5a;
+  --tabernacles-bg: #ecf5f0;
+  --cycles: #2980b9;
+  --cycles-bg: #edf4fb;
+}
+
+/* Card color overrides */
+.card--sabbath .card-icon { background: var(--sabbath-bg); color: var(--sabbath); }
+.card--sabbath .card-info h3 { color: var(--sabbath); }
+.card--sabbath .ritual-steps li::before { background: var(--sabbath); }
+
+.card--newmoon .card-icon { background: var(--newmoon-bg); color: var(--newmoon); }
+.card--newmoon .card-info h3 { color: var(--newmoon); }
+.card--newmoon .ritual-steps li::before { background: var(--newmoon); }
+
+.card--passover .card-icon { background: var(--passover-bg); color: var(--passover); }
+.card--passover .card-info h3 { color: var(--passover); }
+.card--passover .ritual-steps li::before { background: var(--passover); }
+
+.card--firstfruits .card-icon { background: var(--firstfruits-bg); color: var(--firstfruits); }
+.card--firstfruits .card-info h3 { color: var(--firstfruits); }
+.card--firstfruits .ritual-steps li::before { background: var(--firstfruits); }
+
+.card--pentecost .card-icon { background: var(--pentecost-bg); color: var(--pentecost); }
+.card--pentecost .card-info h3 { color: var(--pentecost); }
+.card--pentecost .ritual-steps li::before { background: var(--pentecost); }
+
+.card--trumpets .card-icon { background: var(--trumpets-bg); color: var(--trumpets); }
+.card--trumpets .card-info h3 { color: var(--trumpets); }
+.card--trumpets .ritual-steps li::before { background: var(--trumpets); }
+
+.card--atonement .card-icon { background: var(--atonement-bg); color: var(--atonement); }
+.card--atonement .card-info h3 { color: var(--atonement); }
+.card--atonement .ritual-steps li::before { background: var(--atonement); }
+
+.card--tabernacles .card-icon { background: var(--tabernacles-bg); color: var(--tabernacles); }
+.card--tabernacles .card-info h3 { color: var(--tabernacles); }
+.card--tabernacles .ritual-steps li::before { background: var(--tabernacles); }
+
+.card--cycles .card-icon { background: var(--cycles-bg); color: var(--cycles); }
+.card--cycles .card-info h3 { color: var(--cycles); }
+.card--cycles .ritual-steps li::before { background: var(--cycles); }
+
+/* Sukkot sacrifice table */
+.sukkot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  margin: 12px 0;
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sukkot-table th {
+  background: var(--tabernacles);
+  color: #fff;
+  padding: 8px 10px;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.sukkot-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.92em;
+}
+
+.sukkot-table tbody tr:last-child td {
+  border-bottom: none;
+  font-weight: 700;
+  color: var(--tabernacles);
+}
+
+/* Feast comparison table dark header */
+.feast-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.feast-compare th:hover { background: #3d2a1e; }
+
+@media (max-width: 600px) {
+  .sukkot-table th, .sukkot-table td { padding: 5px 6px; font-size: 0.82em; }
+}
