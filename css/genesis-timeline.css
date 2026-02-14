@@ -94,6 +94,116 @@
 .lifespan-bar--post { background: var(--flood); }
 .lifespan-bar--pat { background: var(--patriarchs); }
 
+/* Gantt chart — overlapping lifespans */
+.gantt-wrap {
+  margin: 0 0 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gantt {
+  position: relative;
+  min-width: 700px;
+}
+
+.gantt-axis {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 4px;
+  margin-left: 90px;
+  font-size: 0.72em;
+  color: var(--text-muted);
+  font-family: -apple-system, sans-serif;
+}
+
+.gantt-row {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.gantt-row:hover { background: #f5ece0; }
+
+.gantt-name {
+  width: 90px;
+  min-width: 90px;
+  font-size: 0.82em;
+  font-weight: 600;
+  text-align: right;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gantt-track {
+  flex: 1;
+  position: relative;
+  height: 16px;
+}
+
+.gantt-bar {
+  position: absolute;
+  height: 14px;
+  top: 1px;
+  border-radius: 7px;
+  opacity: 0.8;
+  background: var(--preflood);
+  transition: opacity 0.15s;
+  cursor: default;
+}
+
+.gantt-bar:hover { opacity: 1; }
+
+.gantt-bar--post { background: var(--flood); }
+.gantt-bar--pat { background: var(--patriarchs); }
+.gantt-bar--enoch { background: var(--creation); opacity: 0.6; }
+.gantt-bar--enoch:hover { opacity: 0.85; }
+
+.gantt-bar .gantt-tip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72em;
+  white-space: nowrap;
+  font-family: -apple-system, sans-serif;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.gantt-bar:hover .gantt-tip { display: block; }
+
+.gantt-flood {
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  width: 2px;
+  background: #c0392b;
+  opacity: 0.6;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gantt-flood-label {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.68em;
+  color: #c0392b;
+  font-family: -apple-system, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 @media (max-width: 600px) {
   .gen-table th, .gen-table td { padding: 5px 6px; font-size: 0.82em; }
+  .gantt-name { width: 70px; min-width: 70px; font-size: 0.75em; }
+  .gantt { min-width: 550px; }
 }
