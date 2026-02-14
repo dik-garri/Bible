@@ -1,0 +1,127 @@
+/* Judges color variables */
+:root {
+  --cycle: #c0392b;
+  --cycle-bg: #fdf0ee;
+  --major: #2c3e80;
+  --major-bg: #eef0f7;
+  --minor: #27ae60;
+  --minor-bg: #eef9f2;
+  --ruth: #b8860b;
+  --ruth-bg: #fdf8eb;
+  --appendix: #7b2d8e;
+  --appendix-bg: #f5eef7;
+}
+
+/* Card color overrides */
+.card--cycle .card-icon { background: var(--cycle-bg); color: var(--cycle); }
+.card--cycle .card-info h3 { color: var(--cycle); }
+.card--cycle .ritual-steps li::before { background: var(--cycle); }
+
+.card--major .card-icon { background: var(--major-bg); color: var(--major); }
+.card--major .card-info h3 { color: var(--major); }
+.card--major .ritual-steps li::before { background: var(--major); }
+
+.card--minor .card-icon { background: var(--minor-bg); color: var(--minor); }
+.card--minor .card-info h3 { color: var(--minor); }
+.card--minor .ritual-steps li::before { background: var(--minor); }
+
+.card--ruth .card-icon { background: var(--ruth-bg); color: var(--ruth); }
+.card--ruth .card-info h3 { color: var(--ruth); }
+.card--ruth .ritual-steps li::before { background: var(--ruth); }
+
+.card--appendix .card-icon { background: var(--appendix-bg); color: var(--appendix); }
+.card--appendix .card-info h3 { color: var(--appendix); }
+.card--appendix .ritual-steps li::before { background: var(--appendix); }
+
+/* Judges comparison table */
+.judges-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.judges-compare th:hover { background: #3d2a1e; }
+
+/* Judge type badges */
+.badge-major {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--major-bg);
+  color: var(--major);
+}
+
+.badge-minor {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--minor-bg);
+  color: var(--minor);
+}
+
+.badge-anti {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #fdf0ee;
+  color: #c0392b;
+}
+
+/* Cycle diagram */
+.cycle-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85em;
+}
+
+.cycle-step {
+  background: var(--cycle-bg);
+  color: var(--cycle);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 100px;
+}
+
+.cycle-arrow {
+  font-size: 1.4em;
+  color: var(--text-muted);
+  padding: 0 6px;
+}
+
+/* Oppression bar */
+.oppression-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--cycle);
+  opacity: 0.6;
+  min-width: 4px;
+}
+
+.peace-bar {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--minor);
+  opacity: 0.6;
+  min-width: 4px;
+}
+
+@media (max-width: 600px) {
+  .cycle-diagram { font-size: 0.75em; }
+  .cycle-step { padding: 6px 10px; min-width: 70px; }
+}
