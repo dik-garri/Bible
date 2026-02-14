@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Пятикнижие Моисея</title>
+<title>Библия — интерактивные справочники</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -56,11 +56,39 @@ header .subtitle {
   margin: 0 auto;
 }
 
+/* Section groups */
+.section-group {
+  padding: 40px 0 8px;
+}
+
+.section-group:first-child { padding-top: 48px; }
+
+.section-group-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.section-group-header h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  color: var(--text);
+}
+
+.section-group-header .section-books {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .topics {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
-  padding: 48px 0 80px;
 }
 
 .topic-card {
@@ -92,7 +120,7 @@ header .subtitle {
   padding: 0 24px 28px;
 }
 
-.topic-card-body h2 {
+.topic-card-body h3 {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 1.2em;
   font-weight: 600;
@@ -112,26 +140,54 @@ header .subtitle {
   font-family: -apple-system, sans-serif;
 }
 
+/* Placeholder card */
+.topic-card--soon {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.topic-card--soon .topic-card-icon { background: linear-gradient(135deg, #f0ebe4, #e8e2d8); }
+
+.soon-badge {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  background: var(--border);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Card theme colors */
 .topic-card--sacrifices .topic-card-icon { background: linear-gradient(135deg, #fdf0ee, #fdf8eb); }
-.topic-card--sacrifices h2 { color: #c0392b; }
+.topic-card--sacrifices h3 { color: #c0392b; }
 
 .topic-card--purity .topic-card-icon { background: linear-gradient(135deg, #eef0f7, #eef9f2); }
-.topic-card--purity h2 { color: #2c3e80; }
+.topic-card--purity h3 { color: #2c3e80; }
 
 .topic-card--feasts .topic-card-icon { background: linear-gradient(135deg, #fdf3ec, #f5eef7); }
-.topic-card--feasts h2 { color: #d35400; }
+.topic-card--feasts h3 { color: #d35400; }
 
 .topic-card--tabernacle .topic-card-icon { background: linear-gradient(135deg, #fdf8eb, #f8f0ea); }
-.topic-card--tabernacle h2 { color: #b8860b; }
+.topic-card--tabernacle h3 { color: #b8860b; }
 
 .topic-card--covenants .topic-card-icon { background: linear-gradient(135deg, #edf4fb, #fdf8eb); }
-.topic-card--covenants h2 { color: #2980b9; }
+.topic-card--covenants h3 { color: #2980b9; }
 
 .topic-card--genesis-timeline .topic-card-icon { background: linear-gradient(135deg, #f5eef7, #eef0f7); }
-.topic-card--genesis-timeline h2 { color: #7b2d8e; }
+.topic-card--genesis-timeline h3 { color: #7b2d8e; }
 
 .topic-card--kings .topic-card-icon { background: linear-gradient(135deg, #fdf0ee, #eef0f7); }
-.topic-card--kings h2 { color: #c0392b; }
+.topic-card--kings h3 { color: #c0392b; }
+
+.topic-card--judges .topic-card-icon { background: linear-gradient(135deg, #eef9f2, #fdf8eb); }
+.topic-card--judges h3 { color: #27ae60; }
+
+.topic-card--exile .topic-card-icon { background: linear-gradient(135deg, #eef0f7, #f5eef7); }
+.topic-card--exile h3 { color: #7b2d8e; }
 
 footer {
   text-align: center;
@@ -150,7 +206,10 @@ footer a:hover { text-decoration: underline; }
 @media (max-width: 600px) {
   header h1 { font-size: 1.7em; }
   header { padding: 40px 20px 16px; }
-  .topics { padding: 32px 0 60px; gap: 18px; }
+  .section-group { padding: 28px 0 8px; }
+  .section-group:first-child { padding-top: 32px; }
+  .section-group-header h2 { font-size: 1.25em; }
+  .topics { gap: 18px; }
   .topic-card-icon { height: 90px; font-size: 2.6em; }
 }
 </style>
@@ -159,78 +218,136 @@ footer a:hover { text-decoration: underline; }
 
 <header>
   <div class="container">
-    <h1>Пятикнижие Моисея</h1>
-    <p class="subtitle">Интерактивные справочники на основании Синодального перевода Библии</p>
+    <h1>Библия</h1>
+    <p class="subtitle">Интерактивные справочники на основании Синодального перевода</p>
   </div>
 </header>
 
 <main class="container">
-  <div class="topics">
 
-    <a href="sacrifices.html" class="topic-card topic-card--sacrifices">
-      <div class="topic-card-icon">&#x1F525;</div>
-      <div class="topic-card-body">
-        <h2>Жертвоприношения</h2>
-        <p>Все виды жертв: всесожжение, хлебное, мирная, за грех, повинности. Особые жертвы, календарь, сравнение и богословские принципы.</p>
-        <div class="topic-refs">Левит 1&ndash;7 &bull; Числа 28&ndash;29 &bull; 6 вкладок</div>
-      </div>
-    </a>
+  <!-- ==================== ПЯТИКНИЖИЕ ==================== -->
+  <div class="section-group">
+    <div class="section-group-header">
+      <h2>Пятикнижие</h2>
+      <span class="section-books">Бытие &mdash; Второзаконие</span>
+    </div>
+    <div class="topics">
 
-    <a href="purity.html" class="topic-card topic-card--purity">
-      <div class="topic-card-icon">&#x1F4A7;</div>
-      <div class="topic-card-body">
-        <h2>Чистота и нечистота</h2>
-        <p>Чистые и нечистые животные, проказа, телесные истечения, осквернение мёртвым телом, рыжая телица, чистота стана.</p>
-        <div class="topic-refs">Левит 11&ndash;15 &bull; Числа 19 &bull; 7 вкладок</div>
-      </div>
-    </a>
+      <a href="genesis-timeline.html" class="topic-card topic-card--genesis-timeline">
+        <div class="topic-card-icon">&#x1F4C5;</div>
+        <div class="topic-card-body">
+          <h3>Хронология книги Бытие</h3>
+          <p>Временная шкала от сотворения до Иосифа, родословия патриархов, потоп, таблица народов, диаграмма пересечений жизней.</p>
+          <div class="topic-refs">Бытие 1&ndash;50 &bull; 6 вкладок</div>
+        </div>
+      </a>
 
-    <a href="feasts.html" class="topic-card topic-card--feasts">
-      <div class="topic-card-icon">&#x1F3BA;</div>
-      <div class="topic-card-body">
-        <h2>Праздники и священные собрания</h2>
-        <p>Суббота, Пасха, Пятидесятница, Праздник Труб, Йом Киппур, Кущи. Годовые циклы, сводная таблица и богословские принципы.</p>
-        <div class="topic-refs">Левит 16, 23, 25 &bull; Числа 28&ndash;29 &bull; 6 вкладок</div>
-      </div>
-    </a>
+      <a href="covenants.html" class="topic-card topic-card--covenants">
+        <div class="topic-card-icon">&#x1F4DC;</div>
+        <div class="topic-card-body">
+          <h3>Заветы</h3>
+          <p>Завет с Ноем, три эпизода завета с Авраамом, Синайский завет, завет на равнинах Моавитских. Сравнение и принципы.</p>
+          <div class="topic-refs">Бытие 9, 15, 17 &bull; Исход 19&ndash;24, 34 &bull; Второзаконие 28&ndash;30 &bull; 6 вкладок</div>
+        </div>
+      </a>
 
-    <a href="tabernacle.html" class="topic-card topic-card--tabernacle">
-      <div class="topic-card-icon">&#x26EA;</div>
-      <div class="topic-card-body">
-        <h2>Скиния</h2>
-        <p>Устройство скинии, двор, Святое и Святое Святых, облачения священников, служение левитов и богословские принципы.</p>
-        <div class="topic-refs">Исход 25&ndash;31, 35&ndash;40 &bull; Числа 3&ndash;4 &bull; 7 вкладок</div>
-      </div>
-    </a>
+      <a href="sacrifices.html" class="topic-card topic-card--sacrifices">
+        <div class="topic-card-icon">&#x1F525;</div>
+        <div class="topic-card-body">
+          <h3>Жертвоприношения</h3>
+          <p>Все виды жертв: всесожжение, хлебное, мирная, за грех, повинности. Особые жертвы, календарь, сравнение и принципы.</p>
+          <div class="topic-refs">Левит 1&ndash;7 &bull; Числа 28&ndash;29 &bull; 6 вкладок</div>
+        </div>
+      </a>
 
-    <a href="covenants.html" class="topic-card topic-card--covenants">
-      <div class="topic-card-icon">&#x1F4DC;</div>
-      <div class="topic-card-body">
-        <h2>Заветы</h2>
-        <p>Завет с Ноем, три эпизода завета с Авраамом, Синайский завет, завет на равнинах Моавитских. Сравнение и богословские принципы.</p>
-        <div class="topic-refs">Бытие 9, 15, 17 &bull; Исход 19&ndash;24, 34 &bull; Второзаконие 28&ndash;30 &bull; 6 вкладок</div>
-      </div>
-    </a>
+      <a href="purity.html" class="topic-card topic-card--purity">
+        <div class="topic-card-icon">&#x1F4A7;</div>
+        <div class="topic-card-body">
+          <h3>Чистота и нечистота</h3>
+          <p>Чистые и нечистые животные, проказа, телесные истечения, осквернение мёртвым телом, рыжая телица, чистота стана.</p>
+          <div class="topic-refs">Левит 11&ndash;15 &bull; Числа 19 &bull; 7 вкладок</div>
+        </div>
+      </a>
 
-    <a href="genesis-timeline.html" class="topic-card topic-card--genesis-timeline">
-      <div class="topic-card-icon">&#x1F4C5;</div>
-      <div class="topic-card-body">
-        <h2>Хронология книги Бытие</h2>
-        <p>Временная шкала от сотворения до Иосифа, родословия допотопных и послепотопных патриархов, потоп, таблица народов.</p>
-        <div class="topic-refs">Бытие 1&ndash;50 &bull; 6 вкладок</div>
-      </div>
-    </a>
+      <a href="feasts.html" class="topic-card topic-card--feasts">
+        <div class="topic-card-icon">&#x1F3BA;</div>
+        <div class="topic-card-body">
+          <h3>Праздники и священные собрания</h3>
+          <p>Суббота, Пасха, Пятидесятница, Праздник Труб, Йом Киппур, Кущи. Годовые циклы, сводная таблица и принципы.</p>
+          <div class="topic-refs">Левит 16, 23, 25 &bull; Числа 28&ndash;29 &bull; 6 вкладок</div>
+        </div>
+      </a>
 
-    <a href="kings.html" class="topic-card topic-card--kings">
-      <div class="topic-card-icon">&#x1F451;</div>
-      <div class="topic-card-body">
-        <h2>Цари и пророки</h2>
-        <p>Объединённое царство, 19 царей Израиля, 20 царей Иудеи, великие и малые пророки, падение Самарии и Иерусалима.</p>
-        <div class="topic-refs">1&ndash;4 Царств &bull; Пророки &bull; 6 вкладок</div>
-      </div>
-    </a>
+      <a href="tabernacle.html" class="topic-card topic-card--tabernacle">
+        <div class="topic-card-icon">&#x26EA;</div>
+        <div class="topic-card-body">
+          <h3>Скиния</h3>
+          <p>Устройство скинии, двор, Святое и Святое Святых, облачения священников, служение левитов и принципы.</p>
+          <div class="topic-refs">Исход 25&ndash;31, 35&ndash;40 &bull; Числа 3&ndash;4 &bull; 7 вкладок</div>
+        </div>
+      </a>
 
+    </div>
   </div>
+
+  <!-- ==================== ЗАВОЕВАНИЕ И СУДЬИ ==================== -->
+  <div class="section-group">
+    <div class="section-group-header">
+      <h2>Завоевание и Судьи</h2>
+      <span class="section-books">Иисус Навин &mdash; Руфь</span>
+    </div>
+    <div class="topics">
+
+      <div class="topic-card topic-card--judges topic-card--soon">
+        <div class="topic-card-icon">&#x2694;&#xFE0F;</div>
+        <div class="topic-card-body">
+          <h3>Завоевание Ханаана <span class="soon-badge">скоро</span></h3>
+          <p>Переход через Иордан, падение Иерихона, южная и северная кампании, разделение земли между коленами.</p>
+          <div class="topic-refs">Иисус Навин 1&ndash;24</div>
+        </div>
+      </div>
+
+      <div class="topic-card topic-card--judges topic-card--soon">
+        <div class="topic-card-icon">&#x1F6E1;&#xFE0F;</div>
+        <div class="topic-card-body">
+          <h3>Судьи Израилевы <span class="soon-badge">скоро</span></h3>
+          <p>Цикл отступничества: грех &rarr; угнетение &rarr; вопль &rarr; избавитель. 12 судей от Гофониила до Самсона. Руфь.</p>
+          <div class="topic-refs">Судей 1&ndash;21 &bull; Руфь 1&ndash;4</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== ЦАРИ И ПРОРОКИ ==================== -->
+  <div class="section-group">
+    <div class="section-group-header">
+      <h2>Цари и пророки</h2>
+      <span class="section-books">1 Царств &mdash; Малахия</span>
+    </div>
+    <div class="topics">
+
+      <a href="kings.html" class="topic-card topic-card--kings">
+        <div class="topic-card-icon">&#x1F451;</div>
+        <div class="topic-card-body">
+          <h3>Цари и пророки</h3>
+          <p>Объединённое царство, 19 царей Израиля, 20 царей Иудеи, великие и малые пророки, падение Самарии и Иерусалима.</p>
+          <div class="topic-refs">1&ndash;4 Царств &bull; Пророки &bull; 6 вкладок</div>
+        </div>
+      </a>
+
+      <div class="topic-card topic-card--exile topic-card--soon">
+        <div class="topic-card-icon">&#x1F3DB;&#xFE0F;</div>
+        <div class="topic-card-body">
+          <h3>Плен и возвращение <span class="soon-badge">скоро</span></h3>
+          <p>Вавилонский плен, указ Кира, возвращение и восстановление храма, стены Иерусалима, Есфирь.</p>
+          <div class="topic-refs">Ездра &bull; Неемия &bull; Есфирь &bull; Даниил</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </main>
 
 <footer>
