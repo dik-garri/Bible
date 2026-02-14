@@ -1,0 +1,90 @@
+/* Tabernacle color variables */
+:root {
+  --overview: #b8860b;
+  --overview-bg: #fdf8eb;
+  --court: #a0522d;
+  --court-bg: #f8f0ea;
+  --holy: #d4a017;
+  --holy-bg: #fdf6e3;
+  --holiest: #7b2d8e;
+  --holiest-bg: #f5eef7;
+  --garments: #2c3e80;
+  --garments-bg: #eef0f7;
+  --levites: #27ae60;
+  --levites-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--overview .card-icon { background: var(--overview-bg); color: var(--overview); }
+.card--overview .card-info h3 { color: var(--overview); }
+.card--overview .ritual-steps li::before { background: var(--overview); }
+
+.card--court .card-icon { background: var(--court-bg); color: var(--court); }
+.card--court .card-info h3 { color: var(--court); }
+.card--court .ritual-steps li::before { background: var(--court); }
+
+.card--holy .card-icon { background: var(--holy-bg); color: var(--holy); }
+.card--holy .card-info h3 { color: var(--holy); }
+.card--holy .ritual-steps li::before { background: var(--holy); }
+
+.card--holiest .card-icon { background: var(--holiest-bg); color: var(--holiest); }
+.card--holiest .card-info h3 { color: var(--holiest); }
+.card--holiest .ritual-steps li::before { background: var(--holiest); }
+
+.card--garments .card-icon { background: var(--garments-bg); color: var(--garments); }
+.card--garments .card-info h3 { color: var(--garments); }
+.card--garments .ritual-steps li::before { background: var(--garments); }
+
+.card--levites .card-icon { background: var(--levites-bg); color: var(--levites); }
+.card--levites .card-info h3 { color: var(--levites); }
+.card--levites .ritual-steps li::before { background: var(--levites); }
+
+/* Tabernacle dimensions display */
+.dimensions {
+  display: inline-block;
+  background: var(--overview-bg);
+  color: var(--overview);
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin: 2px 4px 2px 0;
+}
+
+/* Materials list */
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  padding: 8px 12px;
+  background: var(--bg);
+  border-radius: 8px;
+}
+
+.material-item .mat-icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+/* Tabernacle comparison table dark header */
+.tab-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.tab-compare th:hover { background: #3d2a1e; }
+
+@media (max-width: 600px) {
+  .materials-grid { grid-template-columns: 1fr; }
+  .dimensions { font-size: 0.78em; }
+}

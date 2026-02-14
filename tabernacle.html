@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Скиния — Пятикнижие Моисея</title>
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/tabernacle.css">
+</head>
+<body>
+<a href="index.html" class="back-link">&larr; Главная</a>
+
+<header>
+  <div class="container">
+    <h1>Скиния</h1>
+    <p class="subtitle">Устройство скинии, священные предметы, облачения и служение левитов</p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-scroll" id="navScroll">
+    <div class="nav-inner" id="navInner">
+      <button class="nav-tab active" data-tab="overview">Общий план</button>
+      <button class="nav-tab" data-tab="court">Двор</button>
+      <button class="nav-tab" data-tab="holy">Святое</button>
+      <button class="nav-tab" data-tab="holiest">Святое Святых</button>
+      <button class="nav-tab" data-tab="garments">Облачения</button>
+      <button class="nav-tab" data-tab="levites">Левиты</button>
+      <button class="nav-tab" data-tab="principles">Принципы</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ======================== ОБЩИЙ ПЛАН ======================== -->
+<div class="section active" id="overview">
+  <h2 class="section-title">Общий план скинии</h2>
+  <p class="section-desc">Материалы, конструкция и мастера &mdash; устройство переносного святилища Божьего присутствия.</p>
+
+  <div class="cards-grid">
+
+    <!-- ПРИНОШЕНИЯ -->
+    <div class="card card--overview">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F48E;</div>
+        <div class="card-info">
+          <h3>Приношения народа</h3>
+          <span class="hebrew">Исх. 25:1&ndash;9; 35:4&ndash;29; 36:2&ndash;7</span>
+          <p class="card-summary">15 видов материалов &mdash; добровольные дары всего Израиля для устроения святилища.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Повеление</h4>
+          <div class="quote">&laquo;И устроят они Мне святилище, и буду обитать посреди их&raquo; <span class="ref">Исх. 25:8</span></div>
+          <p>Бог повелел Моисею собрать приношения от каждого, &laquo;у кого расположено сердце&raquo; <span class="ref">(Исх. 25:2)</span>. Приношение было исключительно добровольным.</p>
+
+          <h4>Материалы</h4>
+          <div class="materials-grid">
+            <div class="material-item"><span class="mat-icon">&#x1F947;</span> Золото</div>
+            <div class="material-item"><span class="mat-icon">&#x1FA99;</span> Серебро</div>
+            <div class="material-item"><span class="mat-icon">&#x1F534;</span> Медь</div>
+            <div class="material-item"><span class="mat-icon">&#x1F535;</span> Голубая шерсть</div>
+            <div class="material-item"><span class="mat-icon">&#x1F7E3;</span> Пурпурная шерсть</div>
+            <div class="material-item"><span class="mat-icon">&#x1F534;</span> Червлёная шерсть</div>
+            <div class="material-item"><span class="mat-icon">&#x1F7E1;</span> Виссон (лён)</div>
+            <div class="material-item"><span class="mat-icon">&#x1F410;</span> Козья шерсть</div>
+            <div class="material-item"><span class="mat-icon">&#x1F9B4;</span> Бараньи кожи красные</div>
+            <div class="material-item"><span class="mat-icon">&#x1F9B4;</span> Кожи синие</div>
+            <div class="material-item"><span class="mat-icon">&#x1F332;</span> Дерево ситтим (акация)</div>
+            <div class="material-item"><span class="mat-icon">&#x1F56F;&#xFE0F;</span> Елей для светильника</div>
+            <div class="material-item"><span class="mat-icon">&#x1F331;</span> Ароматы для миро и курения</div>
+            <div class="material-item"><span class="mat-icon">&#x1F48E;</span> Камни оникс</div>
+            <div class="material-item"><span class="mat-icon">&#x1F48E;</span> Камни вставные</div>
+          </div>
+
+          <h4>Итоги (Исх. 38:21&ndash;31)</h4>
+          <ul>
+            <li>Золото: <strong>29 талантов и 730 сиклей</strong> <span class="ref">(Исх. 38:24)</span></li>
+            <li>Серебро: <strong>100 талантов и 1775 сиклей</strong> (от выкупа 603&thinsp;550 мужчин по полсикля) <span class="ref">(Исх. 38:25&ndash;26)</span></li>
+            <li>Медь: <strong>70 талантов и 2400 сиклей</strong> <span class="ref">(Исх. 38:29)</span></li>
+          </ul>
+
+          <h4>Избыток приношений</h4>
+          <p>Народ принёс <strong>больше</strong>, чем требовалось. Моисей приказал прекратить сбор.</p>
+          <div class="quote">&laquo;Народ много приносит, более нежели потребно для сего дела&raquo; <span class="ref">Исх. 36:5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- УСТРОЙСТВО СКИНИИ -->
+    <div class="card card--overview">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x26EA;</div>
+        <div class="card-info">
+          <h3>Конструкция скинии</h3>
+          <span class="hebrew">Исх. 26:1&ndash;30; 36:8&ndash;34</span>
+          <p class="card-summary">48 брусьев, 5 шестов, 4 слоя покровов &mdash; переносное святилище в пустыне.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Каркас</h4>
+          <ul>
+            <li><strong>48 брусьев</strong> из дерева ситтим, обложенных золотом <span class="ref">(Исх. 26:15&ndash;25)</span></li>
+            <li>Каждый брус: <span class="dimensions">10 &times; 1,5 локтей</span></li>
+            <li>Южная сторона &mdash; 20 брусьев, северная &mdash; 20, западная &mdash; 6 + 2 угловых</li>
+            <li>Каждый брус стоит на <strong>2 серебряных подножиях</strong> (96 подножий, по таланту серебра каждое) <span class="ref">(Исх. 26:19&ndash;21; 38:27)</span></li>
+          </ul>
+
+          <h4>Шесты</h4>
+          <ul>
+            <li><strong>5 шестов</strong> из дерева ситтим, обложенных золотом, на каждую сторону <span class="ref">(Исх. 26:26&ndash;29)</span></li>
+            <li>Средний шест проходит по середине брусьев от края до края</li>
+            <li>Кольца золотые на брусьях для вдевания шестов</li>
+          </ul>
+
+          <h4>Четыре слоя покровов</h4>
+          <ol class="ritual-steps">
+            <li><strong>Внутренний</strong> &mdash; 10 полотнищ виссона с херувимами, голубой, пурпурной и червлёной шерстью <span class="ref">(Исх. 26:1&ndash;6)</span></li>
+            <li><strong>Покров из козьей шерсти</strong> &mdash; 11 полотнищ <span class="ref">(Исх. 26:7&ndash;13)</span></li>
+            <li><strong>Покров из бараньих кож</strong> красных <span class="ref">(Исх. 26:14)</span></li>
+            <li><strong>Внешний покров из кож синих</strong> <span class="ref">(Исх. 26:14)</span></li>
+          </ol>
+
+          <h4>Общие размеры</h4>
+          <p>Внутреннее пространство скинии: <span class="dimensions">30 &times; 10 &times; 10 локтей</span>. Святое &mdash; 20 &times; 10 локтей, Святое Святых &mdash; 10 &times; 10 &times; 10 локтей (куб).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- МАСТЕРА -->
+    <div class="card card--overview">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F528;</div>
+        <div class="card-info">
+          <h3>Веселеил и Аголиав</h3>
+          <span class="hebrew">Исх. 31:1&ndash;11; 35:30 &mdash; 36:7</span>
+          <p class="card-summary">Два главных мастера, исполненных Духа Божия для созидания скинии.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Веселеил, сын Урии</h4>
+          <p>Из колена <strong>Иудина</strong>. Бог исполнил его Духом Божиим, мудростью, разумением, ведением и всяким искусством <span class="ref">(Исх. 31:2&ndash;5)</span>.</p>
+          <ul>
+            <li>Работа по золоту, серебру и меди</li>
+            <li>Резьба по камню</li>
+            <li>Резьба по дереву</li>
+            <li>Всякое художественное ремесло</li>
+          </ul>
+
+          <h4>Аголиав, сын Ахисамахов</h4>
+          <p>Из колена <strong>Данова</strong>. Помощник Веселеила — резчик, искусный ткач и вышиватель <span class="ref">(Исх. 31:6; 38:23)</span>.</p>
+
+          <h4>Дар учить</h4>
+          <p>Обоим дана способность <strong>учить других</strong> <span class="ref">(Исх. 35:34)</span>. Вместе с ними работали все мудрые сердцем, которым Господь дал мудрость <span class="ref">(Исх. 36:1&ndash;2)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ДВОР ======================== -->
+<div class="section" id="court">
+  <h2 class="section-title">Двор скинии</h2>
+  <p class="section-desc">Огороженное пространство вокруг скинии &mdash; жертвенник всесожжений, умывальник и ограда двора.</p>
+
+  <div class="cards-grid">
+
+    <!-- ЖЕРТВЕННИК ВСЕСОЖЖЕНИЙ -->
+    <div class="card card--court">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F525;</div>
+        <div class="card-info">
+          <h3>Жертвенник всесожжений</h3>
+          <span class="hebrew">&#1502;&#1460;&#1494;&#1456;&#1489;&#1468;&#1463;&#1495; / мизб&eacute;ах &mdash; Исх. 27:1&ndash;8; 38:1&ndash;7</span>
+          <p class="card-summary">Медный жертвенник у входа в скинию &mdash; место всех кровавых жертв.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Размеры</h4>
+          <p><span class="dimensions">5 &times; 5 &times; 3 локтей</span> &mdash; самый большой предмет двора. Четырёхугольный, с четырьмя рогами на углах <span class="ref">(Исх. 27:1&ndash;2)</span>.</p>
+
+          <h4>Устройство</h4>
+          <ul>
+            <li>Дерево ситтим, обложенное <strong>медью</strong></li>
+            <li>Рога из одного куска с ним</li>
+            <li>Медная решётка (сетка) до половины высоты жертвенника <span class="ref">(Исх. 27:4&ndash;5)</span></li>
+            <li>Шесты из дерева ситтим, обложенные медью, для переноски <span class="ref">(Исх. 27:6&ndash;7)</span></li>
+          </ul>
+
+          <h4>Принадлежности</h4>
+          <p>Все из меди: горшки для пепла, лопатки, чаши, вилки и угольницы <span class="ref">(Исх. 27:3)</span>.</p>
+
+          <h4>Назначение</h4>
+          <p>Первый предмет при входе во двор. Здесь совершались все кровавые жертвы: всесожжения, мирные, за грех, повинности. Без жертвы на этом жертвеннике невозможно приближение к Богу.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- УМЫВАЛЬНИК -->
+    <div class="card card--court">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4A7;</div>
+        <div class="card-info">
+          <h3>Умывальник</h3>
+          <span class="hebrew">&#1499;&#1460;&#1468;&#1497;&#1468;&#1493;&#1465;&#1512; / кийор &mdash; Исх. 30:17&ndash;21; 38:8</span>
+          <p class="card-summary">Медный сосуд между жертвенником и скинией для омовения священников.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Материал</h4>
+          <p>Сделан из <strong>медных зеркал</strong> женщин, собиравшихся у входа в скинию собрания <span class="ref">(Исх. 38:8)</span>.</p>
+
+          <h4>Расположение</h4>
+          <p>Между скинией собрания и жертвенником <span class="ref">(Исх. 30:18)</span>. Наполнялся водой.</p>
+
+          <h4>Правила омовения</h4>
+          <ul>
+            <li>Аарон и сыновья омывали руки и ноги <span class="ref">(Исх. 30:19)</span></li>
+            <li>При входе в скинию собрания — <strong>чтобы не умереть</strong> <span class="ref">(Исх. 30:20)</span></li>
+            <li>При приближении к жертвеннику для служения — <strong>чтобы не умереть</strong></li>
+            <li>&laquo;Устав вечный ему и потомкам его в роды их&raquo; <span class="ref">(Исх. 30:21)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ОГРАДА ДВОРА -->
+    <div class="card card--court">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3DB;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Ограда двора</h3>
+          <span class="hebrew">Исх. 27:9&ndash;19; 38:9&ndash;20</span>
+          <p class="card-summary">100 &times; 50 локтей &mdash; огороженное пространство вокруг скинии.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Размеры</h4>
+          <p><span class="dimensions">100 &times; 50 локтей</span>, высота завес &mdash; <span class="dimensions">5 локтей</span> <span class="ref">(Исх. 27:18)</span>.</p>
+
+          <h4>Столбы</h4>
+          <ul>
+            <li>Южная сторона &mdash; 20 столбов на 20 медных подножиях <span class="ref">(Исх. 27:9&ndash;10)</span></li>
+            <li>Северная сторона &mdash; 20 столбов <span class="ref">(Исх. 27:11)</span></li>
+            <li>Западная сторона &mdash; 10 столбов <span class="ref">(Исх. 27:12)</span></li>
+            <li>Восточная сторона &mdash; 15 локтей завес с каждого бока + ворота <span class="ref">(Исх. 27:13&ndash;15)</span></li>
+          </ul>
+          <p>Крючки и связи серебряные, подножия медные <span class="ref">(Исх. 27:10&ndash;11)</span>.</p>
+
+          <h4>Ворота</h4>
+          <p>Завеса в <span class="dimensions">20 локтей</span> из голубой, пурпурной и червлёной шерсти и кручёного виссона, узорчатой работы, на 4 столбах <span class="ref">(Исх. 27:16)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== СВЯТОЕ ======================== -->
+<div class="section" id="holy">
+  <h2 class="section-title">Святое</h2>
+  <p class="section-desc">Первое отделение скинии &mdash; стол хлебов предложения, золотой светильник и жертвенник курения. Доступно только священникам.</p>
+
+  <div class="cards-grid">
+
+    <!-- СТОЛ ХЛЕБОВ -->
+    <div class="card card--holy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F35E;</div>
+        <div class="card-info">
+          <h3>Стол хлебов предложения</h3>
+          <span class="hebrew">&#1513;&#1473;&#1467;&#1500;&#1456;&#1495;&#1463;&#1503; / шульх&aacute;н &mdash; Исх. 25:23&ndash;30; 37:10&ndash;16</span>
+          <p class="card-summary">12 хлебов пред лицом Господним &mdash; по числу колен Израиля.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Размеры</h4>
+          <p><span class="dimensions">2 &times; 1 &times; 1,5 локтей</span>. Дерево ситтим, обложенное чистым золотом. Золотой венец вокруг <span class="ref">(Исх. 25:23&ndash;25)</span>.</p>
+
+          <h4>Принадлежности</h4>
+          <p>Блюда, кадильницы, чаши и кружки для возлияний &mdash; всё из чистого золота <span class="ref">(Исх. 25:29)</span>.</p>
+
+          <h4>Хлебы предложения</h4>
+          <ul>
+            <li><strong>12 хлебов</strong> из тонкой пшеничной муки, по 2/10 ефы каждый <span class="ref">(Лев. 24:5)</span></li>
+            <li>Выложены в два ряда по 6 <span class="ref">(Лев. 24:6)</span></li>
+            <li>На каждый ряд &mdash; чистый ливан (ладан) <span class="ref">(Лев. 24:7)</span></li>
+            <li>Каждую субботу &mdash; заменяются свежими <span class="ref">(Лев. 24:8)</span></li>
+            <li>Снятые хлебы &mdash; Аарону и сыновьям: &laquo;едят их на святом месте&raquo; <span class="ref">(Лев. 24:9)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- СВЕТИЛЬНИК -->
+    <div class="card card--holy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F56F;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Золотой светильник (менора)</h3>
+          <span class="hebrew">&#1502;&#1456;&#1504;&#1493;&#1465;&#1512;&#1464;&#1492; / менор&aacute; &mdash; Исх. 25:31&ndash;40; 37:17&ndash;24</span>
+          <p class="card-summary">Из одного таланта чистого золота &mdash; 7 лампад в форме миндального дерева.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Устройство</h4>
+          <ul>
+            <li>Чеканной работы из <strong>одного таланта</strong> чистого золота <span class="ref">(Исх. 25:39)</span></li>
+            <li>Стебель, 6 ветвей (по 3 с каждой стороны), всего 7 лампад <span class="ref">(Исх. 25:31&ndash;32)</span></li>
+            <li>На каждой ветви по 3 чашечки в виде миндального цветка: завязь и цветок <span class="ref">(Исх. 25:33&ndash;34)</span></li>
+            <li>Щипцы и лотки — из чистого золота <span class="ref">(Исх. 25:38)</span></li>
+          </ul>
+
+          <h4>Масло и свет</h4>
+          <ul>
+            <li>Чистый елей выбитых маслин для постоянного горения <span class="ref">(Исх. 27:20)</span></li>
+            <li>Аарон и сыновья поддерживают лампады &laquo;от вечера до утра пред Господом&raquo; <span class="ref">(Исх. 27:21)</span></li>
+          </ul>
+
+          <h4>Небесный образец</h4>
+          <div class="quote">&laquo;Смотри, сделай их по тому образцу, какой показан тебе на горе&raquo; <span class="ref">Исх. 25:40</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЖЕРТВЕННИК КУРЕНИЯ -->
+    <div class="card card--holy">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4A8;</div>
+        <div class="card-info">
+          <h3>Жертвенник курения</h3>
+          <span class="hebrew">&#1502;&#1460;&#1494;&#1456;&#1489;&#1468;&#1463;&#1495; &#1511;&#1456;&#1496;&#1465;&#1512;&#1462;&#1514; &mdash; Исх. 30:1&ndash;10; 37:25&ndash;29</span>
+          <p class="card-summary">Золотой жертвенник пред завесой &mdash; утренний и вечерний фимиам.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Размеры</h4>
+          <p><span class="dimensions">1 &times; 1 &times; 2 локтей</span>. Дерево ситтим, обложенное чистым золотом: верх, стенки и рога. Золотой венец вокруг <span class="ref">(Исх. 30:1&ndash;3)</span>.</p>
+
+          <h4>Курение</h4>
+          <ul>
+            <li>Аарон курит на нём благовонное курение <strong>каждое утро</strong> (когда поправляет лампады) <span class="ref">(Исх. 30:7)</span></li>
+            <li>И <strong>каждый вечер</strong> (когда зажигает лампады) &mdash; курение постоянное пред Господом <span class="ref">(Исх. 30:8)</span></li>
+            <li>Нельзя возносить на нём курение иное, ни всесожжения, ни приношения хлебного <span class="ref">(Исх. 30:9)</span></li>
+          </ul>
+
+          <h4>Очищение</h4>
+          <p>Раз в год Аарон очищает рога жертвенника кровью жертвы за грех в День Очищения <span class="ref">(Исх. 30:10)</span>.</p>
+
+          <h4>Священный состав курения</h4>
+          <p>Стакти, оних, халван и чистый ливан &mdash; в равных частях, стёртое, чистое, святое <span class="ref">(Исх. 30:34&ndash;36)</span>. Запрещено делать для себя &mdash; &laquo;истребится из народа своего&raquo; <span class="ref">(Исх. 30:37&ndash;38)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== СВЯТОЕ СВЯТЫХ ======================== -->
+<div class="section" id="holiest">
+  <h2 class="section-title">Святое Святых</h2>
+  <p class="section-desc">Самое внутреннее отделение скинии &mdash; место присутствия Бога. Доступно лишь первосвященнику, раз в год.</p>
+
+  <div class="cards-grid">
+
+    <!-- КОВЧЕГ ЗАВЕТА -->
+    <div class="card card--holiest">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2728;</div>
+        <div class="card-info">
+          <h3>Ковчег завета</h3>
+          <span class="hebrew">&#1488;&#1458;&#1512;&#1493;&#1465;&#1503; &#1492;&#1463;&#1489;&#1456;&#1468;&#1512;&#1460;&#1497;&#1514; / арон hа-брит &mdash; Исх. 25:10&ndash;22; 37:1&ndash;9</span>
+          <p class="card-summary">Центр скинии &mdash; ковчег со скрижалями, крышка с херувимами, место откровения.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Размеры</h4>
+          <p><span class="dimensions">2,5 &times; 1,5 &times; 1,5 локтей</span>. Дерево ситтим, обложенное чистым золотом изнутри и снаружи. Золотой венец вокруг <span class="ref">(Исх. 25:10&ndash;11)</span>.</p>
+
+          <h4>Крышка (каппорет)</h4>
+          <ul>
+            <li>Из <strong>чистого золота</strong> <span class="ref">(Исх. 25:17)</span></li>
+            <li>Два <strong>херувима</strong> из золота, чеканной работы, на обоих концах <span class="ref">(Исх. 25:18&ndash;19)</span></li>
+            <li>Крылья простёрты вверх, покрывая крышку; лица обращены друг к другу и к крышке <span class="ref">(Исх. 25:20)</span></li>
+          </ul>
+
+          <h4>Содержимое</h4>
+          <p>В ковчег положены <strong>скрижали откровения</strong> &mdash; две каменные скрижали с Десятью Заповедями <span class="ref">(Исх. 25:16, 21)</span>.</p>
+
+          <h4>Место откровения</h4>
+          <div class="quote">&laquo;Там Я буду открываться тебе и говорить с тобою над крышкою, посреди двух херувимов&raquo; <span class="ref">Исх. 25:22</span></div>
+          <p>Голос Божий обращался к Моисею &laquo;от крышки, которая над ковчегом откровения, от пространства между двумя херувимами&raquo; <span class="ref">(Чис. 7:89)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЗАВЕСА -->
+    <div class="card card--holiest">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3AD;</div>
+        <div class="card-info">
+          <h3>Завеса</h3>
+          <span class="hebrew">&#1508;&#1464;&#1468;&#1512;&#1465;&#1499;&#1462;&#1514; / парохет &mdash; Исх. 26:31&ndash;35; 36:35&ndash;36</span>
+          <p class="card-summary">Завеса отделяет Святое от Святого Святых &mdash; граница между миром и Божьим присутствием.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Материал</h4>
+          <p>Голубая, пурпурная и червлёная шерсть и кручёный виссон — искусной работы с <strong>вытканными херувимами</strong> <span class="ref">(Исх. 26:31)</span>.</p>
+
+          <h4>Крепление</h4>
+          <ul>
+            <li>На <strong>4 столбах</strong> из дерева ситтим, обложенных золотом <span class="ref">(Исх. 26:32)</span></li>
+            <li>Столбы на <strong>4 серебряных подножиях</strong></li>
+            <li>Крючки золотые</li>
+          </ul>
+
+          <h4>Разделение</h4>
+          <div class="quote">&laquo;И будет завеса отделять вам святилище от Святого Святых&raquo; <span class="ref">Исх. 26:33</span></div>
+          <p>За завесой &mdash; только ковчег завета с крышкой. За завесу входит только первосвященник, раз в год, в День Очищения, с кровью и курением <span class="ref">(Лев. 16:2, 12&ndash;15)</span>.</p>
+
+          <h4>Входная завеса</h4>
+          <p>У входа в скинию &mdash; другая завеса из голубой, пурпурной и червлёной шерсти, узорчатой работы, на <strong>5 столбах</strong> с медными подножиями <span class="ref">(Исх. 26:36&ndash;37)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- СЛАВА ГОСПОДНЯ -->
+    <div class="card card--holiest">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2601;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Слава Господня</h3>
+          <span class="hebrew">Исх. 40:33&ndash;38</span>
+          <p class="card-summary">Когда скиния была поставлена, облако покрыло её и слава Господня наполнила скинию.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Поставление скинии</h4>
+          <p>Скиния поставлена в <strong>первый день первого месяца</strong> второго года по выходе из Египта <span class="ref">(Исх. 40:17)</span>. Моисей поставил и расположил всё &laquo;как повелел Господь Моисею&raquo; <span class="ref">(Исх. 40:19, 21, 23, 25, 27, 29, 32)</span>.</p>
+
+          <h4>Облако и слава</h4>
+          <div class="quote">&laquo;И покрыло облако скинию собрания, и слава Господня наполнила скинию&raquo; <span class="ref">Исх. 40:34</span></div>
+          <p>Моисей <strong>не мог войти</strong> в скинию, потому что осеняло её облако и слава Господня наполняла скинию <span class="ref">(Исх. 40:35)</span>.</p>
+
+          <h4>Облако ведёт Израиль</h4>
+          <ul>
+            <li>Когда облако поднималось &mdash; сыны Израилевы отправлялись в путь <span class="ref">(Исх. 40:36)</span></li>
+            <li>Когда не поднималось &mdash; не отправлялись <span class="ref">(Исх. 40:37)</span></li>
+            <li><strong>Облако Господне</strong> стояло над скинией днём, а <strong>огонь</strong> был ночью &mdash; пред глазами всего дома Израилева <span class="ref">(Исх. 40:38)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ОБЛАЧЕНИЯ ======================== -->
+<div class="section" id="garments">
+  <h2 class="section-title">Облачения священников</h2>
+  <p class="section-desc">Священные одежды Аарона и его сыновей &mdash; &laquo;для славы и благолепия&raquo; <span class="ref">(Исх. 28:2)</span>.</p>
+
+  <div class="cards-grid">
+
+    <!-- ЕФОД -->
+    <div class="card card--garments">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F451;</div>
+        <div class="card-info">
+          <h3>Ефод</h3>
+          <span class="hebrew">&#1488;&#1461;&#1508;&#1493;&#1465;&#1491; / эфод &mdash; Исх. 28:6&ndash;14; 39:2&ndash;7</span>
+          <p class="card-summary">Верхняя одежда первосвященника с двумя камнями оникса на плечах.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Материал</h4>
+          <p>Золото, голубая, пурпурная и червлёная шерсть и кручёный виссон, искусной работы <span class="ref">(Исх. 28:6)</span>. Золотые нити вплетались в ткань <span class="ref">(Исх. 39:3)</span>.</p>
+
+          <h4>Нарамники</h4>
+          <p>Два нарамника (наплечника), соединяющиеся на двух краях <span class="ref">(Исх. 28:7)</span>.</p>
+
+          <h4>Камни на плечах</h4>
+          <ul>
+            <li>Два камня <strong>оникс</strong>, вставленных в золотые гнёзда <span class="ref">(Исх. 28:9&ndash;11)</span></li>
+            <li>На каждом вырезаны <strong>6 имён</strong> колен Израилевых (по порядку рождения) <span class="ref">(Исх. 28:10)</span></li>
+            <li>Аарон носит имена их на обоих плечах &laquo;для памяти пред Господом&raquo; <span class="ref">(Исх. 28:12)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- НАПЕРСНИК -->
+    <div class="card card--garments">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F48E;</div>
+        <div class="card-info">
+          <h3>Наперсник судный</h3>
+          <span class="hebrew">&#1495;&#1465;&#1513;&#1473;&#1462;&#1503; / х&oacute;шен &mdash; Исх. 28:15&ndash;30; 39:8&ndash;21</span>
+          <p class="card-summary">12 драгоценных камней с именами колен и урим и туммим &mdash; на сердце первосвященника.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Устройство</h4>
+          <p>Искусной работы, как ефод: золото, голубая, пурпурная и червлёная шерсть и виссон. Четырёхугольный, двойной: пядень длиной и пядень шириной <span class="ref">(Исх. 28:15&ndash;16)</span>.</p>
+
+          <h4>12 камней</h4>
+          <p>Четыре ряда по 3 камня, вставленных в золотые гнёзда <span class="ref">(Исх. 28:17&ndash;20)</span>:</p>
+          <ol class="ritual-steps">
+            <li>Рубин, топаз, изумруд</li>
+            <li>Карбункул, сапфир, алмаз</li>
+            <li>яхонт, агат, аметист</li>
+            <li>Хризолит, оникс, яспис</li>
+          </ol>
+          <p>На каждом камне вырезано <strong>имя одного из 12 колен</strong> <span class="ref">(Исх. 28:21)</span>.</p>
+
+          <h4>Назначение</h4>
+          <div class="quote">&laquo;И будет носить Аарон имена сынов Израилевых на наперснике судном у сердца своего, когда будет входить во святилище, для постоянной памяти пред Господом&raquo; <span class="ref">Исх. 28:29</span></div>
+
+          <h4>Урим и туммим</h4>
+          <p>Вложены в наперсник &mdash; &laquo;и будут у сердца Ааронова, когда будет он входить пред лице Господне&raquo; <span class="ref">(Исх. 28:30)</span>. Средство вопрошания Божьей воли.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ВЕРХНЯЯ РИЗА -->
+    <div class="card card--garments">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F514;</div>
+        <div class="card-info">
+          <h3>Верхняя риза ефода</h3>
+          <span class="hebrew">Исх. 28:31&ndash;35; 39:22&ndash;26</span>
+          <p class="card-summary">Вся голубая, с золотыми колокольчиками и гранатами по подолу.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Описание</h4>
+          <p>Вся из <strong>голубой шерсти</strong>, тканая, с отверстием для головы и тканой обшивкой, &laquo;чтобы не дралась&raquo; <span class="ref">(Исх. 28:31&ndash;32)</span>.</p>
+
+          <h4>Колокольчики и гранаты</h4>
+          <ul>
+            <li>По подолу &mdash; <strong>гранатовые яблоки</strong> из голубой, пурпурной и червлёной шерсти <span class="ref">(Исх. 28:33)</span></li>
+            <li>Между ними &mdash; <strong>золотые колокольчики</strong>: колокольчик и гранат, колокольчик и гранат <span class="ref">(Исх. 28:34)</span></li>
+          </ul>
+
+          <h4>Назначение</h4>
+          <div class="quote">&laquo;Дабы слышен был от него звук, когда он будет входить во святилище пред лице Господне, и когда будет выходить, чтобы ему не умереть&raquo; <span class="ref">Исх. 28:35</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- КИДАР И ПРОЧЕЕ -->
+    <div class="card card--garments">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3F5;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Кидар, хитон и прочее</h3>
+          <span class="hebrew">Исх. 28:36&ndash;43; 39:27&ndash;31</span>
+          <p class="card-summary">Золотая дощечка &laquo;Святыня Господня&raquo;, льняной хитон, пояс и нижние одежды.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Золотая дощечка</h4>
+          <ul>
+            <li>Дощечка из чистого золота с надписью: <strong>&laquo;Святыня Господня&raquo;</strong> <span class="ref">(Исх. 28:36)</span></li>
+            <li>Прикрепляется голубым шнурком к кидару (головной повязке) спереди <span class="ref">(Исх. 28:37)</span></li>
+            <li>На челе Аарона &mdash; &laquo;и понесёт Аарон на себе недостатки приношений&raquo;, чтобы они были благоприятны пред Господом <span class="ref">(Исх. 28:38)</span></li>
+          </ul>
+
+          <h4>Хитон</h4>
+          <p>Из виссона, клетчатой работы <span class="ref">(Исх. 28:39)</span>. Надевается под ефод.</p>
+
+          <h4>Одежды сыновей Аарона</h4>
+          <p>Хитоны, поясы и повязки &laquo;для славы и благолепия&raquo; <span class="ref">(Исх. 28:40)</span>.</p>
+
+          <h4>Нижние одежды</h4>
+          <p>Льняные надраги (нижнее бельё) от чресл до голеней, для покрытия телесной наготы &mdash; обязательны при входе в скинию и приближении к жертвеннику, &laquo;чтобы им не понести греха и не умереть&raquo; <span class="ref">(Исх. 28:42&ndash;43)</span>.</p>
+
+          <h4>Священное миро помазания</h4>
+          <p>Особый состав: мирра 500 сиклей, корица 250, тростник 250, кассия 500, елей 1 гин <span class="ref">(Исх. 30:23&ndash;25)</span>. Помазывается скиния и все предметы, а также Аарон и сыновья. Запрещено воспроизводить &mdash; &laquo;истребится из народа своего&raquo; <span class="ref">(Исх. 30:31&ndash;33)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ЛЕВИТЫ ======================== -->
+<div class="section" id="levites">
+  <h2 class="section-title">Служение левитов</h2>
+  <p class="section-desc">Три рода левитов &mdash; каафиты, гирсониты и мерариты &mdash; несут, хранят и обслуживают скинию.</p>
+
+  <div class="cards-grid">
+
+    <!-- КААФИТЫ -->
+    <div class="card card--levites">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2728;</div>
+        <div class="card-info">
+          <h3>Каафиты</h3>
+          <span class="hebrew">Числ. 3:27&ndash;32; 4:4&ndash;20</span>
+          <p class="card-summary">Переносят святейшие предметы скинии &mdash; ковчег, стол, светильник, жертвенники.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Расположение</h4>
+          <p>Станом с <strong>южной стороны</strong> скинии <span class="ref">(Числ. 3:29)</span>.</p>
+
+          <h4>Обязанности</h4>
+          <p>Попечение о самых святых предметах <span class="ref">(Числ. 3:31)</span>:</p>
+          <ul>
+            <li>Ковчег завета</li>
+            <li>Стол хлебов предложения</li>
+            <li>Светильник и его принадлежности</li>
+            <li>Жертвенники (курения и всесожжений)</li>
+            <li>Сосуды служения и завеса</li>
+          </ul>
+
+          <h4>Порядок сборки</h4>
+          <p>Перед переходом Аарон и сыновья <strong>сначала покрывают</strong> все святые предметы, и только после этого каафиты подходят нести <span class="ref">(Числ. 4:5&ndash;15)</span>.</p>
+
+          <div class="quote">&laquo;Но к святилищу они не должны подходить, чтобы не умереть&raquo; <span class="ref">Числ. 4:15</span></div>
+          <div class="quote">&laquo;Не погубите колена племён Каафовых из среды левитов... чтобы они не умерли, когда будут приступать к Святому Святых&raquo; <span class="ref">Числ. 4:18&ndash;19</span></div>
+
+          <h4>Численность</h4>
+          <p>Служителей от 30 до 50 лет: <strong>2&thinsp;750</strong> <span class="ref">(Числ. 4:36)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ГИРСОНИТЫ -->
+    <div class="card card--levites">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F9F5;</div>
+        <div class="card-info">
+          <h3>Гирсониты</h3>
+          <span class="hebrew">Числ. 3:21&ndash;26; 4:21&ndash;28</span>
+          <p class="card-summary">Переносят покровы, завесы и верёвки скинии.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Расположение</h4>
+          <p>Станом с <strong>западной стороны</strong> скинии <span class="ref">(Числ. 3:23)</span>.</p>
+
+          <h4>Обязанности</h4>
+          <ul>
+            <li>Покровы скинии и скиния собрания <span class="ref">(Числ. 3:25; 4:25)</span></li>
+            <li>Покрытие скинии и покрытие из кож синих <span class="ref">(Числ. 4:25)</span></li>
+            <li>Завесы двора и завеса входа <span class="ref">(Числ. 4:26)</span></li>
+            <li>Верёвки и все принадлежности <span class="ref">(Числ. 4:26)</span></li>
+          </ul>
+
+          <h4>Подчинение</h4>
+          <p>Под руководством Ифамара, сына Аарона <span class="ref">(Числ. 4:28)</span>.</p>
+
+          <h4>Численность</h4>
+          <p>Служителей от 30 до 50 лет: <strong>2&thinsp;630</strong> <span class="ref">(Числ. 4:40)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- МЕРАРИТЫ -->
+    <div class="card card--levites">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F6E0;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Мерариты</h3>
+          <span class="hebrew">Числ. 3:33&ndash;37; 4:29&ndash;33</span>
+          <p class="card-summary">Переносят конструкцию скинии &mdash; брусья, столбы, подножия, шесты, колья.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Расположение</h4>
+          <p>Станом с <strong>северной стороны</strong> скинии <span class="ref">(Числ. 3:35)</span>.</p>
+
+          <h4>Обязанности</h4>
+          <ul>
+            <li>Брусья скинии <span class="ref">(Числ. 3:36)</span></li>
+            <li>Шесты (засовы)</li>
+            <li>Столбы и подножия</li>
+            <li>Колья и верёвки <span class="ref">(Числ. 3:37)</span></li>
+            <li>Столбы двора, их подножия, колья и верёвки <span class="ref">(Числ. 4:31&ndash;32)</span></li>
+          </ul>
+
+          <h4>Подчинение</h4>
+          <p>Под руководством Ифамара, сына Аарона <span class="ref">(Числ. 4:33)</span>. Каждый предмет назначен <strong>поимённо</strong> <span class="ref">(Числ. 4:32)</span>.</p>
+
+          <h4>Численность</h4>
+          <p>Служителей от 30 до 50 лет: <strong>3&thinsp;200</strong> <span class="ref">(Числ. 4:44)</span>.</p>
+
+          <h4>Общий итог</h4>
+          <p>Всего служащих левитов от 30 до 50 лет: <strong>8&thinsp;580</strong> <span class="ref">(Числ. 4:48)</span>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ПРИНЦИПЫ ======================== -->
+<div class="section" id="principles">
+  <h2 class="section-title">Богословские принципы</h2>
+  <p class="section-desc">Восемь ключевых принципов устройства скинии.</p>
+
+  <div class="principles-grid">
+
+    <div class="principle-card">
+      <div class="num">Принцип 1</div>
+      <h3>Бог обитает среди народа</h3>
+      <p>Главная цель скинии &mdash; не ритуал, а присутствие. Бог желает обитать посреди Своего народа. Скиния &mdash; место встречи неба и земли, Бога и человека.</p>
+      <div class="principle-verse">Исх. 25:8</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 2</div>
+      <h3>Небесный образец</h3>
+      <p>Скиния &mdash; не человеческое изобретение. Моисей получил точный &laquo;образец&raquo; (тавнит) на горе Синай. Земное святилище отражает небесную реальность.</p>
+      <div class="principle-verse">Исх. 25:9, 40; 26:30</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 3</div>
+      <h3>Градация святости</h3>
+      <p>От двора (медь, всякий израильтянин) через Святое (золото, священники) к Святому Святых (чистое золото, первосвященник раз в год). Чем ближе к Божьему присутствию &mdash; тем выше требования святости и ценность материалов.</p>
+      <div class="principle-verse">Исх. 26:33; Лев. 16:2</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 4</div>
+      <h3>Посредничество</h3>
+      <p>Завеса разделяет. Без священника-посредника народ не может приблизиться к Богу. Первосвященник несёт имена всех колен на плечах и у сердца &mdash; он входит к Богу не один, а как представитель всего народа.</p>
+      <div class="principle-verse">Исх. 28:12, 29; Лев. 16:17</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 5</div>
+      <h3>Искупление через кровь</h3>
+      <p>Жертвенник всесожжений стоит у самого входа. Без пролития крови невозможно приближение к Богу. Умывальник между жертвенником и скинией &mdash; очищение обязательно на каждом шаге.</p>
+      <div class="principle-verse">Исх. 29:36; 30:20</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 6</div>
+      <h3>Точное послушание</h3>
+      <p>Фраза &laquo;как повелел Господь Моисею&raquo; повторяется около 18 раз в Исх. 39&ndash;40. Каждая деталь выполнена в точности по образцу. Послушание &mdash; условие Божьего присутствия.</p>
+      <div class="principle-verse">Исх. 39:42&ndash;43; 40:16</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 7</div>
+      <h3>Каждый участвует</h3>
+      <p>Построение скинии &mdash; дело всего народа. Мужчины и женщины приносили дары добровольно; женщины пряли виссон и козью шерсть; вожди приносили камни и ароматы. У каждого левита &mdash; своя чёткая обязанность при скинии.</p>
+      <div class="principle-verse">Исх. 35:21&ndash;29; Числ. 4:49</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 8</div>
+      <h3>Присутствие ведёт</h3>
+      <p>Скиния не просто стоит &mdash; она движется с народом. Облако днём и огненный столп ночью указывают путь. Когда облако поднимается &mdash; Израиль выступает; когда стоит &mdash; остаётся. Божье присутствие &mdash; водитель.</p>
+      <div class="principle-verse">Исх. 40:36&ndash;38</div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer style="text-align:center;padding:40px 20px;color:var(--text-muted);font-size:0.85em;border-top:1px solid var(--border);margin-top:20px;">
+  На основании текста Синодального перевода
+</footer>
+
+<!-- Verse modal -->
+<div class="verse-overlay" id="verseOverlay">
+  <div class="verse-modal">
+    <div class="verse-modal-header">
+      <h3 id="verseModalTitle">...</h3>
+      <button class="verse-modal-close" id="verseModalClose">&times;</button>
+    </div>
+    <div class="verse-modal-body" id="verseModalBody">
+      <div class="verse-loading">Загрузка...</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/shared.js"></script>
+
+</body>
+</html>
