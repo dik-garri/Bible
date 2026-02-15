@@ -1,0 +1,134 @@
+/* === REVELATION THEME COLORS === */
+:root {
+  --churches: #b8860b;
+  --seals: #c0392b;
+  --trumpets: #d35400;
+  --bowls: #2c3e80;
+  --conflict: #7b2d8e;
+  --glory: #27ae60;
+}
+
+/* === CARD COLOR CATEGORIES === */
+
+/* Churches */
+.card--churches .card-icon { color: var(--churches); }
+.card--churches h3 { color: var(--churches); }
+.card--churches .ritual-steps li::before { background: var(--churches); }
+
+/* Seals */
+.card--seals .card-icon { color: var(--seals); }
+.card--seals h3 { color: var(--seals); }
+.card--seals .ritual-steps li::before { background: var(--seals); }
+
+/* Trumpets */
+.card--trumpets .card-icon { color: var(--trumpets); }
+.card--trumpets h3 { color: var(--trumpets); }
+.card--trumpets .ritual-steps li::before { background: var(--trumpets); }
+
+/* Bowls */
+.card--bowls .card-icon { color: var(--bowls); }
+.card--bowls h3 { color: var(--bowls); }
+.card--bowls .ritual-steps li::before { background: var(--bowls); }
+
+/* Conflict */
+.card--conflict .card-icon { color: var(--conflict); }
+.card--conflict h3 { color: var(--conflict); }
+.card--conflict .ritual-steps li::before { background: var(--conflict); }
+
+/* Glory */
+.card--glory .card-icon { color: var(--glory); }
+.card--glory h3 { color: var(--glory); }
+.card--glory .ritual-steps li::before { background: var(--glory); }
+
+/* === JUDGMENT GRID === */
+.judgment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.judgment-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.judgment-item:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.judgment-num {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.judgment-item .judgment-desc {
+  font-size: 0.88em;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Color-coded judgment numbers */
+.card--seals .judgment-num { color: var(--seals); }
+.card--trumpets .judgment-num { color: var(--trumpets); }
+.card--bowls .judgment-num { color: var(--bowls); }
+
+/* === CHURCH CARD DETAILS === */
+.church-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.church-detail-item {
+  display: flex;
+  gap: 8px;
+  font-size: 0.93em;
+  line-height: 1.6;
+}
+
+.church-label {
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.82em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  min-width: 90px;
+}
+
+/* === REVELATION HEADER === */
+header .subtitle {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .judgment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .judgment-item {
+    padding: 10px 8px;
+  }
+
+  .judgment-num {
+    font-size: 1.2em;
+  }
+
+  .church-label {
+    min-width: 70px;
+    font-size: 0.75em;
+  }
+}

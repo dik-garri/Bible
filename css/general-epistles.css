@@ -1,0 +1,43 @@
+/* General Epistles color variables */
+:root {
+  --hebrews: #b8860b;
+  --hebrews-bg: #fdf8eb;
+  --james: #27ae60;
+  --james-bg: #eef9f2;
+  --peter: #2980b9;
+  --peter-bg: #edf4fb;
+  --john: #c0392b;
+  --john-bg: #fdf0ee;
+  --jude: #7b2d8e;
+  --jude-bg: #f5eef7;
+}
+
+/* Card color overrides */
+.card--hebrews .card-icon { background: var(--hebrews-bg); color: var(--hebrews); }
+.card--hebrews .card-info h3 { color: var(--hebrews); }
+.card--hebrews .ritual-steps li::before { background: var(--hebrews); }
+
+.card--james .card-icon { background: var(--james-bg); color: var(--james); }
+.card--james .card-info h3 { color: var(--james); }
+.card--james .ritual-steps li::before { background: var(--james); }
+
+.card--peter .card-icon { background: var(--peter-bg); color: var(--peter); }
+.card--peter .card-info h3 { color: var(--peter); }
+.card--peter .ritual-steps li::before { background: var(--peter); }
+
+.card--john .card-icon { background: var(--john-bg); color: var(--john); }
+.card--john .card-info h3 { color: var(--john); }
+.card--john .ritual-steps li::before { background: var(--john); }
+
+.card--jude .card-icon { background: var(--jude-bg); color: var(--jude); }
+.card--jude .card-info h3 { color: var(--jude); }
+.card--jude .ritual-steps li::before { background: var(--jude); }
+
+/* Comparison table header */
+.epistles-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.epistles-compare th:hover { background: #3d2a1e; }
