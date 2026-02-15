@@ -1,0 +1,83 @@
+/* Book of Job color variables */
+:root {
+  --prologue: #b8860b;
+  --prologue-bg: #fdf8eb;
+  --suffering: #5d4037;
+  --suffering-bg: #f5f0ed;
+  --friends: #c0392b;
+  --friends-bg: #fdf0ee;
+  --elihu: #2c3e80;
+  --elihu-bg: #eef0f7;
+  --god: #27ae60;
+  --god-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--prologue .card-icon { background: var(--prologue-bg); color: var(--prologue); }
+.card--prologue .card-info h3 { color: var(--prologue); }
+.card--prologue .ritual-steps li::before { background: var(--prologue); }
+
+.card--suffering .card-icon { background: var(--suffering-bg); color: var(--suffering); }
+.card--suffering .card-info h3 { color: var(--suffering); }
+.card--suffering .ritual-steps li::before { background: var(--suffering); }
+
+.card--friends .card-icon { background: var(--friends-bg); color: var(--friends); }
+.card--friends .card-info h3 { color: var(--friends); }
+.card--friends .ritual-steps li::before { background: var(--friends); }
+
+.card--elihu .card-icon { background: var(--elihu-bg); color: var(--elihu); }
+.card--elihu .card-info h3 { color: var(--elihu); }
+.card--elihu .ritual-steps li::before { background: var(--elihu); }
+
+.card--god .card-icon { background: var(--god-bg); color: var(--god); }
+.card--god .card-info h3 { color: var(--god); }
+.card--god .ritual-steps li::before { background: var(--god); }
+
+/* Speech cycle component — debate structure */
+.speech-cycle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.speech-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.88em;
+}
+
+.speech-item--friend {
+  background: var(--friends-bg);
+  border-left: 3px solid var(--friends);
+}
+
+.speech-item--job {
+  background: var(--suffering-bg);
+  border-left: 3px solid var(--suffering);
+}
+
+.speech-label {
+  font-size: 0.72em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: -apple-system, sans-serif;
+  margin-bottom: 3px;
+}
+
+.speech-label--friend { color: var(--friends); }
+.speech-label--job { color: var(--suffering); }
+
+/* Comparison table */
+.job-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.job-compare th:hover { background: #3d2a1e; }
+
+@media (max-width: 600px) {
+  .speech-cycle { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,128 @@
+/* Wisdom Books color variables */
+:root {
+  --proverbs: #b8860b;
+  --proverbs-bg: #fdf8eb;
+  --ecclesiastes: #5d4037;
+  --ecclesiastes-bg: #f5f0ec;
+  --song: #c0392b;
+  --song-bg: #fdf0ee;
+  --fear: #2c3e80;
+  --fear-bg: #eef0f7;
+  --woman: #27ae60;
+  --woman-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--proverbs .card-icon { background: var(--proverbs-bg); color: var(--proverbs); }
+.card--proverbs .card-info h3 { color: var(--proverbs); }
+.card--proverbs .ritual-steps li::before { background: var(--proverbs); }
+
+.card--ecclesiastes .card-icon { background: var(--ecclesiastes-bg); color: var(--ecclesiastes); }
+.card--ecclesiastes .card-info h3 { color: var(--ecclesiastes); }
+.card--ecclesiastes .ritual-steps li::before { background: var(--ecclesiastes); }
+
+.card--song .card-icon { background: var(--song-bg); color: var(--song); }
+.card--song .card-info h3 { color: var(--song); }
+.card--song .ritual-steps li::before { background: var(--song); }
+
+.card--fear .card-icon { background: var(--fear-bg); color: var(--fear); }
+.card--fear .card-info h3 { color: var(--fear); }
+.card--fear .ritual-steps li::before { background: var(--fear); }
+
+.card--woman .card-icon { background: var(--woman-bg); color: var(--woman); }
+.card--woman .card-info h3 { color: var(--woman); }
+.card--woman .ritual-steps li::before { background: var(--woman); }
+
+/* Wisdom comparison table */
+.wisdom-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.wisdom-compare th:hover { background: #3d2a1e; }
+
+/* Book badges */
+.badge-proverbs {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--proverbs-bg);
+  color: var(--proverbs);
+}
+
+.badge-ecclesiastes {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--ecclesiastes-bg);
+  color: var(--ecclesiastes);
+}
+
+.badge-song {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--song-bg);
+  color: var(--song);
+}
+
+.badge-all {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--fear-bg);
+  color: var(--fear);
+}
+
+/* Proverb pair component — contrasts */
+.proverb-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.proverb-wise {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #eef9f2;
+  border-left: 3px solid var(--woman);
+  font-size: 0.9em;
+}
+
+.proverb-fool {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fdf0ee;
+  border-left: 3px solid var(--song);
+  font-size: 0.9em;
+}
+
+.proverb-label {
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: -apple-system, sans-serif;
+  margin-bottom: 4px;
+}
+
+.proverb-wise .proverb-label { color: var(--woman); }
+.proverb-fool .proverb-label { color: var(--song); }
+
+@media (max-width: 600px) {
+  .proverb-pair { grid-template-columns: 1fr; }
+}

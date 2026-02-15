@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Псалмы &mdash; Библия</title>
+<link rel="stylesheet" href="css/shared.css">
+<link rel="stylesheet" href="css/psalms.css">
+</head>
+<body>
+<a href="index.html" class="back-link">&larr; Главная</a>
+
+<header>
+  <div class="container">
+    <h1>Псалмы</h1>
+    <p class="subtitle">Молитвенная книга Библии &mdash; 150 псалмов хвалы, плача, покаяния и мессианского упования</p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-scroll" id="navScroll">
+    <div class="nav-inner" id="navInner">
+      <button class="nav-tab active" data-tab="structure">Структура</button>
+      <button class="nav-tab" data-tab="praise">Хвала</button>
+      <button class="nav-tab" data-tab="lament">Плач и покаяние</button>
+      <button class="nav-tab" data-tab="messianic">Мессианские</button>
+      <button class="nav-tab" data-tab="compare">Сравнение</button>
+      <button class="nav-tab" data-tab="principles">Принципы</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ======================== СТРУКТУРА ======================== -->
+<div class="section active" id="structure">
+  <h2 class="section-title">Структура Псалтири</h2>
+  <p class="section-desc">Псалтирь &mdash; собрание 150 псалмов, разделённых на пять книг по образу Пятикнижия Моисея. Каждая книга завершается славословием (доксологией).</p>
+
+  <div class="cards-grid">
+
+    <!-- ПЯТЬ КНИГ ПСАЛТИРИ -->
+    <div class="card card--royal">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4D6;</div>
+        <div class="card-info">
+          <h3>Пять книг Псалтири</h3>
+          <span class="hebrew">Пс. 1&ndash;150</span>
+          <p class="card-summary">Псалтирь разделена на пять книг, каждая из которых заканчивается славословием. Пять книг псалмов &mdash; как пять книг Торы.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <div class="book-grid">
+            <div class="book-item"><strong>Книга I</strong>Пс. 1&ndash;40</div>
+            <div class="book-item"><strong>Книга II</strong>Пс. 41&ndash;71</div>
+            <div class="book-item"><strong>Книга III</strong>Пс. 72&ndash;88</div>
+            <div class="book-item"><strong>Книга IV</strong>Пс. 89&ndash;105</div>
+            <div class="book-item"><strong>Книга V</strong>Пс. 106&ndash;150</div>
+          </div>
+
+          <h4>Книга I: Пс. 1&ndash;40 &mdash; Давидовы, личные</h4>
+          <p>Преимущественно псалмы Давида, личные молитвы и размышления. Открывается псалмом о двух путях <span class="ref">(Пс. 1)</span> и мессианским псалмом <span class="ref">(Пс. 2)</span>.</p>
+          <div class="psalm-text"><span class="verse-num">14</span>&laquo;Благословен Господь Бог Израилев от века и до века! Аминь, аминь!&raquo; <span class="ref">(Пс. 40:14)</span></div>
+
+          <h4>Книга II: Пс. 41&ndash;71 &mdash; Давидовы и Кореевы</h4>
+          <p>Псалмы Давида и сынов Кореевых. Преобладает имя &laquo;Бог&raquo; (Элохим), а не &laquo;Господь&raquo; (Яхве).</p>
+          <div class="psalm-text"><span class="verse-num">18</span>&laquo;Благословен Господь Бог, Бог Израилев, един творящий чудеса,&raquo; <span class="verse-num">19</span>&laquo;и благословенно имя славы Его вовек, и наполнится славою Его вся земля. Аминь и аминь.&raquo; <span class="ref">(Пс. 71:18&ndash;19)</span></div>
+
+          <h4>Книга III: Пс. 72&ndash;88 &mdash; Асафовы и Кореевы</h4>
+          <p>Псалмы Асафа и сынов Кореевых. Тема &mdash; кризис веры, разрушение храма, страдания народа.</p>
+          <div class="psalm-text"><span class="verse-num">53</span>&laquo;Благословен Господь вовек! Аминь, аминь.&raquo; <span class="ref">(Пс. 88:53)</span></div>
+
+          <h4>Книга IV: Пс. 89&ndash;105 &mdash; Моисей, анонимные</h4>
+          <p>Открывается молитвой Моисея <span class="ref">(Пс. 89)</span>. Многие анонимные псалмы. Тема &mdash; Царство Божие (&laquo;Господь царствует&raquo;).</p>
+          <div class="psalm-text"><span class="verse-num">48</span>&laquo;Благословен Господь, Бог Израилев, от века и до века! И да скажет весь народ: аминь! Аллилуия!&raquo; <span class="ref">(Пс. 105:48)</span></div>
+
+          <h4>Книга V: Пс. 106&ndash;150 &mdash; Давидовы, Аллилуйя, восхождения</h4>
+          <p>Включает &laquo;Великий Аллель&raquo; <span class="ref">(Пс. 135)</span>, псалмы восхождения <span class="ref">(Пс. 119&ndash;133)</span> и финальное крещендо хвалы <span class="ref">(Пс. 145&ndash;150)</span>. Весь Псалом 150 служит заключительной доксологией всей Псалтири.</p>
+          <div class="psalm-text"><span class="verse-num">6</span>&laquo;Все дышащее да хвалит Господа! Аллилуия.&raquo; <span class="ref">(Пс. 150:6)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ЖАНРЫ ПСАЛМОВ -->
+    <div class="card card--wisdom-ps">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3B5;</div>
+        <div class="card-info">
+          <h3>Жанры псалмов</h3>
+          <span class="hebrew">Классификация по содержанию</span>
+          <p class="card-summary">Псалтирь включает разнообразные жанры: от торжественных гимнов хвалы до горьких плачей, от покаянных молитв до мессианских пророчеств.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <ul class="genre-list">
+            <li><span class="badge-praise">хвала</span> &mdash; гимны поклонения Богу: Пс. 8, 103, 145&ndash;150 <span class="ref">(Пс. 8)</span></li>
+            <li><span class="badge-lament">плач / жалоба</span> &mdash; вопли к Богу в скорби: Пс. 3, 22, 42, 88 <span class="ref">(Пс. 22:1)</span></li>
+            <li><span class="badge-thanksgiving">благодарение</span> &mdash; хвала за избавление: Пс. 30, 34, 116 <span class="ref">(Пс. 34:2)</span></li>
+            <li><span class="badge-lament">покаянные</span> &mdash; семь великих покаянных псалмов: Пс. 6, 31, 37, 50, 101, 129, 142 <span class="ref">(Пс. 50:3)</span></li>
+            <li><span class="badge-messianic">мессианские</span> &mdash; пророчества о Помазаннике: Пс. 2, 21, 109 <span class="ref">(Пс. 2:7)</span></li>
+            <li><span class="badge-royal">царские</span> &mdash; о царе и Царстве Божием: Пс. 2, 17, 19, 44, 71, 109 <span class="ref">(Пс. 2:6)</span></li>
+            <li><span class="badge-wisdom-ps">мудрости</span> &mdash; размышления о праведной жизни: Пс. 1, 36, 48, 72, 118 <span class="ref">(Пс. 1:1&ndash;2)</span></li>
+            <li><span class="badge-praise">восхождения</span> &mdash; паломнические песни (Шир ха-маалот): Пс. 119&ndash;133 <span class="ref">(Пс. 121:1)</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ХВАЛА ======================== -->
+<div class="section" id="praise">
+  <h2 class="section-title">Хвала и поклонение</h2>
+  <p class="section-desc">Величайшие гимны Псалтири &mdash; от созерцания звёздного неба до финального &laquo;Аллилуия&raquo;, в котором всё творение хвалит Творца.</p>
+
+  <div class="cards-grid">
+
+    <!-- ПСАЛОМ 8 -->
+    <div class="card card--praise">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x2B50;</div>
+        <div class="card-info">
+          <h3>Псалом 8 &mdash; Слава Божия в творении</h3>
+          <span class="hebrew">Пс. 8</span>
+          <p class="card-summary">&laquo;Господи, Боже наш! как величественно имя Твоё по всей земле!&raquo; &mdash; гимн о величии Творца и достоинстве человека.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Величие имени Божия</h4>
+          <div class="psalm-text"><span class="verse-num">2</span>Господи, Боже наш! как величественно имя Твое по всей земле! Слава Твоя простирается превыше небес!</div>
+
+          <h4>Хвала из уст младенцев</h4>
+          <div class="psalm-text"><span class="verse-num">3</span>Из уст младенцев и грудных детей Ты устроил хвалу, ради врагов Твоих, дабы сделать безмолвным врага и мстителя.</div>
+          <p>Иисус Христос процитировал этот стих, когда дети восклицали &laquo;Осанна!&raquo; в храме <span class="ref">(Мф. 21:16)</span>.</p>
+
+          <h4>Достоинство человека</h4>
+          <div class="psalm-text"><span class="verse-num">5</span>то что есть человек, что Ты помнишь его, и сын человеческий, что Ты посещаешь его? <span class="verse-num">6</span>Не много Ты умалил его пред Ангелами: славою и честью увенчал его; <span class="verse-num">7</span>поставил его владыкою над делами рук Твоих; все положил под ноги его.</div>
+          <p>Автор Послания к Евреям применяет эти слова ко Христу, Который &laquo;немного был унижен пред Ангелами&raquo; и увенчан славой через страдание <span class="ref">(Евр. 2:6&ndash;9)</span>.</p>
+
+          <h4>Обрамление (инклюзио)</h4>
+          <p>Псалом начинается и заканчивается одним и тем же восклицанием <span class="ref">(Пс. 8:2, 10)</span>:</p>
+          <div class="psalm-text"><span class="verse-num">10</span>Господи, Боже наш! Как величественно имя Твое по всей земле!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛОМ 103 -->
+    <div class="card card--praise">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F30D;</div>
+        <div class="card-info">
+          <h3>Псалом 103 &mdash; Великий гимн творению</h3>
+          <span class="hebrew">Пс. 103</span>
+          <p class="card-summary">&laquo;Как многочисленны дела Твои, Господи! Всё соделал Ты премудро&raquo; &mdash; грандиозная панорама творения от небес до глубин моря.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Небеса как шатёр</h4>
+          <div class="psalm-text"><span class="verse-num">1</span>Благослови, душа моя, Господа! Господи, Боже мой! Ты дивно велик, Ты облечен славою и величием; <span class="verse-num">2</span>Ты одеваешься светом, как ризою, простираешь небеса, как шатер.</div>
+
+          <h4>Забота о творении</h4>
+          <ol class="ritual-steps">
+            <li><strong>Основание земли</strong> &mdash; &laquo;Ты поставил землю на твёрдых основах: не поколеблется она во веки и веки&raquo; <span class="ref">(Пс. 103:5)</span></li>
+            <li><strong>Воды и источники</strong> &mdash; &laquo;Ты послал источники в долины: между горами текут, поят всех полевых зверей&raquo; <span class="ref">(Пс. 103:10&ndash;11)</span></li>
+            <li><strong>Пища для людей</strong> &mdash; хлеб, вино и елей <span class="ref">(Пс. 103:14&ndash;15)</span></li>
+            <li><strong>Луна и солнце</strong> &mdash; &laquo;Он сотворил луну для указания времён, солнце знает свой запад&raquo; <span class="ref">(Пс. 103:19)</span></li>
+            <li><strong>Левиафан</strong> &mdash; морское чудовище, которого Бог сотворил &laquo;играть&raquo; в море <span class="ref">(Пс. 103:26)</span></li>
+          </ol>
+
+          <h4>Вершина псалма</h4>
+          <div class="psalm-text"><span class="verse-num">24</span>Как многочисленны дела Твои, Господи! Все соделал Ты премудро; земля полна произведений Твоих.</div>
+
+          <h4>Дыхание жизни</h4>
+          <div class="psalm-text"><span class="verse-num">29</span>скроешь лице Твое &mdash; мятутся, отнимешь дух их &mdash; умирают и в персть свою возвращаются; <span class="verse-num">30</span>пошлешь дух Твой &mdash; созидаются, и Ты обновляешь лице земли.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛМЫ 148–150 -->
+    <div class="card card--praise">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F3B6;</div>
+        <div class="card-info">
+          <h3>Псалмы 148&ndash;150 &mdash; Финальное крещендо хвалы</h3>
+          <span class="hebrew">Пс. 148&ndash;150</span>
+          <p class="card-summary">&laquo;Всё дышащее да хвалит Господа!&raquo; &mdash; заключительный тройной &laquo;Аллилуия&raquo;, в котором всё творение славит Бога.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Псалом 148 &mdash; Всё творение хвалит Бога</h4>
+          <p>Хвала с небес и от земли &mdash; ангелы, солнце, звёзды, морские чудовища, огонь, град, горы, звери, цари и народы:</p>
+          <div class="psalm-text"><span class="verse-num">1</span>Хвалите Господа с небес, хвалите Его в вышних. <span class="verse-num">2</span>Хвалите Его, все Ангелы Его, хвалите Его, все воинства Его. <span class="verse-num">3</span>Хвалите Его, солнце и луна, хвалите Его, все звезды света.</div>
+          <div class="psalm-text"><span class="verse-num">7</span>Хвалите Господа от земли, великие рыбы и все бездны, <span class="verse-num">8</span>огонь и град, снег и туман, бурный ветер, исполняющий слово Его, <span class="verse-num">9</span>горы и все холмы, дерева плодоносные и все кедры, <span class="verse-num">10</span>звери и всякий скот, пресмыкающиеся и птицы крылатые.</div>
+
+          <h4>Псалом 149 &mdash; Новая песнь</h4>
+          <div class="psalm-text"><span class="verse-num">1</span>Пойте Господу песнь новую; хвала Ему в собрании святых. <span class="verse-num">2</span>Да веселится Израиль о Создателе своем; сыны Сиона да радуются о Царе своем.</div>
+
+          <h4>Псалом 150 &mdash; Заключительная доксология</h4>
+          <p>Финальный псалом &mdash; чистая хвала. Каждый стих начинается с &laquo;Хвалите&raquo;; перечислены все музыкальные инструменты храмового богослужения:</p>
+          <div class="psalm-text"><span class="verse-num">1</span>Хвалите Бога во святыне Его, хвалите Его на тверди силы Его. <span class="verse-num">2</span>Хвалите Его по могуществу Его, хвалите Его по множеству величия Его. <span class="verse-num">3</span>Хвалите Его со звуком трубным, хвалите Его на псалтири и гуслях. <span class="verse-num">4</span>Хвалите Его с тимпаном и ликами, хвалите Его на струнах и органе. <span class="verse-num">5</span>Хвалите Его на звучных кимвалах, хвалите Его на кимвалах громогласных. <span class="verse-num">6</span>Все дышащее да хвалит Господа! Аллилуия.</div>
+          <p>Весь Псалом 150 служит заключительной доксологией всей Псалтири &mdash; последнее слово книги: &laquo;Аллилуия!&raquo;</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== ПЛАЧ И ПОКАЯНИЕ ======================== -->
+<div class="section" id="lament">
+  <h2 class="section-title">Плач и покаяние</h2>
+  <p class="section-desc">Псалмы, в которых человек предстоит пред Богом со своей болью, скорбью и покаянием &mdash; с поразительной честностью и надеждой.</p>
+
+  <div class="cards-grid">
+
+    <!-- ПСАЛОМ 22 -->
+    <div class="card card--thanksgiving">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F33F;</div>
+        <div class="card-info">
+          <h3>Псалом 22 &mdash; Господь &mdash; Пастырь мой</h3>
+          <span class="hebrew">Пс. 22</span>
+          <p class="card-summary">&laquo;Господь &mdash; Пастырь мой; я ни в чём не буду нуждаться&raquo; &mdash; самый известный псалом, исповедание доверия посреди опасности.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Пастырь и покой</h4>
+          <div class="psalm-text"><span class="verse-num">1</span>Господь &mdash; Пастырь мой; я ни в чем не буду нуждаться: <span class="verse-num">2</span>Он покоит меня на злачных пажитях и водит меня к водам тихим, <span class="verse-num">3</span>подкрепляет душу мою, направляет меня на стези правды ради имени Своего.</div>
+
+          <h4>Долина смертной тени</h4>
+          <div class="psalm-text"><span class="verse-num">4</span>Если я пойду и долиною смертной тени, не убоюсь зла, потому что Ты со мной; Твой жезл и Твой посох &mdash; они успокаивают меня.</div>
+          <p>Посреди самой тёмной долины страх уходит &mdash; не потому, что опасности нет, а потому, что &laquo;Ты со мной&raquo;. Жезл защищает, посох направляет.</p>
+
+          <h4>Трапеза и чаша</h4>
+          <div class="psalm-text"><span class="verse-num">5</span>Ты приготовил предо мною трапезу в виду врагов моих; умастил елеем голову мою; чаша моя преисполнена.</div>
+
+          <h4>Благость на все дни</h4>
+          <div class="psalm-text"><span class="verse-num">6</span>Так, благость и милость да сопровождают меня во все дни жизни моей, и я пребуду в доме Господнем многие дни.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛОМ 50 -->
+    <div class="card card--lament">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F494;</div>
+        <div class="card-info">
+          <h3>Псалом 50 &mdash; Великий покаянный псалом</h3>
+          <span class="hebrew">Пс. 50</span>
+          <p class="card-summary">&laquo;Помилуй меня, Боже&raquo; &mdash; покаяние Давида после греха с Вирсавией. Глубочайшая молитва о прощении и обновлении.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Контекст</h4>
+          <p>Давид написал этот псалом после того, как пророк Нафан обличил его в грехе прелюбодеяния с Вирсавией и убийства Урии <span class="ref">(2 Цар. 12:1&ndash;13)</span>.</p>
+
+          <h4>Мольба о помиловании</h4>
+          <div class="psalm-text"><span class="verse-num">3</span>Помилуй меня, Боже, по великой милости Твоей, и по множеству щедрот Твоих изгладь беззакония мои. <span class="verse-num">4</span>Многократно омой меня от беззакония моего, и от греха моего очисти меня.</div>
+
+          <h4>Исповедание греха</h4>
+          <div class="psalm-text"><span class="verse-num">6</span>Тебе, Тебе единому согрешил я и лукавое пред очами Твоими сделал, так что Ты праведен в приговоре Твоем и чист в суде Твоем.</div>
+
+          <h4>Очищение и обновление</h4>
+          <div class="psalm-text"><span class="verse-num">9</span>Окропи меня иссопом, и буду чист; омой меня, и буду белее снега.</div>
+          <div class="psalm-text"><span class="verse-num">12</span>Сердце чистое сотвори во мне, Боже, и дух правый обнови внутри меня. <span class="verse-num">13</span>Не отвергни меня от лица Твоего и Духа Твоего Святого не отними от меня.</div>
+
+          <h4>Жертва Богу &mdash; дух сокрушённый</h4>
+          <div class="psalm-text"><span class="verse-num">18</span>ибо жертвы Ты не желаешь, &mdash; я дал бы ее; к всесожжению не благоволишь. <span class="verse-num">19</span>Жертва Богу &mdash; дух сокрушенный; сердца сокрушенного и смиренного Ты не презришь, Боже.</div>
+          <p>Давид осознаёт, что внешний ритуал без внутреннего покаяния не примиряет с Богом. Истинная жертва &mdash; сокрушённое сердце.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛОМ 88 -->
+    <div class="card card--lament">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F6A9;</div>
+        <div class="card-info">
+          <h3>Псалом 88 &mdash; Плач о крушении завета</h3>
+          <span class="hebrew">Пс. 88</span>
+          <p class="card-summary">Начинается хвалой за обетования Давиду, а завершается горьким вопросом: &laquo;Доколе, Господи, будешь скрываться непрестанно?&raquo;</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Хвала за завет с Давидом</h4>
+          <div class="psalm-text"><span class="verse-num">2</span>Милости Твои, Господи, буду петь вечно, в род и род возвещать истину Твою устами моими.</div>
+          <div class="psalm-text"><span class="verse-num">4</span>&laquo;Я поставил завет с избранным Моим, клялся Давиду, рабу Моему: <span class="verse-num">5</span>навек утвержу семя твое, в род и род устрою престол твой&raquo;.</div>
+
+          <h4>Обетования непоколебимы</h4>
+          <div class="psalm-text"><span class="verse-num">35</span>Не нарушу завета Моего, и не переменю того, что вышло из уст Моих. <span class="verse-num">36</span>Однажды Я поклялся святостью Моею: солгу ли Давиду? <span class="verse-num">37</span>Семя его пребудет вечно, и престол его, как солнце, предо Мною.</div>
+
+          <h4>Крушение: Бог отринул помазанника</h4>
+          <div class="psalm-text"><span class="verse-num">39</span>Но ныне Ты отринул и презрел, прогневался на помазанника Твоего; <span class="verse-num">40</span>пренебрег завет с рабом Твоим, поверг на землю венец его.</div>
+          <p>Резкий перелом &mdash; реальность противоречит обетованиям. Давидова династия в руинах, враги торжествуют.</p>
+
+          <h4>Горький вопрос</h4>
+          <div class="psalm-text"><span class="verse-num">47</span>Доколе, Господи, будешь скрываться непрестанно, будет пылать ярость Твоя, как огонь? <span class="verse-num">50</span>Где прежние милости Твои, Господи? Ты клялся Давиду истиною Твоею.</div>
+          <p>Псалом заканчивается без разрешения &mdash; вопрос остаётся открытым. Третья книга Псалтири завершается этим плачем, и лишь доксология <span class="ref">(Пс. 88:53)</span> утверждает: &laquo;Благословен Господь вовек! Аминь, аминь.&raquo;</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== МЕССИАНСКИЕ ======================== -->
+<div class="section" id="messianic">
+  <h2 class="section-title">Мессианские псалмы</h2>
+  <p class="section-desc">Псалмы, в которых ранняя церковь и сам Христос узнали пророчества о Мессии &mdash; Его воцарении, страданиях и вечном священстве.</p>
+
+  <div class="cards-grid">
+
+    <!-- ПСАЛОМ 2 -->
+    <div class="card card--messianic">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F451;</div>
+        <div class="card-info">
+          <h3>Псалом 2 &mdash; Помазанник Господень</h3>
+          <span class="hebrew">Пс. 2</span>
+          <p class="card-summary">&laquo;Ты Сын Мой; Я ныне родил Тебя&raquo; &mdash; воцарение Мессии над мятущимися народами. Царский и мессианский псалом.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Мятеж народов</h4>
+          <div class="psalm-text"><span class="verse-num">1</span>Зачем мятутся народы, и племена замышляют тщетное? <span class="verse-num">2</span>Восстают цари земли, и князья совещаются вместе против Господа и против Помазанника Его.</div>
+          <p>Апостолы применили эти слова к распятию Христа: Ирод и Пилат, язычники и Израиль восстали против Помазанника <span class="ref">(Деян. 4:25&ndash;27)</span>.</p>
+
+          <h4>Воцарение на Сионе</h4>
+          <div class="psalm-text"><span class="verse-num">6</span>&laquo;Я помазал Царя Моего над Сионом, святою горою Моею; <span class="verse-num">7</span>возвещу определение: Господь сказал Мне: Ты Сын Мой; Я ныне родил Тебя; <span class="verse-num">8</span>проси у Меня, и дам народы в наследие Тебе и пределы земли во владение Тебе&raquo;.</div>
+          <p>Слова &laquo;Ты Сын Мой&raquo; звучат при крещении Иисуса <span class="ref">(Мк. 1:11)</span> и цитируются в Послании к Евреям <span class="ref">(Евр. 1:5)</span> и Деяниях <span class="ref">(Деян. 13:33)</span>.</p>
+
+          <h4>Призыв к покорности</h4>
+          <div class="psalm-text"><span class="verse-num">10</span>Итак вразумитесь, цари; научитесь, судьи земли! <span class="verse-num">11</span>Служите Господу со страхом и радуйтесь с трепетом. <span class="verse-num">12</span>Почтите Сына, чтобы Он не прогневался, и чтобы вам не погибнуть в пути вашем, ибо гнев Его возгорится вскоре. Блаженны все, уповающие на Него.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛОМ 21 -->
+    <div class="card card--messianic">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x271D;&#xFE0F;</div>
+        <div class="card-info">
+          <h3>Псалом 21 &mdash; Прообраз распятия</h3>
+          <span class="hebrew">Пс. 21</span>
+          <p class="card-summary">&laquo;Боже мой, Боже мой! для чего Ты оставил меня?&raquo; &mdash; пронзённые руки и ноги, делят ризы, бросают жребий. Псалом, исполнившийся на Голгофе.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Вопль оставленности</h4>
+          <div class="psalm-text"><span class="verse-num">2</span>Боже мой! Боже мой! для чего Ты оставил меня? Далеки от спасения моего слова вопля моего.</div>
+          <p>Именно эти слова Иисус произнёс на кресте <span class="ref">(Мф. 27:46; Мк. 15:34)</span>.</p>
+
+          <h4>Поношение и насмешки</h4>
+          <div class="psalm-text"><span class="verse-num">7</span>Я же червь, а не человек, поношение у людей и презрение в народе. <span class="verse-num">8</span>Все, видящие меня, ругаются надо мною, говорят устами, кивая головою: <span class="verse-num">9</span>&laquo;он уповал на Господа; пусть избавит его, пусть спасет, если он угоден Ему&raquo;.</div>
+          <p>Сравните с насмешками у креста <span class="ref">(Мф. 27:39&ndash;43)</span>.</p>
+
+          <h4>Пронзённые руки и ноги</h4>
+          <div class="psalm-text"><span class="verse-num">17</span>Ибо псы окружили меня, скопище злых обступило меня, пронзили руки мои и ноги мои. <span class="verse-num">18</span>Можно было бы перечесть все кости мои; а они смотрят и делают из меня зрелище.</div>
+
+          <h4>Разделение одежд</h4>
+          <div class="psalm-text"><span class="verse-num">19</span>делят ризы мои между собою и об одежде моей бросают жребий.</div>
+          <p>Буквально исполнилось у креста <span class="ref">(Ин. 19:23&ndash;24)</span>.</p>
+
+          <h4>От плача к хвале</h4>
+          <div class="psalm-text"><span class="verse-num">23</span>Буду возвещать имя Твое братьям моим, посреди собрания восхвалять Тебя.</div>
+          <div class="psalm-text"><span class="verse-num">28</span>Вспомнят, и обратятся к Господу все концы земли, и поклонятся пред Тобою все племена язычников, <span class="verse-num">29</span>ибо Господне есть царство, и Он &mdash; Владыка над народами.</div>
+          <p>Псалом начинается воплем, но заканчивается всемирной хвалой &mdash; от Голгофы к воскресению.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПСАЛОМ 109 -->
+    <div class="card card--messianic">
+      <div class="card-header" onclick="toggleCard(this)">
+        <div class="card-icon">&#x1F4AB;</div>
+        <div class="card-info">
+          <h3>Псалом 109 &mdash; Священник по чину Мелхиседека</h3>
+          <span class="hebrew">Пс. 109</span>
+          <p class="card-summary">&laquo;Сказал Господь Господу моему: седи одесную Меня&raquo; &mdash; самый цитируемый псалом в Новом Завете. Мессия &mdash; Царь и Священник вовек.</p>
+        </div>
+        <span class="card-chevron">&#9660;</span>
+      </div>
+      <div class="card-body">
+        <div class="card-content">
+          <h4>Господь &mdash; Господу</h4>
+          <div class="psalm-text"><span class="verse-num">1</span>Сказал Господь Господу моему: седи одесную Меня, доколе положу врагов Твоих в подножие ног Твоих.</div>
+          <p>Иисус цитирует этот стих, спрашивая фарисеев: если Давид называет Мессию &laquo;Господом&raquo;, как же Он его сын? <span class="ref">(Мф. 22:41&ndash;45)</span>. Пётр цитирует его в Пятидесятницу <span class="ref">(Деян. 2:34&ndash;35)</span>.</p>
+
+          <h4>Вечное священство</h4>
+          <div class="psalm-text"><span class="verse-num">4</span>Клялся Господь и не раскается: Ты священник вовек по чину Мелхиседека.</div>
+          <p>Послание к Евреям строит целое учение о первосвященстве Христа на этом стихе: Иисус &mdash; священник не по чину Аарона (который временный), а по чину Мелхиседека (вечный) <span class="ref">(Евр. 5:6; 7:1&ndash;28)</span>.</p>
+
+          <h4>Царь и Священник</h4>
+          <p>Псалом 109 уникален: Мессия одновременно Царь (&laquo;седи одесную Меня&raquo;) и Священник (&laquo;священник вовек&raquo;). В Ветхом Завете эти служения разделены &mdash; только в Мессии они соединяются.</p>
+
+          <h4>Победа</h4>
+          <div class="psalm-text"><span class="verse-num">2</span>Жезл силы Твоей пошлет Господь с Сиона: господствуй среди врагов Твоих. <span class="verse-num">3</span>В день силы Твоей народ Твой готов во благолепии святыни; из чрева прежде денницы подобно росе рождение Твое.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================== СРАВНЕНИЕ ======================== -->
+<div class="section" id="compare">
+  <h2 class="section-title">Сводная таблица псалмов</h2>
+  <p class="section-desc">Ключевые псалмы по жанрам, авторству и тематике. Нажмите на заголовок для сортировки.</p>
+
+  <div class="table-wrap">
+    <table id="compareTable" class="psalms-compare">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Псалом <span class="sort-arrow"></span></th>
+          <th onclick="sortTable(1)">Жанр <span class="sort-arrow"></span></th>
+          <th onclick="sortTable(2)">Автор <span class="sort-arrow"></span></th>
+          <th onclick="sortTable(3)">Книга <span class="sort-arrow"></span></th>
+          <th>Ключевая тема</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="ref">Пс. 1</span></td><td><span class="badge-wisdom-ps">мудрости</span></td><td>Аноним</td><td>I</td><td>Два пути: праведных и нечестивых</td></tr>
+        <tr><td><span class="ref">Пс. 2</span></td><td><span class="badge-messianic">мессианский</span></td><td>Давид</td><td>I</td><td>Помазанник Господень, Сын Божий</td></tr>
+        <tr><td><span class="ref">Пс. 8</span></td><td><span class="badge-praise">хвала</span></td><td>Давид</td><td>I</td><td>Величие Творца и достоинство человека</td></tr>
+        <tr><td><span class="ref">Пс. 18</span></td><td><span class="badge-praise">хвала</span></td><td>Давид</td><td>I</td><td>Небеса проповедуют славу; Закон Господень</td></tr>
+        <tr><td><span class="ref">Пс. 21</span></td><td><span class="badge-messianic">мессианский</span></td><td>Давид</td><td>I</td><td>Страдания Мессии, пронзённые руки и ноги</td></tr>
+        <tr><td><span class="ref">Пс. 22</span></td><td><span class="badge-thanksgiving">доверия</span></td><td>Давид</td><td>I</td><td>Господь &mdash; Пастырь мой</td></tr>
+        <tr><td><span class="ref">Пс. 23</span></td><td><span class="badge-royal">царский</span></td><td>Давид</td><td>I</td><td>Царь славы входит во врата</td></tr>
+        <tr><td><span class="ref">Пс. 31</span></td><td><span class="badge-lament">покаянный</span></td><td>Давид</td><td>I</td><td>Блаженство прощения грехов</td></tr>
+        <tr><td><span class="ref">Пс. 45</span></td><td><span class="badge-praise">хвала</span></td><td>Сыны Кореевы</td><td>II</td><td>Бог нам прибежище и сила</td></tr>
+        <tr><td><span class="ref">Пс. 50</span></td><td><span class="badge-lament">покаянный</span></td><td>Давид</td><td>II</td><td>Покаяние; сердце чистое сотвори</td></tr>
+        <tr><td><span class="ref">Пс. 89</span></td><td><span class="badge-wisdom-ps">мудрости</span></td><td>Моисей</td><td>IV</td><td>Вечность Бога и краткость жизни</td></tr>
+        <tr><td><span class="ref">Пс. 90</span></td><td><span class="badge-thanksgiving">доверия</span></td><td>Аноним</td><td>IV</td><td>Под кровом Всевышнего; защита Божия</td></tr>
+        <tr><td><span class="ref">Пс. 103</span></td><td><span class="badge-praise">хвала</span></td><td>Аноним</td><td>IV</td><td>Великий гимн творению</td></tr>
+        <tr><td><span class="ref">Пс. 109</span></td><td><span class="badge-messianic">мессианский</span></td><td>Давид</td><td>V</td><td>Священник вовек по чину Мелхиседека</td></tr>
+        <tr><td><span class="ref">Пс. 118</span></td><td><span class="badge-wisdom-ps">мудрости</span></td><td>Аноним</td><td>V</td><td>Закон Господень &mdash; 176 стихов, алфавитный акростих</td></tr>
+        <tr><td><span class="ref">Пс. 138</span></td><td><span class="badge-praise">хвала</span></td><td>Давид</td><td>V</td><td>Всеведение Божие; &laquo;дивно устроен я&raquo;</td></tr>
+        <tr><td><span class="ref">Пс. 150</span></td><td><span class="badge-praise">хвала</span></td><td>Аноним</td><td>V</td><td>Всё дышащее да хвалит Господа</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:10px;font-size:0.85em;color:var(--text-muted);">
+    <span class="badge-praise">хвала</span> &nbsp;
+    <span class="badge-lament">плач / покаяние</span> &nbsp;
+    <span class="badge-thanksgiving">доверие / благодарение</span> &nbsp;
+    <span class="badge-messianic">мессианский</span> &nbsp;
+    <span class="badge-royal">царский</span> &nbsp;
+    <span class="badge-wisdom-ps">мудрости</span>
+  </p>
+</div>
+
+<!-- ======================== ПРИНЦИПЫ ======================== -->
+<div class="section" id="principles">
+  <h2 class="section-title">Принципы</h2>
+  <p class="section-desc">Восемь богословских истин, которые открывает Псалтирь.</p>
+
+  <div class="principles-grid">
+
+    <div class="principle-card">
+      <div class="num">Принцип 1</div>
+      <h3>Два пути &mdash; праведных и нечестивых</h3>
+      <p>Псалтирь открывается чётким разделением: праведный &laquo;как дерево, посаженное при потоках вод&raquo;, нечестивые &laquo;как прах, возметаемый ветром&raquo;. Этот выбор определяет всю жизнь человека.</p>
+      <div class="principle-verse">Пс. 1:1&ndash;6</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 2</div>
+      <h3>Бог &mdash; Пастырь и Прибежище</h3>
+      <p>&laquo;Господь &mdash; Пастырь мой&raquo;, &laquo;Бог нам прибежище и сила&raquo;, &laquo;Живущий под кровом Всевышнего&raquo; &mdash; Бог не далёкий наблюдатель, а близкий защитник, ведущий через долину смертной тени.</p>
+      <div class="principle-verse">Пс. 22:1; 45:2; 90:1&ndash;2</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 3</div>
+      <h3>Честность в молитве</h3>
+      <p>Псалмы позволяют кричать, гневаться, скорбить и задавать Богу самые трудные вопросы. &laquo;Доколе, Господи, будешь забывать меня?&raquo;, &laquo;Боже мой! для чего Ты оставил меня?&raquo; &mdash; вера не исключает честной боли.</p>
+      <div class="principle-verse">Пс. 12:2; 21:2; 88:47</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 4</div>
+      <h3>Покаяние и прощение</h3>
+      <p>&laquo;Блажен, кому отпущены беззакония&raquo;. Давид учит, что утаивание греха разрушает, а исповедание исцеляет. Бог творит чистое сердце &mdash; не просто прощает, а обновляет изнутри.</p>
+      <div class="principle-verse">Пс. 31:1&ndash;5; 50:3&ndash;4, 12</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 5</div>
+      <h3>Творение свидетельствует о Творце</h3>
+      <p>&laquo;Небеса проповедуют славу Божию&raquo; &mdash; природа непрестанно возвещает о Боге. От звёздного неба до левиафана в море &mdash; &laquo;как многочисленны дела Твои, Господи! Всё соделал Ты премудро&raquo;.</p>
+      <div class="principle-verse">Пс. 18:2; 103:24</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 6</div>
+      <h3>Мессианское упование</h3>
+      <p>Псалмы рисуют Мессию как Сына Божия, страдающего праведника и вечного Священника. Новый Завет видит в них пророчество о Христе &mdash; от рождения до воскресения и воцарения одесную Отца.</p>
+      <div class="principle-verse">Пс. 2:7; 21:2; 109:1, 4</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 7</div>
+      <h3>Тора как наслаждение</h3>
+      <p>&laquo;В законе Господа воля его, и о законе Его размышляет он день и ночь&raquo;. Закон &mdash; не бремя, а радость, светильник и мёд. Псалом 118 &mdash; 176 стихов, воспевающих Слово Божие.</p>
+      <div class="principle-verse">Пс. 1:2; 18:8&ndash;11; 118:97, 105</div>
+    </div>
+
+    <div class="principle-card">
+      <div class="num">Принцип 8</div>
+      <h3>Вся жизнь &mdash; хвала</h3>
+      <p>Псалтирь движется от плача к хвале. Финальные псалмы &mdash; непрекращающееся &laquo;Аллилуия&raquo;. &laquo;Благословлю Господа во всякое время; хвала Ему непрестанно в устах моих&raquo; &mdash; вся жизнь должна стать песней Богу.</p>
+      <div class="principle-verse">Пс. 33:2; 145:1; 150:6</div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer style="text-align:center;padding:40px 20px;color:var(--text-muted);font-size:0.85em;border-top:1px solid var(--border);margin-top:20px;">
+  На основании текста Синодального перевода
+</footer>
+
+<!-- Verse modal -->
+<div class="verse-overlay" id="verseOverlay">
+  <div class="verse-modal">
+    <div class="verse-modal-header">
+      <h3 id="verseModalTitle">...</h3>
+      <button class="verse-modal-close" id="verseModalClose">&times;</button>
+    </div>
+    <div class="verse-modal-body" id="verseModalBody">
+      <div class="verse-loading">Загрузка...</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/shared.js"></script>
+
+</body>
+</html>
