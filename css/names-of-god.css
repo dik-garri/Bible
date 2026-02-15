@@ -1,0 +1,124 @@
+/* Names of God color variables */
+:root {
+  --primary: #b8860b;
+  --primary-bg: #fdf8eb;
+  --compound: #2c3e80;
+  --compound-bg: #edf0f9;
+  --titles: #7b2d8e;
+  --titles-bg: #f5edf7;
+  --hebrew-color: #5d4037;
+}
+
+/* Card color overrides — primary names */
+.card--primary .card-icon { background: var(--primary-bg); color: var(--primary); }
+.card--primary .card-info h3 { color: var(--primary); }
+.card--primary .ritual-steps li::before { background: var(--primary); }
+
+/* Card color overrides — compound names */
+.card--compound .card-icon { background: var(--compound-bg); color: var(--compound); }
+.card--compound .card-info h3 { color: var(--compound); }
+.card--compound .ritual-steps li::before { background: var(--compound); }
+
+/* Card color overrides — titles */
+.card--titles .card-icon { background: var(--titles-bg); color: var(--titles); }
+.card--titles .card-info h3 { color: var(--titles); }
+.card--titles .ritual-steps li::before { background: var(--titles); }
+
+/* Hebrew text styling */
+.hebrew {
+  font-family: 'SBL Hebrew', 'Ezra SIL', 'Times New Roman', serif;
+  font-size: 1.1em;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  color: var(--hebrew-color);
+}
+
+/* Hebrew in card-info — smaller for subtitles */
+.card-info .hebrew {
+  font-size: 0.95em;
+  color: var(--text-muted);
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* Hebrew column in comparison table */
+td .hebrew {
+  font-size: 1.05em;
+  display: inline-block;
+}
+
+/* Frequency badge */
+.freq-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  background: #f5ece0;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* Overview key-verse list */
+.overview-verses {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.overview-verses li {
+  padding: 10px 16px;
+  border-left: 3px solid var(--accent);
+  margin-bottom: 8px;
+  background: #fdf8eb;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.93em;
+  line-height: 1.6;
+}
+
+/* Comparison table — dark header */
+.names-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.names-compare th:hover { background: #3d2a1e; }
+
+/* Overview intro grid */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.overview-item {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.overview-item h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.overview-item h3.color-primary { color: var(--primary); }
+.overview-item h3.color-compound { color: var(--compound); }
+.overview-item h3.color-titles { color: var(--titles); }
+
+.overview-item p {
+  font-size: 0.92em;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .overview-grid { grid-template-columns: 1fr; }
+}

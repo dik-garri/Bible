@@ -1,0 +1,112 @@
+/* Exile and Return color variables */
+:root {
+  --captivity: #5d4037;
+  --captivity-bg: #f0ebe8;
+  --return: #27ae60;
+  --return-bg: #eef9f2;
+  --esther: #7b2d8e;
+  --esther-bg: #f5eef7;
+  --prophets: #2c3e80;
+  --prophets-bg: #eef0f7;
+  --timeline: #b8860b;
+  --timeline-bg: #fdf8eb;
+}
+
+/* Card color overrides */
+.card--captivity .card-icon { background: var(--captivity-bg); color: var(--captivity); }
+.card--captivity .card-info h3 { color: var(--captivity); }
+.card--captivity .ritual-steps li::before { background: var(--captivity); }
+
+.card--return .card-icon { background: var(--return-bg); color: var(--return); }
+.card--return .card-info h3 { color: var(--return); }
+.card--return .ritual-steps li::before { background: var(--return); }
+
+.card--esther .card-icon { background: var(--esther-bg); color: var(--esther); }
+.card--esther .card-info h3 { color: var(--esther); }
+.card--esther .ritual-steps li::before { background: var(--esther); }
+
+.card--prophets .card-icon { background: var(--prophets-bg); color: var(--prophets); }
+.card--prophets .card-info h3 { color: var(--prophets); }
+.card--prophets .ritual-steps li::before { background: var(--prophets); }
+
+/* Timeline overview */
+.timeline {
+  position: relative;
+  padding: 0 0 0 32px;
+  margin: 24px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--captivity), var(--timeline), var(--return));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--timeline);
+  background: var(--bg-card);
+  z-index: 1;
+}
+
+.timeline-item--captivity::before { border-color: var(--captivity); }
+.timeline-item--return::before { border-color: var(--return); }
+.timeline-item--esther::before { border-color: var(--esther); }
+
+.timeline-date {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.78em;
+  font-weight: 700;
+  color: var(--timeline);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.timeline-item--captivity .timeline-date { color: var(--captivity); }
+.timeline-item--return .timeline-date { color: var(--return); }
+
+.timeline-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.timeline-text {
+  font-size: 0.92em;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Comparison table */
+.exile-compare th {
+  background: var(--captivity);
+  color: #fff;
+  cursor: pointer;
+}
+
+.exile-compare th:hover { background: #4e342e; }
+
+@media (max-width: 600px) {
+  .timeline { padding-left: 24px; }
+  .timeline-item { padding-left: 18px; }
+  .timeline-item::before { left: -19px; width: 12px; height: 12px; }
+}

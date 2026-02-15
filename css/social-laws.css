@@ -1,0 +1,103 @@
+/* Social Laws color variables */
+:root {
+  --poor: #b8860b;
+  --poor-bg: #fdf8eb;
+  --servants: #5d4037;
+  --servants-bg: #f3eeeb;
+  --strangers: #2980b9;
+  --strangers-bg: #eaf3fa;
+  --justice: #27ae60;
+  --justice-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--poor .card-icon { background: var(--poor-bg); color: var(--poor); }
+.card--poor .card-info h3 { color: var(--poor); }
+.card--poor .ritual-steps li::before { background: var(--poor); }
+
+.card--servants .card-icon { background: var(--servants-bg); color: var(--servants); }
+.card--servants .card-info h3 { color: var(--servants); }
+.card--servants .ritual-steps li::before { background: var(--servants); }
+
+.card--strangers .card-icon { background: var(--strangers-bg); color: var(--strangers); }
+.card--strangers .card-info h3 { color: var(--strangers); }
+.card--strangers .ritual-steps li::before { background: var(--strangers); }
+
+.card--justice .card-icon { background: var(--justice-bg); color: var(--justice); }
+.card--justice .card-info h3 { color: var(--justice); }
+.card--justice .ritual-steps li::before { background: var(--justice); }
+
+/* Table dark header override */
+.compare-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88em;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.compare-table th {
+  background: var(--text);
+  color: #fff;
+  padding: 12px 14px;
+  font-family: -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.compare-table th:hover { background: #3d2a1e; }
+
+.compare-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table tbody tr:nth-child(even) { background: #fdf9f4; }
+
+/* Principle cards stacked (not grid) */
+.principle-card { margin-bottom: 18px; }
+.principle-card h3 { color: var(--accent); }
+.principle-verse { color: var(--accent); font-size: 0.9em; cursor: pointer; }
+.principle-verse:hover { text-decoration: underline; }
+
+/* Overview key verses */
+.key-verses {
+  margin-top: 24px;
+}
+
+.key-verses h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.key-verses ul {
+  list-style: none;
+  padding: 0;
+}
+
+.key-verses li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.key-verses li:last-child { border-bottom: none; }

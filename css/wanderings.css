@@ -1,0 +1,141 @@
+/* Wanderings color variables */
+:root {
+  --egypt: #c0392b;
+  --egypt-bg: #fdf0ee;
+  --sinai: #b8860b;
+  --sinai-bg: #fdf8eb;
+  --wilderness: #5d4037;
+  --wilderness-bg: #efebe9;
+  --stations: #2c3e80;
+  --stations-bg: #eef0f7;
+}
+
+/* Card color overrides */
+.card--egypt .card-icon { background: var(--egypt-bg); color: var(--egypt); }
+.card--egypt .card-info h3 { color: var(--egypt); }
+.card--egypt .ritual-steps li::before { background: var(--egypt); }
+
+.card--sinai .card-icon { background: var(--sinai-bg); color: var(--sinai); }
+.card--sinai .card-info h3 { color: var(--sinai); }
+.card--sinai .ritual-steps li::before { background: var(--sinai); }
+
+.card--wilderness .card-icon { background: var(--wilderness-bg); color: var(--wilderness); }
+.card--wilderness .card-info h3 { color: var(--wilderness); }
+.card--wilderness .ritual-steps li::before { background: var(--wilderness); }
+
+.card--stations .card-icon { background: var(--stations-bg); color: var(--stations); }
+.card--stations .card-info h3 { color: var(--stations); }
+.card--stations .ritual-steps li::before { background: var(--stations); }
+
+/* Route timeline */
+.route-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.route-step {
+  position: relative;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+
+.route-step::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.route-step:last-child { border-left: none; }
+
+.route-step-name {
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.95em;
+}
+
+.route-step-event {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+/* Timeline color variants */
+.route-timeline--egypt .route-step::before { background: var(--egypt); }
+.route-timeline--sinai .route-step::before { background: var(--sinai); }
+.route-timeline--wilderness .route-step::before { background: var(--wilderness); }
+
+/* Route overview diagram */
+.route-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 24px 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85em;
+}
+
+.route-diagram-step {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+}
+
+.route-diagram-step--egypt { background: var(--egypt-bg); color: var(--egypt); }
+.route-diagram-step--sinai { background: var(--sinai-bg); color: var(--sinai); }
+.route-diagram-step--wilderness { background: var(--wilderness-bg); color: var(--wilderness); }
+.route-diagram-step--moab { background: var(--stations-bg); color: var(--stations); }
+
+.route-diagram-arrow {
+  font-size: 1.4em;
+  color: var(--text-muted);
+  padding: 0 6px;
+}
+
+.route-diagram-label {
+  font-size: 0.75em;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* Stations compare table */
+.stations-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.stations-compare th:hover { background: #3d2a1e; }
+
+/* Stage badge */
+.badge-stage {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.badge-stage--egypt { background: var(--egypt-bg); color: var(--egypt); }
+.badge-stage--sinai { background: var(--sinai-bg); color: var(--sinai); }
+.badge-stage--wilderness { background: var(--wilderness-bg); color: var(--wilderness); }
+
+@media (max-width: 600px) {
+  .route-diagram { font-size: 0.75em; }
+  .route-diagram-step { padding: 6px 10px; min-width: 70px; }
+  .route-timeline { padding-left: 22px; }
+  .route-step { padding-left: 8px; }
+}
