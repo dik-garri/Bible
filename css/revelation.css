@@ -74,6 +74,12 @@
   line-height: 1.5;
 }
 
+.judgment-item .ref {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8em;
+}
+
 /* Color-coded judgment numbers */
 .card--seals .judgment-num { color: var(--seals); }
 .card--trumpets .judgment-num { color: var(--trumpets); }
