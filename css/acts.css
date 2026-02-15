@@ -1,0 +1,137 @@
+/* Acts color variables */
+:root {
+  --church: #b8860b;
+  --church-bg: #fdf8eb;
+  --witness: #27ae60;
+  --witness-bg: #eef9f2;
+  --persecution: #c0392b;
+  --persecution-bg: #fdf0ee;
+  --mission: #2c3e80;
+  --mission-bg: #eef0f7;
+  --rome: #7b2d8e;
+  --rome-bg: #f5eef7;
+}
+
+/* Card color overrides */
+.card--church .card-icon { background: var(--church-bg); color: var(--church); }
+.card--church .card-info h3 { color: var(--church); }
+.card--church .ritual-steps li::before { background: var(--church); }
+
+.card--witness .card-icon { background: var(--witness-bg); color: var(--witness); }
+.card--witness .card-info h3 { color: var(--witness); }
+.card--witness .ritual-steps li::before { background: var(--witness); }
+
+.card--persecution .card-icon { background: var(--persecution-bg); color: var(--persecution); }
+.card--persecution .card-info h3 { color: var(--persecution); }
+.card--persecution .ritual-steps li::before { background: var(--persecution); }
+
+.card--mission .card-icon { background: var(--mission-bg); color: var(--mission); }
+.card--mission .card-info h3 { color: var(--mission); }
+.card--mission .ritual-steps li::before { background: var(--mission); }
+
+.card--rome .card-icon { background: var(--rome-bg); color: var(--rome); }
+.card--rome .card-info h3 { color: var(--rome); }
+.card--rome .ritual-steps li::before { background: var(--rome); }
+
+/* Acts comparison table */
+.acts-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.acts-compare th:hover { background: #3d2a1e; }
+
+/* Category badges */
+.badge-church {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--church-bg);
+  color: var(--church);
+}
+
+.badge-witness {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--witness-bg);
+  color: var(--witness);
+}
+
+.badge-persecution {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--persecution-bg);
+  color: var(--persecution);
+}
+
+.badge-mission {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--mission-bg);
+  color: var(--mission);
+}
+
+.badge-rome {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--rome-bg);
+  color: var(--rome);
+}
+
+/* Mission journey route component */
+.journey-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  font-size: 0.88em;
+  border: 1px solid var(--border);
+}
+
+.journey-stop {
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: var(--mission-bg);
+  color: var(--mission);
+  font-weight: 600;
+  font-size: 0.85em;
+}
+
+.journey-arrow {
+  color: var(--text-muted);
+  font-size: 0.8em;
+}
+
+.journey-stop--key {
+  background: var(--mission);
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .journey-route { font-size: 0.78em; padding: 8px; gap: 4px; }
+  .journey-stop { padding: 3px 7px; font-size: 0.8em; }
+}

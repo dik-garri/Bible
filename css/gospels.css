@@ -1,0 +1,88 @@
+/* Gospels color variables */
+:root {
+  --birth: #b8860b;
+  --birth-bg: #fdf8eb;
+  --ministry: #27ae60;
+  --ministry-bg: #eef9f2;
+  --teaching: #2c3e80;
+  --teaching-bg: #eef0f7;
+  --miracles: #7b2d8e;
+  --miracles-bg: #f5eef7;
+  --passion: #c0392b;
+  --passion-bg: #fdf0ee;
+  --resurrection: #d4a017;
+  --resurrection-bg: #fdf8eb;
+}
+
+/* Card color overrides */
+.card--birth .card-icon { background: var(--birth-bg); color: var(--birth); }
+.card--birth .card-info h3 { color: var(--birth); }
+.card--birth .ritual-steps li::before { background: var(--birth); }
+
+.card--ministry .card-icon { background: var(--ministry-bg); color: var(--ministry); }
+.card--ministry .card-info h3 { color: var(--ministry); }
+.card--ministry .ritual-steps li::before { background: var(--ministry); }
+
+.card--teaching .card-icon { background: var(--teaching-bg); color: var(--teaching); }
+.card--teaching .card-info h3 { color: var(--teaching); }
+.card--teaching .ritual-steps li::before { background: var(--teaching); }
+
+.card--miracles .card-icon { background: var(--miracles-bg); color: var(--miracles); }
+.card--miracles .card-info h3 { color: var(--miracles); }
+.card--miracles .ritual-steps li::before { background: var(--miracles); }
+
+.card--passion .card-icon { background: var(--passion-bg); color: var(--passion); }
+.card--passion .card-info h3 { color: var(--passion); }
+.card--passion .ritual-steps li::before { background: var(--passion); }
+
+.card--resurrection .card-icon { background: var(--resurrection-bg); color: var(--resurrection); }
+.card--resurrection .card-info h3 { color: var(--resurrection); }
+.card--resurrection .ritual-steps li::before { background: var(--resurrection); }
+
+/* Synoptic comparison table */
+.gospel-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.gospel-compare th:first-child { text-align: left; }
+.gospel-compare th:hover { background: #3d2a1e; }
+
+.gospel-compare td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.92em;
+}
+
+.gospel-compare td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.gospel-compare tbody tr:hover td { background: #fdf8eb; }
+
+.gospel-compare td.yes {
+  background: #eef9f2;
+  color: #27ae60;
+  font-weight: 600;
+  text-align: center;
+}
+
+.gospel-compare td.no {
+  background: #fdf0ee;
+  color: #ccc;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .gospel-compare th, .gospel-compare td { padding: 5px 6px; font-size: 0.82em; }
+}

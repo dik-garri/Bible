@@ -1,0 +1,149 @@
+/* Exodus color variables */
+:root {
+  --slavery: #5d4037;
+  --slavery-bg: #efebe9;
+  --calling: #b8860b;
+  --calling-bg: #fdf8eb;
+  --plagues: #c0392b;
+  --plagues-bg: #fdf0ee;
+  --passover: #2c3e80;
+  --passover-bg: #eef0f7;
+  --journey: #27ae60;
+  --journey-bg: #eef9f2;
+}
+
+/* Card color overrides */
+.card--slavery .card-icon { background: var(--slavery-bg); color: var(--slavery); }
+.card--slavery .card-info h3 { color: var(--slavery); }
+.card--slavery .ritual-steps li::before { background: var(--slavery); }
+
+.card--calling .card-icon { background: var(--calling-bg); color: var(--calling); }
+.card--calling .card-info h3 { color: var(--calling); }
+.card--calling .ritual-steps li::before { background: var(--calling); }
+
+.card--plagues .card-icon { background: var(--plagues-bg); color: var(--plagues); }
+.card--plagues .card-info h3 { color: var(--plagues); }
+.card--plagues .ritual-steps li::before { background: var(--plagues); }
+
+.card--passover .card-icon { background: var(--passover-bg); color: var(--passover); }
+.card--passover .card-info h3 { color: var(--passover); }
+.card--passover .ritual-steps li::before { background: var(--passover); }
+
+.card--journey .card-icon { background: var(--journey-bg); color: var(--journey); }
+.card--journey .card-info h3 { color: var(--journey); }
+.card--journey .ritual-steps li::before { background: var(--journey); }
+
+/* Exodus comparison table */
+.exodus-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.exodus-compare th:hover { background: #3d2a1e; }
+
+/* Plague grid */
+.plague-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.plague-item {
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--plagues);
+}
+
+.plague-num {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: var(--plagues);
+  font-family: -apple-system, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.plague-name {
+  font-weight: 700;
+  margin: 4px 0;
+}
+
+.plague-desc {
+  font-size: 0.88em;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Hardening badges */
+.badge-pharaoh {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--slavery-bg);
+  color: var(--slavery);
+}
+
+.badge-god {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--plagues-bg);
+  color: var(--plagues);
+}
+
+.badge-passive {
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72em;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--passover-bg);
+  color: var(--passover);
+}
+
+/* Exodus route diagram */
+.exodus-route {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.85em;
+}
+
+.exodus-step {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 90px;
+}
+
+.exodus-step--egypt { background: var(--slavery-bg); color: var(--slavery); }
+.exodus-step--plagues { background: var(--plagues-bg); color: var(--plagues); }
+.exodus-step--sea { background: var(--passover-bg); color: var(--passover); }
+.exodus-step--sinai { background: var(--journey-bg); color: var(--journey); }
+
+.exodus-arrow {
+  font-size: 1.4em;
+  color: var(--text-muted);
+  padding: 0 6px;
+}
+
+@media (max-width: 600px) {
+  .plague-grid { grid-template-columns: 1fr; }
+  .exodus-route { font-size: 0.75em; }
+  .exodus-step { padding: 6px 10px; min-width: 70px; }
+}
