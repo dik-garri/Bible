@@ -54,9 +54,9 @@ const BOOK_MAP = {
   'Быт': 'gn', 'Бытие': 'gn',
   'Исх': 'ex', 'Исход': 'ex',
   'Лев': 'lv', 'Левит': 'lv',
-  'Чис': 'nm', 'Числа': 'nm',
+  'Чис': 'nm', 'Числ': 'nm', 'Числа': 'nm',
   'Втор': 'dt', 'Второзаконие': 'dt',
-  'Нав': 'js', 'И.Навин': 'js',
+  'Нав': 'js', 'И.Навин': 'js', 'И. Нав': 'js',
   'Суд': 'jud', 'Судьи': 'jud',
   'Руфь': 'rt',
   '1 Цар': '1sm', '1Цар': '1sm',
@@ -134,43 +134,69 @@ async function loadBook(fileId) {
 }
 
 // Parse reference text like "Лев. 1:3–9" or "Быт. 22:2, 13–14" or "Лев. 16:3, 6, 11"
-// Also handles "Чис. 28:3–8" and multiple refs separated by ";"
-function parseRef(text) {
-  // Clean up
+// Handles semicolons with book carry-forward, chapter ranges, and comma-separated chapters
+function parseRef(text, lastFileId) {
   text = text.replace(/[()]/g, '').replace(/\s+/g, ' ').trim();
-  // Handle semicolons as separate references
+
+  // Handle semicolons — carry book name forward
   if (text.includes(';')) {
-    return text.split(';').flatMap(part => parseRef(part.trim())).filter(Boolean);
+    let carry = lastFileId || null;
+    const results = [];
+    for (const part of text.split(';')) {
+      const refs = parseRef(part.trim(), carry);
+      if (refs.length > 0) {
+        carry = refs[0].fileId;
+        results.push(...refs);
+      }
+    }
+    return results;
   }
 
-  // Match: BookName Chapter:Verses
-  // Also match "ср. Рим. 8:28" (remove "ср." prefix)
   text = text.replace(/^ср\.\s*/, '');
 
   // Try: BookAbbr[.] Chapter:VerseSpec
   const m = text.match(/^(.+?)\s+(\d+):(.+)$/);
-  if (!m) {
-    // Try just "BookAbbr Chapter" (whole chapter, no verses)
-    const mc = text.match(/^(.+?)\s+(\d+)$/);
-    if (mc) {
-      const bookAbbr = mc[1].replace(/\.$/, '').trim();
-      const fileId = BOOK_MAP[bookAbbr];
-      if (fileId) {
-        return [{ fileId, chapter: parseInt(mc[2]), verses: null }]; // whole chapter
-      }
-    }
-    return [];
+  if (m) {
+    const bookAbbr = m[1].replace(/\.$/, '').trim();
+    const fileId = BOOK_MAP[bookAbbr];
+    if (fileId) return [{ fileId, chapter: parseInt(m[2]), verses: parseVerses(m[3].trim()) }];
   }
 
-  const bookAbbr = m[1].replace(/\.$/, '').trim();
-  const chapter = parseInt(m[2]);
-  const verseSpec = m[3].trim();
-  const fileId = BOOK_MAP[bookAbbr];
-  if (!fileId) return [];
+  // Try just Chapter:Verses with carried-over book
+  const mc2 = text.match(/^(\d+):(.+)$/);
+  if (mc2 && lastFileId) {
+    return [{ fileId: lastFileId, chapter: parseInt(mc2[1]), verses: parseVerses(mc2[2].trim()) }];
+  }
 
-  // Parse verse spec: "3–9", "2, 13–14", "3, 6, 11"
-  const verses = parseVerses(verseSpec);
-  return [{ fileId, chapter, verses }];
+  // Try: BookAbbr[.] ChapterSpec (whole chapters, ranges, comma-separated)
+  const mch = text.match(/^(.+?)\s+([\d,\s\u2013\u2014\-]+)$/);
+  if (mch) {
+    const bookAbbr = mch[1].replace(/\.$/, '').trim();
+    const fileId = BOOK_MAP[bookAbbr];
+    if (fileId) return parseChapters(mch[2].trim(), fileId);
+  }
+
+  // Try just chapter(s) with carried-over book
+  if (lastFileId && /^[\d,\s\u2013\u2014\-]+$/.test(text)) {
+    return parseChapters(text, lastFileId);
+  }
+
+  return [];
+}
+
+// Parse chapter spec: "22", "4–5", "22, 28–29", "42, 49, 50, 52–53"
+function parseChapters(spec, fileId) {
+  const results = [];
+  for (const part of spec.split(/,\s*/)) {
+    const rm = part.trim().match(/^(\d+)\s*[\u2013\u2014\-]\s*(\d+)$/);
+    if (rm) {
+      for (let ch = parseInt(rm[1]); ch <= parseInt(rm[2]); ch++) results.push({ fileId, chapter: ch, verses: null });
+    } else {
+      const n = parseInt(part.trim());
+      if (!isNaN(n)) results.push({ fileId, chapter: n, verses: null });
+    }
+  }
+  return results;
 }
 
 function parseVerses(spec) {

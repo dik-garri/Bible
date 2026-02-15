@@ -130,3 +130,159 @@
 @media (max-width: 600px) {
   .king-table th, .king-table td { padding: 5px 6px; font-size: 0.82em; }
 }
+
+/* ====== Gantt Chart ====== */
+.gantt-wrap {
+  margin: 0 0 32px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gantt {
+  position: relative;
+  min-width: 800px;
+}
+
+.gantt-axis {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 4px;
+  margin-left: 100px;
+  font-size: 0.72em;
+  color: var(--text-muted);
+  font-family: -apple-system, sans-serif;
+}
+
+.gantt-divider {
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 10px 0 2px;
+  color: var(--text-muted);
+  font-family: -apple-system, sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.gantt-row {
+  display: flex;
+  align-items: center;
+  height: 22px;
+}
+
+.gantt-row:hover { background: #f5ece0; }
+
+.gantt-name {
+  width: 100px;
+  min-width: 100px;
+  font-size: 0.78em;
+  font-weight: 600;
+  text-align: right;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gantt-track {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.gantt-bar {
+  position: absolute;
+  height: 14px;
+  top: 1px;
+  border-radius: 7px;
+  opacity: 0.8;
+  transition: opacity 0.15s;
+  cursor: default;
+  min-width: 3px;
+}
+
+.gantt-bar:hover { opacity: 1; }
+
+.gantt-bar--united { background: var(--united); }
+.gantt-bar--israel { background: var(--israel); }
+.gantt-bar--judah { background: var(--judah); }
+.gantt-bar--judah-good { background: #4a82b8; }
+.gantt-bar--prophets { background: var(--prophets); }
+.gantt-bar--exile { background: var(--exile); }
+
+.gantt-tip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72em;
+  white-space: nowrap;
+  font-family: -apple-system, sans-serif;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.gantt-bar:hover .gantt-tip { display: block; }
+
+.gantt-event {
+  position: absolute;
+  top: 20px;
+  bottom: 0;
+  width: 2px;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gantt-event--split { background: var(--united); }
+.gantt-event--samaria { background: var(--israel); }
+.gantt-event--jerusalem { background: var(--judah); }
+
+.gantt-event-label {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.65em;
+  font-family: -apple-system, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.gantt-event--split .gantt-event-label { color: var(--united); }
+.gantt-event--samaria .gantt-event-label { color: var(--israel); }
+.gantt-event--jerusalem .gantt-event-label { color: var(--judah); }
+
+.gantt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 0;
+  font-size: 0.78em;
+  font-family: -apple-system, sans-serif;
+}
+
+.gantt-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gantt-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .gantt-name { width: 80px; min-width: 80px; font-size: 0.72em; }
+  .gantt { min-width: 650px; }
+  .gantt-axis { margin-left: 80px; }
+  .gantt-row { height: 20px; }
+  .gantt-bar { height: 12px; }
+}
