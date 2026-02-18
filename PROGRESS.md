@@ -145,6 +145,7 @@
 ### Инфраструктура
 - [x] Стартовая страница-хаб: `index.html` (23 темы)
 - [x] Рефакторинг: общие CSS/JS вынесены в `css/shared.css`, `js/shared.js`
+- [x] OG-превью: мета-теги Open Graph/Twitter Card + картинка `og.png` (1200×630) из SVG-исходника
 - [x] Документация: CLAUDE.md, README.md, TODO.md, PROGRESS.md
 
 ## Планы (TODO.md)
