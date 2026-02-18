@@ -1,0 +1,37 @@
+/* Minor Prophets color variables */
+:root {
+  --pre-exile-israel: #c0392b;
+  --pre-exile-israel-bg: #fdf0ee;
+  --pre-exile-judah: #2c3e80;
+  --pre-exile-judah-bg: #eef0f7;
+  --post-exile: #27ae60;
+  --post-exile-bg: #eef9f2;
+  --overview: #b8860b;
+  --overview-bg: #fdf8eb;
+}
+
+/* Card color overrides */
+.card--israel .card-icon { background: var(--pre-exile-israel-bg); color: var(--pre-exile-israel); }
+.card--israel .card-info h3 { color: var(--pre-exile-israel); }
+.card--israel .ritual-steps li::before { background: var(--pre-exile-israel); }
+
+.card--judah .card-icon { background: var(--pre-exile-judah-bg); color: var(--pre-exile-judah); }
+.card--judah .card-info h3 { color: var(--pre-exile-judah); }
+.card--judah .ritual-steps li::before { background: var(--pre-exile-judah); }
+
+.card--postexile .card-icon { background: var(--post-exile-bg); color: var(--post-exile); }
+.card--postexile .card-info h3 { color: var(--post-exile); }
+.card--postexile .ritual-steps li::before { background: var(--post-exile); }
+
+.card--overview .card-icon { background: var(--overview-bg); color: var(--overview); }
+.card--overview .card-info h3 { color: var(--overview); }
+.card--overview .ritual-steps li::before { background: var(--overview); }
+
+/* Comparison table header */
+.prophets-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.prophets-compare th:hover { background: #3d2a1e; }

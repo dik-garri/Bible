@@ -1,0 +1,37 @@
+/* Major Prophets color variables */
+:root {
+  --isaiah: #2c3e80;
+  --isaiah-bg: #eef0f7;
+  --jeremiah: #c0392b;
+  --jeremiah-bg: #fdf0ee;
+  --ezekiel: #27ae60;
+  --ezekiel-bg: #eef9f2;
+  --daniel: #b8860b;
+  --daniel-bg: #fdf8eb;
+}
+
+/* Card color overrides */
+.card--isaiah .card-icon { background: var(--isaiah-bg); color: var(--isaiah); }
+.card--isaiah .card-info h3 { color: var(--isaiah); }
+.card--isaiah .ritual-steps li::before { background: var(--isaiah); }
+
+.card--jeremiah .card-icon { background: var(--jeremiah-bg); color: var(--jeremiah); }
+.card--jeremiah .card-info h3 { color: var(--jeremiah); }
+.card--jeremiah .ritual-steps li::before { background: var(--jeremiah); }
+
+.card--ezekiel .card-icon { background: var(--ezekiel-bg); color: var(--ezekiel); }
+.card--ezekiel .card-info h3 { color: var(--ezekiel); }
+.card--ezekiel .ritual-steps li::before { background: var(--ezekiel); }
+
+.card--daniel .card-icon { background: var(--daniel-bg); color: var(--daniel); }
+.card--daniel .card-info h3 { color: var(--daniel); }
+.card--daniel .ritual-steps li::before { background: var(--daniel); }
+
+/* Comparison table header */
+.prophets-compare th {
+  background: var(--text);
+  color: #fff;
+  cursor: pointer;
+}
+
+.prophets-compare th:hover { background: #3d2a1e; }
