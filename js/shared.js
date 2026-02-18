@@ -48,6 +48,50 @@ function sortTable(colIndex) {
   rows.forEach(row => tbody.appendChild(row));
 }
 
+// ========== PERSON INFO LOOKUP ==========
+
+let personsCache = null;
+
+async function loadPersons() {
+  if (personsCache) return personsCache;
+  try {
+    const resp = await fetch('persons.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    personsCache = await resp.json();
+    return personsCache;
+  } catch(e) {
+    console.error('Failed to load persons.json:', e);
+    return null;
+  }
+}
+
+async function openPersonModal(name) {
+  const persons = await loadPersons();
+  if (!persons) {
+    modalTitle.textContent = name;
+    modalBody.innerHTML = '<div class="verse-error">Не удалось загрузить данные</div>';
+    showModal();
+    return;
+  }
+
+  const person = persons[name];
+  if (!person) {
+    modalTitle.textContent = name;
+    modalBody.innerHTML = '<div class="verse-error">Информация не найдена</div>';
+    showModal();
+    return;
+  }
+
+  modalTitle.textContent = name;
+  let html = '<div class="person-info">';
+  if (person.role) html += `<div class="person-role">${person.role}</div>`;
+  if (person.dates) html += `<div class="person-dates">${person.dates}</div>`;
+  if (person.bio) html += `<div class="person-bio">${person.bio}</div>`;
+  html += '</div>';
+  modalBody.innerHTML = html;
+  showModal();
+}
+
 // ========== BIBLE VERSE LOOKUP ==========
 
 const BOOK_MAP = {
@@ -282,12 +326,22 @@ async function openVerseModal(refText) {
   modalBody.innerHTML = html || '<div class="verse-error">Стихи не найдены</div>';
 }
 
-// Make all refs clickable
+// Make all refs and persons clickable
 document.addEventListener('click', (e) => {
-  const el = e.target.closest('.ref, .cal-ref, .principle-verse');
-  if (!el) return;
-  e.preventDefault();
-  e.stopPropagation();
-  const text = el.textContent.trim();
-  if (text) openVerseModal(text);
+  const ref = e.target.closest('.ref, .cal-ref, .principle-verse');
+  if (ref) {
+    e.preventDefault();
+    e.stopPropagation();
+    const text = ref.textContent.trim();
+    if (text) openVerseModal(text);
+    return;
+  }
+
+  const person = e.target.closest('.person');
+  if (person) {
+    e.preventDefault();
+    e.stopPropagation();
+    const name = person.dataset.person || person.textContent.trim();
+    if (name) openPersonModal(name);
+  }
 });

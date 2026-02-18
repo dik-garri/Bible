@@ -275,6 +275,48 @@ nav {
   text-decoration-style: solid;
 }
 
+/* === PERSON INFO (in modal) === */
+.person {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--accent-light);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s;
+}
+
+.person:hover {
+  text-decoration-style: solid;
+  text-decoration-color: var(--accent);
+}
+
+.person-info {
+  padding: 4px 0;
+}
+
+.person-role {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.person-dates {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.person-bio {
+  font-size: 0.95em;
+  line-height: 1.75;
+}
+
 /* === RITUAL STEPS === */
 .ritual-steps {
   counter-reset: step;
