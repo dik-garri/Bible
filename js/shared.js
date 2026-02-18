@@ -92,6 +92,50 @@ async function openPersonModal(name) {
   showModal();
 }
 
+// ========== LOCATION INFO LOOKUP ==========
+
+let locationsCache = null;
+
+async function loadLocations() {
+  if (locationsCache) return locationsCache;
+  try {
+    const resp = await fetch('locations.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    locationsCache = await resp.json();
+    return locationsCache;
+  } catch(e) {
+    console.error('Failed to load locations.json:', e);
+    return null;
+  }
+}
+
+async function openLocationModal(name) {
+  const locations = await loadLocations();
+  if (!locations) {
+    modalTitle.textContent = name;
+    modalBody.innerHTML = '<div class="verse-error">Не удалось загрузить данные</div>';
+    showModal();
+    return;
+  }
+
+  const location = locations[name];
+  if (!location) {
+    modalTitle.textContent = name;
+    modalBody.innerHTML = '<div class="verse-error">Информация не найдена</div>';
+    showModal();
+    return;
+  }
+
+  modalTitle.textContent = name;
+  let html = '<div class="location-info">';
+  if (location.type) html += `<div class="location-type">${location.type}</div>`;
+  if (location.region) html += `<div class="location-region">${location.region}</div>`;
+  if (location.desc) html += `<div class="location-desc">${location.desc}</div>`;
+  html += '</div>';
+  modalBody.innerHTML = html;
+  showModal();
+}
+
 // ========== BIBLE VERSE LOOKUP ==========
 
 const BOOK_MAP = {
@@ -343,5 +387,14 @@ document.addEventListener('click', (e) => {
     e.stopPropagation();
     const name = person.dataset.person || person.textContent.trim();
     if (name) openPersonModal(name);
+    return;
+  }
+
+  const location = e.target.closest('.location');
+  if (location) {
+    e.preventDefault();
+    e.stopPropagation();
+    const name = location.dataset.location || location.textContent.trim();
+    if (name) openLocationModal(name);
   }
 });
