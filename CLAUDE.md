@@ -101,9 +101,7 @@ Bible/
 │   └── shared.js             # Общий JS: вкладки, карточки, таблица, модальные окна стихов, персон и локаций
 ├── persons.json              # База персонажей (160 записей: имя, даты, роль, биография)
 ├── locations.json            # База локаций (76 записей: тип, регион, описание, координаты)
-├── geo/                      # GeoJSON-полигоны регионов (из OpenBible.info, CC BY 4.0)
-├── images/
-│   └── maps/                 # Библейские карты (SVG/PNG, CC/PD лицензии)
+├── geo/                      # GeoJSON-полигоны 14 регионов (OpenBible.info, CC BY 4.0)
 ├── og.png                    # OG-картинка для превью при шаринге (1200×630)
 ├── og-image.svg              # Исходник OG-картинки (SVG)
 ├── TODO.md
@@ -220,9 +218,9 @@ Bible/
 
 Если у локации есть `coords`, в модалке отображается мини-карта (Leaflet.js + CartoDB Voyager тайлы). Если есть `geometry` — поверх карты рисуется GeoJSON-полигон региона.
 
-**Статус:** прототип. Leaflet CDN подключён пока только к `exodus.html`. Координаты добавлены к 4 локациям (Иерусалим, Вавилон, Египет, Синай, Красное море). GeoJSON-полигон — только Египет (`geo/egypt.geojson`).
+Leaflet CDN подключён ко всем 25 HTML-страницам. Координаты `coords` заданы для всех 76 локаций. GeoJSON-полигоны для всех 14 регионов (в `geo/`).
 
-**Для подключения Leaflet к странице** — добавить в `<head>` и перед `shared.js`:
+**Для подключения Leaflet к новой странице** — добавить в `<head>` и перед `shared.js`:
 ```html
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <!-- перед shared.js: -->
@@ -231,7 +229,7 @@ Bible/
 
 **Источники данных:**
 - Тайлы: CartoDB Voyager (бесплатно, без ключа, подписи латиницей)
-- Координаты: OpenBible.info Bible Geocoding Data (CC BY 4.0)
+- Координаты: вручную (Wikipedia/OpenStreetMap)
 - Полигоны: OpenBible.info `geometry/` (CC BY 4.0, ~0.5–3 KB на файл после очистки)
 
 ### Как получить GeoJSON-полигоны из OpenBible.info
@@ -267,7 +265,20 @@ single = { 'type': 'FeatureCollection', 'features': [{
 **Известные ancient ID:**
 | Локация | ancient ID |
 |---------|-----------|
-| Египет | af301ca |
+| Египет (Egypt) | af301ca |
+| Ханаан (Canaan) | a90cbb3 |
+| Галилея (Galilee) | a01d580 |
+| Иудея (Judea) | ad93e17 |
+| Самария (Samaria) | afe5fc4 |
+| Едом (Edom) | a7d02f4 |
+| Моав (Moab) | a2aaff8 |
+| Аммон (Ammon) | a9e2e80 |
+| Ассирия (Assyria) | a7c7f11 |
+| Персия (Persia) | a7fba9f |
+| Вавилония (Babylonia) | a8baf0e |
+| Месопотамия (Mesopotamia) | a6e87e2 |
+| Финикия (Phoenicia) | ae2c3e2 |
+| Галатия (Galatia) | a2b7ed3 |
 
 ### Правила для локаций
 

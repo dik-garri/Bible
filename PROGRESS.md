@@ -166,13 +166,10 @@
 - [x] Модальное окно: `openLocationModal()` в `shared.js`, стили `.location` в `shared.css` (бирюзовый `#2e8b7e`)
 - [x] Разметка: 602 тега `<span class="location">` по 23 HTML-файлам
 - [x] Склонение: `data-location` для русских падежных форм (Египте → Египет)
-- [x] Карты: 6 библейских карт в `images/maps/` (SVG/PNG, CC/PD лицензии с Wikimedia Commons)
-- [ ] Интерактивная мини-карта в модалке (Leaflet.js + CartoDB Voyager) — прототип на `exodus.html`
-  - [x] Координаты `coords` для 4 локаций (Иерусалим, Вавилон, Египет, Синай, Красное море)
-  - [x] GeoJSON-полигон для Египта (`geo/egypt.geojson`, OpenBible.info CC BY 4.0)
-  - [ ] Добавить координаты остальным 72 локациям
-  - [ ] Скачать GeoJSON-полигоны для всех регионов
-  - [ ] Подключить Leaflet CDN ко всем 25 страницам
+- [x] Интерактивная мини-карта в модалке (Leaflet.js + CartoDB Voyager) на всех 25 страницах
+  - [x] Координаты `coords` для всех 76 локаций
+  - [x] GeoJSON-полигоны для всех 14 регионов (`geo/`, OpenBible.info CC BY 4.0)
+  - [x] Leaflet CDN подключён ко всем 25 HTML-страницам
 
 ### Инфраструктура
 - [x] Стартовая страница-хаб: `index.html` (25 тем)
