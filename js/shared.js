@@ -4,10 +4,11 @@ const navScroll = document.getElementById('navScroll');
 
 // Hide right fade when scrolled to the end
 function checkNavScroll() {
+  if (!navInner || !navScroll) return;
   const atEnd = navInner.scrollLeft + navInner.clientWidth >= navInner.scrollWidth - 5;
   navScroll.classList.toggle('scrolled-end', atEnd);
 }
-navInner.addEventListener('scroll', checkNavScroll);
+if (navInner) navInner.addEventListener('scroll', checkNavScroll);
 window.addEventListener('resize', checkNavScroll);
 checkNavScroll();
 
@@ -332,9 +333,20 @@ const modalClose = document.getElementById('verseModalClose');
 function showModal() { overlay.classList.add('visible'); document.body.style.overflow = 'hidden'; }
 function hideModal() { overlay.classList.remove('visible'); document.body.style.overflow = ''; }
 
-modalClose.addEventListener('click', hideModal);
-overlay.addEventListener('click', (e) => { if (e.target === overlay) hideModal(); });
+if (modalClose) modalClose.addEventListener('click', hideModal);
+if (overlay) overlay.addEventListener('click', (e) => { if (e.target === overlay) hideModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideModal(); });
+
+function openContactModal() {
+  modalTitle.textContent = 'Связаться с автором';
+  const email = 'dik.garry.994@gmail.com';
+  modalBody.innerHTML =
+    '<div style="text-align:center;padding:12px 0;">' +
+    '<p style="margin-bottom:16px;font-size:1.05em;">' + email + '</p>' +
+    '<a href="mailto:' + email + '" style="display:inline-block;padding:10px 24px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-family:-apple-system,sans-serif;font-size:0.95em;">Написать письмо</a>' +
+    '</div>';
+  showModal();
+}
 
 async function openVerseModal(refText) {
   const refs = parseRef(refText);
