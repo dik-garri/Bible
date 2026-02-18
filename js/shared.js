@@ -131,9 +131,26 @@ async function openLocationModal(name) {
   if (location.type) html += `<div class="location-type">${location.type}</div>`;
   if (location.region) html += `<div class="location-region">${location.region}</div>`;
   if (location.desc) html += `<div class="location-desc">${location.desc}</div>`;
+  if (location.coords) html += '<div id="locationMap" class="location-map"></div>';
   html += '</div>';
   modalBody.innerHTML = html;
   showModal();
+
+  // Leaflet map (only if coords exist and Leaflet is loaded)
+  if (location.coords && typeof L !== 'undefined') {
+    const map = L.map('locationMap', { zoomControl: false, attributionControl: false }).setView(location.coords, 7);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom: 18 }).addTo(map);
+    if (!location.geometry) L.marker(location.coords).addTo(map);
+    if (location.geometry) {
+      fetch(location.geometry).then(r => r.json()).then(geojson => {
+        L.geoJSON(geojson, {
+          style: { color: '#2e8b7e', weight: 2, fillColor: '#2e8b7e', fillOpacity: 0.15 },
+          pointToLayer: () => null
+        }).addTo(map);
+      });
+    }
+    setTimeout(() => map.invalidateSize(), 150);
+  }
 }
 
 // ========== BIBLE VERSE LOOKUP ==========

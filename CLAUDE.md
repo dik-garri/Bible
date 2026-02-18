@@ -100,7 +100,8 @@ Bible/
 ├── js/
 │   └── shared.js             # Общий JS: вкладки, карточки, таблица, модальные окна стихов, персон и локаций
 ├── persons.json              # База персонажей (160 записей: имя, даты, роль, биография)
-├── locations.json            # База локаций (76 записей: тип, регион, описание)
+├── locations.json            # База локаций (76 записей: тип, регион, описание, координаты)
+├── geo/                      # GeoJSON-полигоны регионов (из OpenBible.info, CC BY 4.0)
 ├── images/
 │   └── maps/                 # Библейские карты (SVG/PNG, CC/PD лицензии)
 ├── og.png                    # OG-картинка для превью при шаринге (1200×630)
@@ -205,11 +206,68 @@ Bible/
 
 76 библейских локаций. Каждая запись: `type` (город, регион, гора, река, море...), `region`, `desc` (1–2 предложения).
 
+Опциональные поля для интерактивной карты:
+- `coords`: `[lat, lon]` — координаты для маркера Leaflet
+- `geometry`: `"geo/egypt.geojson"` — путь к GeoJSON-полигону региона
+
 Разметка: `<span class="location">Иерусалим</span>` — клик открывает модальное окно (бирюзовый цвет `#2e8b7e`).
 
 Для склонённых форм: `<span class="location" data-location="Египет">Египте</span>` — `data-location` указывает каноническое имя.
 
 Для имён с дисамбигуатором в скобках: `data-location="Синай (гора)"` — ключ в JSON содержит пояснение.
+
+### Интерактивная карта в модалке локаций
+
+Если у локации есть `coords`, в модалке отображается мини-карта (Leaflet.js + CartoDB Voyager тайлы). Если есть `geometry` — поверх карты рисуется GeoJSON-полигон региона.
+
+**Статус:** прототип. Leaflet CDN подключён пока только к `exodus.html`. Координаты добавлены к 4 локациям (Иерусалим, Вавилон, Египет, Синай, Красное море). GeoJSON-полигон — только Египет (`geo/egypt.geojson`).
+
+**Для подключения Leaflet к странице** — добавить в `<head>` и перед `shared.js`:
+```html
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<!-- перед shared.js: -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+```
+
+**Источники данных:**
+- Тайлы: CartoDB Voyager (бесплатно, без ключа, подписи латиницей)
+- Координаты: OpenBible.info Bible Geocoding Data (CC BY 4.0)
+- Полигоны: OpenBible.info `geometry/` (CC BY 4.0, ~0.5–3 KB на файл после очистки)
+
+### Как получить GeoJSON-полигоны из OpenBible.info
+
+Репозиторий: `github.com/openbibleinfo/Bible-Geocoding-Data` (ветка `main`).
+
+**Шаг 1 — найти ancient ID локации** в `data/ancient.jsonl` (~1341 запись):
+```bash
+curl -sL "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/main/data/ancient.jsonl" -o /tmp/ancient.jsonl
+grep -i '"Egypt"' /tmp/ancient.jsonl   # → "id": "af301ca"
+```
+
+**Шаг 2 — скачать GeoJSON** из `geometry/{ANCIENT_ID}.geojson`:
+```bash
+curl -sL "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/main/geometry/af301ca.geojson"
+```
+
+**Формат файла — изобанды уверенности (isobands):**
+FeatureCollection с MultiPolygon (9 вложенных полигонов, confidence 10%→90%) и Point (центроид). Вложенные полигоны — НЕ отдельные регионы, а контуры уверенности: внешний = «может быть тут» (10%), внутренний = «точно тут» (90%).
+
+**Для отображения берём один полигон** (средний, ~50% уверенности):
+```python
+mp = data['features'][0]['geometry']  # MultiPolygon
+mid = len(mp['coordinates']) // 2
+single = { 'type': 'FeatureCollection', 'features': [{
+    'type': 'Feature', 'properties': {},
+    'geometry': { 'type': 'Polygon', 'coordinates': mp['coordinates'][mid] }
+}]}
+```
+
+**Полигоны есть только у регионов** (Egypt, Canaan, Moab, Edom и т.д.). Города (Jerusalem, Babylon) имеют только Point — для них используем маркер.
+
+**Известные ancient ID:**
+| Локация | ancient ID |
+|---------|-----------|
+| Египет | af301ca |
 
 ### Правила для локаций
 
