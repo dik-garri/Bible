@@ -2,7 +2,7 @@
 
 Интерактивные справочники по книгам Библии на основании текста Синодального перевода.
 
-**Демо:** [dik-garri.github.io/Bible](https://dik-garri.github.io/Bible/)
+**Демо:** [church.kg/biblemap](https://church.kg/biblemap/)
 
 ## Разделы
 
@@ -294,6 +294,7 @@ Bible/
 ├── persons.json                       # База персонажей (160 записей: даты, роль, биография)
 ├── locations.json                     # База локаций (76 записей: тип, регион, описание, координаты)
 ├── geo/                               # GeoJSON-полигоны 14 регионов (OpenBible.info, CC BY 4.0)
+├── favicon.svg                        # Иконка сайта (SVG, свиток)
 ├── og.png                             # OG-картинка для превью (1200×630)
 ├── og-image.svg                       # Исходник OG-картинки
 ├── TODO.md                            # Планы будущих тем

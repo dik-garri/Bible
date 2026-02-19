@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Интерактивные справочники по книгам Библии на основании Синодального перевода. **25 тематических страниц** покрывают все разделы Библии — от Бытия до Откровения.
 
-**Деплой:** https://dik-garri.github.io/Bible/
+**Деплой:** https://church.kg/biblemap/
 
 ## Язык
 
@@ -23,7 +23,7 @@ python3 -m http.server 8000
 npx serve .
 ```
 
-Деплой: GitHub Pages из ветки `main`. Пуш в main → автоматическое обновление сайта.
+Деплой: https://church.kg/biblemap/ (статический хостинг). Также доступно на GitHub Pages: https://dik-garri.github.io/Bible/
 
 ## Структура файлов
 
@@ -102,6 +102,7 @@ Bible/
 ├── persons.json              # База персонажей (160 записей: имя, даты, роль, биография)
 ├── locations.json            # База локаций (76 записей: тип, регион, описание, координаты)
 ├── geo/                      # GeoJSON-полигоны 14 регионов (OpenBible.info, CC BY 4.0)
+├── favicon.svg               # Иконка сайта (SVG, свиток)
 ├── og.png                    # OG-картинка для превью при шаринге (1200×630)
 ├── og-image.svg              # Исходник OG-картинки (SVG)
 ├── TODO.md
@@ -123,7 +124,7 @@ Bible/
 
 ### Тематический CSS (`css/{topic}.css`)
 
-Каждый файл определяет: цветовые переменные в `:root`, `.card--{category}` классы (icon, h3, steps) и уникальные компоненты темы.
+Каждый файл определяет: цветовые переменные в `:root`, `.card--{category}` с `--cat`/`--cat-bg` (основной цвет и фон), и уникальные компоненты темы. Общий `shared.css` подхватывает `--cat`/`--cat-bg` через `[class*="card--"]` для `.card-icon`, `h3` и `.ritual-steps`.
 
 ### Общий JS (`js/shared.js`)
 
@@ -171,6 +172,18 @@ Bible/
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тема — Библия</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Описание темы">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://church.kg/biblemap/topic.html">
+<meta property="og:title" content="Тема — Библия">
+<meta property="og:description" content="Описание темы">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://church.kg/biblemap/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Тема — Библия">
+<meta name="twitter:description" content="Описание темы">
+<meta name="twitter:image" content="https://church.kg/biblemap/og.png">
 <link rel="stylesheet" href="css/shared.css">
 <link rel="stylesheet" href="css/topic.css">
 </head>

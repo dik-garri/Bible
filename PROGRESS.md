@@ -174,7 +174,9 @@
 ### Инфраструктура
 - [x] Стартовая страница-хаб: `index.html` (25 тем)
 - [x] Рефакторинг: общие CSS/JS вынесены в `css/shared.css`, `js/shared.js`
-- [x] OG-превью: мета-теги Open Graph/Twitter Card + картинка `og.png` (1200×630) из SVG-исходника
+- [x] Favicon: `favicon.svg` (SVG, свиток в стиле сайта) на всех 26 страницах
+- [x] OG-превью: мета-теги Open Graph/Twitter Card на всех 26 страницах + картинка `og.png` (1200×630)
+- [x] CSS-консолидация: паттерн `--cat`/`--cat-bg` для цветов карточек (−219 строк по 24 файлам)
 - [x] Документация: CLAUDE.md, README.md, TODO.md, PROGRESS.md
 
 ## Планы (TODO.md)
