@@ -10,19 +10,13 @@
 }
 
 /* Card color overrides — primary names */
-.card--primary .card-icon { background: var(--primary-bg); color: var(--primary); }
-.card--primary .card-info h3 { color: var(--primary); }
-.card--primary .ritual-steps li::before { background: var(--primary); }
+.card--primary { --cat: var(--primary); --cat-bg: var(--primary-bg); }
 
 /* Card color overrides — compound names */
-.card--compound .card-icon { background: var(--compound-bg); color: var(--compound); }
-.card--compound .card-info h3 { color: var(--compound); }
-.card--compound .ritual-steps li::before { background: var(--compound); }
+.card--compound { --cat: var(--compound); --cat-bg: var(--compound-bg); }
 
 /* Card color overrides — titles */
-.card--titles .card-icon { background: var(--titles-bg); color: var(--titles); }
-.card--titles .card-info h3 { color: var(--titles); }
-.card--titles .ritual-steps li::before { background: var(--titles); }
+.card--titles { --cat: var(--titles); --cat-bg: var(--titles-bg); }
 
 /* Hebrew text styling */
 .hebrew {

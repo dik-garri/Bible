@@ -13,29 +13,23 @@
 }
 
 /* Card color overrides */
-.card--ola .card-icon { background: var(--ola-bg); color: var(--ola); }
-.card--ola .card-info h3 { color: var(--ola); }
+.card--ola { --cat: var(--ola); --cat-bg: var(--ola-bg); }
 .card--ola .ritual-steps li::before { background: var(--ola-bg); color: var(--ola); }
 
-.card--minha .card-icon { background: var(--minha-bg); color: var(--minha); }
-.card--minha .card-info h3 { color: var(--minha); }
+.card--minha { --cat: var(--minha); --cat-bg: var(--minha-bg); }
 .card--minha .ritual-steps li::before { background: var(--minha-bg); color: var(--minha); }
 
-.card--shlamim .card-icon { background: var(--shlamim-bg); color: var(--shlamim); }
-.card--shlamim .card-info h3 { color: var(--shlamim); }
+.card--shlamim { --cat: var(--shlamim); --cat-bg: var(--shlamim-bg); }
 .card--shlamim .ritual-steps li::before { background: var(--shlamim-bg); color: var(--shlamim); }
 
-.card--hattat .card-icon { background: var(--hattat-bg); color: var(--hattat); }
-.card--hattat .card-info h3 { color: var(--hattat); }
+.card--hattat { --cat: var(--hattat); --cat-bg: var(--hattat-bg); }
 .card--hattat .ritual-steps li::before { background: var(--hattat-bg); color: var(--hattat); }
 
-.card--asham .card-icon { background: var(--asham-bg); color: var(--asham); }
-.card--asham .card-info h3 { color: var(--asham); }
+.card--asham { --cat: var(--asham); --cat-bg: var(--asham-bg); }
 .card--asham .ritual-steps li::before { background: var(--asham-bg); color: var(--asham); }
 
 /* Special cards */
-.card--special .card-icon { background: #f0ebe4; color: var(--accent); }
-.card--special .card-info h3 { color: var(--accent); }
+.card--special { --cat: var(--accent); --cat-bg: #f0ebe4; }
 
 /* === CALENDAR === */
 .calendar-grid {

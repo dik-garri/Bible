@@ -11,25 +11,15 @@
 }
 
 /* Card color overrides */
-.card--early .card-icon { background: var(--early-bg); color: var(--early); }
-.card--early .card-info h3 { color: var(--early); }
-.card--early .ritual-steps li::before { background: var(--early); }
+.card--early { --cat: var(--early); --cat-bg: var(--early-bg); }
 
-.card--doctrine .card-icon { background: var(--doctrine-bg); color: var(--doctrine); }
-.card--doctrine .card-info h3 { color: var(--doctrine); }
-.card--doctrine .ritual-steps li::before { background: var(--doctrine); }
+.card--doctrine { --cat: var(--doctrine); --cat-bg: var(--doctrine-bg); }
 
-.card--prison .card-icon { background: var(--prison-bg); color: var(--prison); }
-.card--prison .card-info h3 { color: var(--prison); }
-.card--prison .ritual-steps li::before { background: var(--prison); }
+.card--prison { --cat: var(--prison); --cat-bg: var(--prison-bg); }
 
-.card--pastoral .card-icon { background: var(--pastoral-bg); color: var(--pastoral); }
-.card--pastoral .card-info h3 { color: var(--pastoral); }
-.card--pastoral .ritual-steps li::before { background: var(--pastoral); }
+.card--pastoral { --cat: var(--pastoral); --cat-bg: var(--pastoral-bg); }
 
-.card--church .card-icon { background: var(--doctrine-bg); color: var(--doctrine); }
-.card--church .card-info h3 { color: var(--doctrine); }
-.card--church .ritual-steps li::before { background: var(--doctrine); }
+.card--church { --cat: var(--doctrine); --cat-bg: var(--doctrine-bg); }
 
 /* Category badges */
 .badge-early {

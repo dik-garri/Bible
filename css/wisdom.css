@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--proverbs .card-icon { background: var(--proverbs-bg); color: var(--proverbs); }
-.card--proverbs .card-info h3 { color: var(--proverbs); }
-.card--proverbs .ritual-steps li::before { background: var(--proverbs); }
+.card--proverbs { --cat: var(--proverbs); --cat-bg: var(--proverbs-bg); }
 
-.card--ecclesiastes .card-icon { background: var(--ecclesiastes-bg); color: var(--ecclesiastes); }
-.card--ecclesiastes .card-info h3 { color: var(--ecclesiastes); }
-.card--ecclesiastes .ritual-steps li::before { background: var(--ecclesiastes); }
+.card--ecclesiastes { --cat: var(--ecclesiastes); --cat-bg: var(--ecclesiastes-bg); }
 
-.card--song .card-icon { background: var(--song-bg); color: var(--song); }
-.card--song .card-info h3 { color: var(--song); }
-.card--song .ritual-steps li::before { background: var(--song); }
+.card--song { --cat: var(--song); --cat-bg: var(--song-bg); }
 
-.card--fear .card-icon { background: var(--fear-bg); color: var(--fear); }
-.card--fear .card-info h3 { color: var(--fear); }
-.card--fear .ritual-steps li::before { background: var(--fear); }
+.card--fear { --cat: var(--fear); --cat-bg: var(--fear-bg); }
 
-.card--woman .card-icon { background: var(--woman-bg); color: var(--woman); }
-.card--woman .card-info h3 { color: var(--woman); }
-.card--woman .ritual-steps li::before { background: var(--woman); }
+.card--woman { --cat: var(--woman); --cat-bg: var(--woman-bg); }
 
 /* Wisdom comparison table */
 .wisdom-compare th {

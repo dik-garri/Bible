@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--cycle .card-icon { background: var(--cycle-bg); color: var(--cycle); }
-.card--cycle .card-info h3 { color: var(--cycle); }
-.card--cycle .ritual-steps li::before { background: var(--cycle); }
+.card--cycle { --cat: var(--cycle); --cat-bg: var(--cycle-bg); }
 
-.card--major .card-icon { background: var(--major-bg); color: var(--major); }
-.card--major .card-info h3 { color: var(--major); }
-.card--major .ritual-steps li::before { background: var(--major); }
+.card--major { --cat: var(--major); --cat-bg: var(--major-bg); }
 
-.card--minor .card-icon { background: var(--minor-bg); color: var(--minor); }
-.card--minor .card-info h3 { color: var(--minor); }
-.card--minor .ritual-steps li::before { background: var(--minor); }
+.card--minor { --cat: var(--minor); --cat-bg: var(--minor-bg); }
 
-.card--ruth .card-icon { background: var(--ruth-bg); color: var(--ruth); }
-.card--ruth .card-info h3 { color: var(--ruth); }
-.card--ruth .ritual-steps li::before { background: var(--ruth); }
+.card--ruth { --cat: var(--ruth); --cat-bg: var(--ruth-bg); }
 
-.card--appendix .card-icon { background: var(--appendix-bg); color: var(--appendix); }
-.card--appendix .card-info h3 { color: var(--appendix); }
-.card--appendix .ritual-steps li::before { background: var(--appendix); }
+.card--appendix { --cat: var(--appendix); --cat-bg: var(--appendix-bg); }
 
 /* Judges comparison table */
 .judges-compare th {

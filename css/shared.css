@@ -373,6 +373,12 @@ nav {
   border: 1px solid var(--border);
 }
 
+/* === CARD CATEGORY COLORS === */
+/* Topic CSS sets --cat (main color) and --cat-bg (light bg) on .card--* */
+[class*="card--"] .card-icon { background: var(--cat-bg, transparent); color: var(--cat); }
+[class*="card--"] .card-info h3 { color: var(--cat); }
+[class*="card--"] .ritual-steps li::before { background: var(--cat); }
+
 /* === RITUAL STEPS === */
 .ritual-steps {
   counter-reset: step;

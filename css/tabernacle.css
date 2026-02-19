@@ -15,29 +15,17 @@
 }
 
 /* Card color overrides */
-.card--overview .card-icon { background: var(--overview-bg); color: var(--overview); }
-.card--overview .card-info h3 { color: var(--overview); }
-.card--overview .ritual-steps li::before { background: var(--overview); }
+.card--overview { --cat: var(--overview); --cat-bg: var(--overview-bg); }
 
-.card--court .card-icon { background: var(--court-bg); color: var(--court); }
-.card--court .card-info h3 { color: var(--court); }
-.card--court .ritual-steps li::before { background: var(--court); }
+.card--court { --cat: var(--court); --cat-bg: var(--court-bg); }
 
-.card--holy .card-icon { background: var(--holy-bg); color: var(--holy); }
-.card--holy .card-info h3 { color: var(--holy); }
-.card--holy .ritual-steps li::before { background: var(--holy); }
+.card--holy { --cat: var(--holy); --cat-bg: var(--holy-bg); }
 
-.card--holiest .card-icon { background: var(--holiest-bg); color: var(--holiest); }
-.card--holiest .card-info h3 { color: var(--holiest); }
-.card--holiest .ritual-steps li::before { background: var(--holiest); }
+.card--holiest { --cat: var(--holiest); --cat-bg: var(--holiest-bg); }
 
-.card--garments .card-icon { background: var(--garments-bg); color: var(--garments); }
-.card--garments .card-info h3 { color: var(--garments); }
-.card--garments .ritual-steps li::before { background: var(--garments); }
+.card--garments { --cat: var(--garments); --cat-bg: var(--garments-bg); }
 
-.card--levites .card-icon { background: var(--levites-bg); color: var(--levites); }
-.card--levites .card-info h3 { color: var(--levites); }
-.card--levites .ritual-steps li::before { background: var(--levites); }
+.card--levites { --cat: var(--levites); --cat-bg: var(--levites-bg); }
 
 /* Tabernacle dimensions display */
 .dimensions {

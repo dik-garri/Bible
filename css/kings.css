@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--united .card-icon { background: var(--united-bg); color: var(--united); }
-.card--united .card-info h3 { color: var(--united); }
-.card--united .ritual-steps li::before { background: var(--united); }
+.card--united { --cat: var(--united); --cat-bg: var(--united-bg); }
 
-.card--israel .card-icon { background: var(--israel-bg); color: var(--israel); }
-.card--israel .card-info h3 { color: var(--israel); }
-.card--israel .ritual-steps li::before { background: var(--israel); }
+.card--israel { --cat: var(--israel); --cat-bg: var(--israel-bg); }
 
-.card--judah .card-icon { background: var(--judah-bg); color: var(--judah); }
-.card--judah .card-info h3 { color: var(--judah); }
-.card--judah .ritual-steps li::before { background: var(--judah); }
+.card--judah { --cat: var(--judah); --cat-bg: var(--judah-bg); }
 
-.card--prophets .card-icon { background: var(--prophets-bg); color: var(--prophets); }
-.card--prophets .card-info h3 { color: var(--prophets); }
-.card--prophets .ritual-steps li::before { background: var(--prophets); }
+.card--prophets { --cat: var(--prophets); --cat-bg: var(--prophets-bg); }
 
-.card--exile .card-icon { background: var(--exile-bg); color: var(--exile); }
-.card--exile .card-info h3 { color: var(--exile); }
-.card--exile .ritual-steps li::before { background: var(--exile); }
+.card--exile { --cat: var(--exile); --cat-bg: var(--exile-bg); }
 
 /* King table */
 .king-table {

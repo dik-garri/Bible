@@ -11,21 +11,13 @@
 }
 
 /* Card color overrides */
-.card--creation .card-icon { background: var(--creation-bg); color: var(--creation); }
-.card--creation .card-info h3 { color: var(--creation); }
-.card--creation .ritual-steps li::before { background: var(--creation); }
+.card--creation { --cat: var(--creation); --cat-bg: var(--creation-bg); }
 
-.card--preflood .card-icon { background: var(--preflood-bg); color: var(--preflood); }
-.card--preflood .card-info h3 { color: var(--preflood); }
-.card--preflood .ritual-steps li::before { background: var(--preflood); }
+.card--preflood { --cat: var(--preflood); --cat-bg: var(--preflood-bg); }
 
-.card--flood .card-icon { background: var(--flood-bg); color: var(--flood); }
-.card--flood .card-info h3 { color: var(--flood); }
-.card--flood .ritual-steps li::before { background: var(--flood); }
+.card--flood { --cat: var(--flood); --cat-bg: var(--flood-bg); }
 
-.card--patriarchs .card-icon { background: var(--patriarchs-bg); color: var(--patriarchs); }
-.card--patriarchs .card-info h3 { color: var(--patriarchs); }
-.card--patriarchs .ritual-steps li::before { background: var(--patriarchs); }
+.card--patriarchs { --cat: var(--patriarchs); --cat-bg: var(--patriarchs-bg); }
 
 /* Genealogy table */
 .gen-table {

@@ -13,21 +13,13 @@
 }
 
 /* Card color overrides */
-.card--captivity .card-icon { background: var(--captivity-bg); color: var(--captivity); }
-.card--captivity .card-info h3 { color: var(--captivity); }
-.card--captivity .ritual-steps li::before { background: var(--captivity); }
+.card--captivity { --cat: var(--captivity); --cat-bg: var(--captivity-bg); }
 
-.card--return .card-icon { background: var(--return-bg); color: var(--return); }
-.card--return .card-info h3 { color: var(--return); }
-.card--return .ritual-steps li::before { background: var(--return); }
+.card--return { --cat: var(--return); --cat-bg: var(--return-bg); }
 
-.card--esther .card-icon { background: var(--esther-bg); color: var(--esther); }
-.card--esther .card-info h3 { color: var(--esther); }
-.card--esther .ritual-steps li::before { background: var(--esther); }
+.card--esther { --cat: var(--esther); --cat-bg: var(--esther-bg); }
 
-.card--prophets .card-icon { background: var(--prophets-bg); color: var(--prophets); }
-.card--prophets .card-info h3 { color: var(--prophets); }
-.card--prophets .ritual-steps li::before { background: var(--prophets); }
+.card--prophets { --cat: var(--prophets); --cat-bg: var(--prophets-bg); }
 
 /* Timeline overview */
 .timeline {

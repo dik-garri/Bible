@@ -11,21 +11,13 @@
 }
 
 /* Card color overrides */
-.card--poor .card-icon { background: var(--poor-bg); color: var(--poor); }
-.card--poor .card-info h3 { color: var(--poor); }
-.card--poor .ritual-steps li::before { background: var(--poor); }
+.card--poor { --cat: var(--poor); --cat-bg: var(--poor-bg); }
 
-.card--servants .card-icon { background: var(--servants-bg); color: var(--servants); }
-.card--servants .card-info h3 { color: var(--servants); }
-.card--servants .ritual-steps li::before { background: var(--servants); }
+.card--servants { --cat: var(--servants); --cat-bg: var(--servants-bg); }
 
-.card--strangers .card-icon { background: var(--strangers-bg); color: var(--strangers); }
-.card--strangers .card-info h3 { color: var(--strangers); }
-.card--strangers .ritual-steps li::before { background: var(--strangers); }
+.card--strangers { --cat: var(--strangers); --cat-bg: var(--strangers-bg); }
 
-.card--justice .card-icon { background: var(--justice-bg); color: var(--justice); }
-.card--justice .card-info h3 { color: var(--justice); }
-.card--justice .ritual-steps li::before { background: var(--justice); }
+.card--justice { --cat: var(--justice); --cat-bg: var(--justice-bg); }
 
 /* Table dark header override */
 .compare-wrap {

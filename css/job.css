@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--prologue .card-icon { background: var(--prologue-bg); color: var(--prologue); }
-.card--prologue .card-info h3 { color: var(--prologue); }
-.card--prologue .ritual-steps li::before { background: var(--prologue); }
+.card--prologue { --cat: var(--prologue); --cat-bg: var(--prologue-bg); }
 
-.card--suffering .card-icon { background: var(--suffering-bg); color: var(--suffering); }
-.card--suffering .card-info h3 { color: var(--suffering); }
-.card--suffering .ritual-steps li::before { background: var(--suffering); }
+.card--suffering { --cat: var(--suffering); --cat-bg: var(--suffering-bg); }
 
-.card--friends .card-icon { background: var(--friends-bg); color: var(--friends); }
-.card--friends .card-info h3 { color: var(--friends); }
-.card--friends .ritual-steps li::before { background: var(--friends); }
+.card--friends { --cat: var(--friends); --cat-bg: var(--friends-bg); }
 
-.card--elihu .card-icon { background: var(--elihu-bg); color: var(--elihu); }
-.card--elihu .card-info h3 { color: var(--elihu); }
-.card--elihu .ritual-steps li::before { background: var(--elihu); }
+.card--elihu { --cat: var(--elihu); --cat-bg: var(--elihu-bg); }
 
-.card--god .card-icon { background: var(--god-bg); color: var(--god); }
-.card--god .card-info h3 { color: var(--god); }
-.card--god .ritual-steps li::before { background: var(--god); }
+.card--god { --cat: var(--god); --cat-bg: var(--god-bg); }
 
 /* Speech cycle component — debate structure */
 .speech-cycle {

@@ -15,29 +15,17 @@
 }
 
 /* Card color overrides */
-.card--food .card-icon { background: var(--food-bg); color: var(--food); }
-.card--food .card-info h3 { color: var(--food); }
-.card--food .ritual-steps li::before { background: var(--food); }
+.card--food { --cat: var(--food); --cat-bg: var(--food-bg); }
 
-.card--body .card-icon { background: var(--body-bg); color: var(--body); }
-.card--body .card-info h3 { color: var(--body); }
-.card--body .ritual-steps li::before { background: var(--body); }
+.card--body { --cat: var(--body); --cat-bg: var(--body-bg); }
 
-.card--discharge .card-icon { background: var(--discharge-bg); color: var(--discharge); }
-.card--discharge .card-info h3 { color: var(--discharge); }
-.card--discharge .ritual-steps li::before { background: var(--discharge); }
+.card--discharge { --cat: var(--discharge); --cat-bg: var(--discharge-bg); }
 
-.card--death .card-icon { background: var(--death-bg); color: var(--death); }
-.card--death .card-info h3 { color: var(--death); }
-.card--death .ritual-steps li::before { background: var(--death); }
+.card--death { --cat: var(--death); --cat-bg: var(--death-bg); }
 
-.card--leprosy .card-icon { background: var(--leprosy-bg); color: var(--leprosy); }
-.card--leprosy .card-info h3 { color: var(--leprosy); }
-.card--leprosy .ritual-steps li::before { background: var(--leprosy); }
+.card--leprosy { --cat: var(--leprosy); --cat-bg: var(--leprosy-bg); }
 
-.card--camp .card-icon { background: var(--camp-bg); color: var(--camp); }
-.card--camp .card-info h3 { color: var(--camp); }
-.card--camp .ritual-steps li::before { background: var(--camp); }
+.card--camp { --cat: var(--camp); --cat-bg: var(--camp-bg); }
 
 /* Table dark header override */
 .compare-wrap {

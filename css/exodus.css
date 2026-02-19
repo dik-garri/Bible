@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--slavery .card-icon { background: var(--slavery-bg); color: var(--slavery); }
-.card--slavery .card-info h3 { color: var(--slavery); }
-.card--slavery .ritual-steps li::before { background: var(--slavery); }
+.card--slavery { --cat: var(--slavery); --cat-bg: var(--slavery-bg); }
 
-.card--calling .card-icon { background: var(--calling-bg); color: var(--calling); }
-.card--calling .card-info h3 { color: var(--calling); }
-.card--calling .ritual-steps li::before { background: var(--calling); }
+.card--calling { --cat: var(--calling); --cat-bg: var(--calling-bg); }
 
-.card--plagues .card-icon { background: var(--plagues-bg); color: var(--plagues); }
-.card--plagues .card-info h3 { color: var(--plagues); }
-.card--plagues .ritual-steps li::before { background: var(--plagues); }
+.card--plagues { --cat: var(--plagues); --cat-bg: var(--plagues-bg); }
 
-.card--passover .card-icon { background: var(--passover-bg); color: var(--passover); }
-.card--passover .card-info h3 { color: var(--passover); }
-.card--passover .ritual-steps li::before { background: var(--passover); }
+.card--passover { --cat: var(--passover); --cat-bg: var(--passover-bg); }
 
-.card--journey .card-icon { background: var(--journey-bg); color: var(--journey); }
-.card--journey .card-info h3 { color: var(--journey); }
-.card--journey .ritual-steps li::before { background: var(--journey); }
+.card--journey { --cat: var(--journey); --cat-bg: var(--journey-bg); }
 
 /* Exodus comparison table */
 .exodus-compare th {

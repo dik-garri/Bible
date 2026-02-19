@@ -15,29 +15,17 @@
 }
 
 /* Card color overrides */
-.card--praise .card-icon { background: var(--praise-bg); color: var(--praise); }
-.card--praise .card-info h3 { color: var(--praise); }
-.card--praise .ritual-steps li::before { background: var(--praise); }
+.card--praise { --cat: var(--praise); --cat-bg: var(--praise-bg); }
 
-.card--lament .card-icon { background: var(--lament-bg); color: var(--lament); }
-.card--lament .card-info h3 { color: var(--lament); }
-.card--lament .ritual-steps li::before { background: var(--lament); }
+.card--lament { --cat: var(--lament); --cat-bg: var(--lament-bg); }
 
-.card--thanksgiving .card-icon { background: var(--thanksgiving-bg); color: var(--thanksgiving); }
-.card--thanksgiving .card-info h3 { color: var(--thanksgiving); }
-.card--thanksgiving .ritual-steps li::before { background: var(--thanksgiving); }
+.card--thanksgiving { --cat: var(--thanksgiving); --cat-bg: var(--thanksgiving-bg); }
 
-.card--messianic .card-icon { background: var(--messianic-bg); color: var(--messianic); }
-.card--messianic .card-info h3 { color: var(--messianic); }
-.card--messianic .ritual-steps li::before { background: var(--messianic); }
+.card--messianic { --cat: var(--messianic); --cat-bg: var(--messianic-bg); }
 
-.card--royal .card-icon { background: var(--royal-bg); color: var(--royal); }
-.card--royal .card-info h3 { color: var(--royal); }
-.card--royal .ritual-steps li::before { background: var(--royal); }
+.card--royal { --cat: var(--royal); --cat-bg: var(--royal-bg); }
 
-.card--wisdom-ps .card-icon { background: var(--wisdom-ps-bg); color: var(--wisdom-ps); }
-.card--wisdom-ps .card-info h3 { color: var(--wisdom-ps); }
-.card--wisdom-ps .ritual-steps li::before { background: var(--wisdom-ps); }
+.card--wisdom-ps { --cat: var(--wisdom-ps); --cat-bg: var(--wisdom-ps-bg); }
 
 /* Psalm text quote component */
 .psalm-text {

@@ -11,21 +11,13 @@
 }
 
 /* Card color overrides */
-.card--egypt .card-icon { background: var(--egypt-bg); color: var(--egypt); }
-.card--egypt .card-info h3 { color: var(--egypt); }
-.card--egypt .ritual-steps li::before { background: var(--egypt); }
+.card--egypt { --cat: var(--egypt); --cat-bg: var(--egypt-bg); }
 
-.card--sinai .card-icon { background: var(--sinai-bg); color: var(--sinai); }
-.card--sinai .card-info h3 { color: var(--sinai); }
-.card--sinai .ritual-steps li::before { background: var(--sinai); }
+.card--sinai { --cat: var(--sinai); --cat-bg: var(--sinai-bg); }
 
-.card--wilderness .card-icon { background: var(--wilderness-bg); color: var(--wilderness); }
-.card--wilderness .card-info h3 { color: var(--wilderness); }
-.card--wilderness .ritual-steps li::before { background: var(--wilderness); }
+.card--wilderness { --cat: var(--wilderness); --cat-bg: var(--wilderness-bg); }
 
-.card--stations .card-icon { background: var(--stations-bg); color: var(--stations); }
-.card--stations .card-info h3 { color: var(--stations); }
-.card--stations .ritual-steps li::before { background: var(--stations); }
+.card--stations { --cat: var(--stations); --cat-bg: var(--stations-bg); }
 
 /* Route timeline */
 .route-timeline {

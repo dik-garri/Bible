@@ -11,17 +11,11 @@
 }
 
 /* Card color overrides */
-.card--torah .card-icon { background: var(--torah-bg); color: var(--torah); }
-.card--torah .card-info h3 { color: var(--torah); }
-.card--torah .ritual-steps li::before { background: var(--torah); }
+.card--torah { --cat: var(--torah); --cat-bg: var(--torah-bg); }
 
-.card--prophets .card-icon { background: var(--prophets-bg); color: var(--prophets); }
-.card--prophets .card-info h3 { color: var(--prophets); }
-.card--prophets .ritual-steps li::before { background: var(--prophets); }
+.card--prophets { --cat: var(--prophets); --cat-bg: var(--prophets-bg); }
 
-.card--psalms .card-icon { background: var(--psalms-bg); color: var(--psalms); }
-.card--psalms .card-info h3 { color: var(--psalms); }
-.card--psalms .ritual-steps li::before { background: var(--psalms); }
+.card--psalms { --cat: var(--psalms); --cat-bg: var(--psalms-bg); }
 
 /* Fulfillment block */
 .fulfillment {

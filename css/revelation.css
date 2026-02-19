@@ -11,34 +11,28 @@
 /* === CARD COLOR CATEGORIES === */
 
 /* Churches */
-.card--churches .card-icon { color: var(--churches); }
+.card--churches { --cat: var(--churches); }
 .card--churches h3 { color: var(--churches); }
-.card--churches .ritual-steps li::before { background: var(--churches); }
 
 /* Seals */
-.card--seals .card-icon { color: var(--seals); }
+.card--seals { --cat: var(--seals); }
 .card--seals h3 { color: var(--seals); }
-.card--seals .ritual-steps li::before { background: var(--seals); }
 
 /* Trumpets */
-.card--trumpets .card-icon { color: var(--trumpets); }
+.card--trumpets { --cat: var(--trumpets); }
 .card--trumpets h3 { color: var(--trumpets); }
-.card--trumpets .ritual-steps li::before { background: var(--trumpets); }
 
 /* Bowls */
-.card--bowls .card-icon { color: var(--bowls); }
+.card--bowls { --cat: var(--bowls); }
 .card--bowls h3 { color: var(--bowls); }
-.card--bowls .ritual-steps li::before { background: var(--bowls); }
 
 /* Conflict */
-.card--conflict .card-icon { color: var(--conflict); }
+.card--conflict { --cat: var(--conflict); }
 .card--conflict h3 { color: var(--conflict); }
-.card--conflict .ritual-steps li::before { background: var(--conflict); }
 
 /* Glory */
-.card--glory .card-icon { color: var(--glory); }
+.card--glory { --cat: var(--glory); }
 .card--glory h3 { color: var(--glory); }
-.card--glory .ritual-steps li::before { background: var(--glory); }
 
 /* === JUDGMENT GRID === */
 .judgment-grid {

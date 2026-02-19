@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--church .card-icon { background: var(--church-bg); color: var(--church); }
-.card--church .card-info h3 { color: var(--church); }
-.card--church .ritual-steps li::before { background: var(--church); }
+.card--church { --cat: var(--church); --cat-bg: var(--church-bg); }
 
-.card--witness .card-icon { background: var(--witness-bg); color: var(--witness); }
-.card--witness .card-info h3 { color: var(--witness); }
-.card--witness .ritual-steps li::before { background: var(--witness); }
+.card--witness { --cat: var(--witness); --cat-bg: var(--witness-bg); }
 
-.card--persecution .card-icon { background: var(--persecution-bg); color: var(--persecution); }
-.card--persecution .card-info h3 { color: var(--persecution); }
-.card--persecution .ritual-steps li::before { background: var(--persecution); }
+.card--persecution { --cat: var(--persecution); --cat-bg: var(--persecution-bg); }
 
-.card--mission .card-icon { background: var(--mission-bg); color: var(--mission); }
-.card--mission .card-info h3 { color: var(--mission); }
-.card--mission .ritual-steps li::before { background: var(--mission); }
+.card--mission { --cat: var(--mission); --cat-bg: var(--mission-bg); }
 
-.card--rome .card-icon { background: var(--rome-bg); color: var(--rome); }
-.card--rome .card-info h3 { color: var(--rome); }
-.card--rome .ritual-steps li::before { background: var(--rome); }
+.card--rome { --cat: var(--rome); --cat-bg: var(--rome-bg); }
 
 /* Acts comparison table */
 .acts-compare th {

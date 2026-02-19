@@ -15,29 +15,17 @@
 }
 
 /* Card color overrides */
-.card--birth .card-icon { background: var(--birth-bg); color: var(--birth); }
-.card--birth .card-info h3 { color: var(--birth); }
-.card--birth .ritual-steps li::before { background: var(--birth); }
+.card--birth { --cat: var(--birth); --cat-bg: var(--birth-bg); }
 
-.card--ministry .card-icon { background: var(--ministry-bg); color: var(--ministry); }
-.card--ministry .card-info h3 { color: var(--ministry); }
-.card--ministry .ritual-steps li::before { background: var(--ministry); }
+.card--ministry { --cat: var(--ministry); --cat-bg: var(--ministry-bg); }
 
-.card--teaching .card-icon { background: var(--teaching-bg); color: var(--teaching); }
-.card--teaching .card-info h3 { color: var(--teaching); }
-.card--teaching .ritual-steps li::before { background: var(--teaching); }
+.card--teaching { --cat: var(--teaching); --cat-bg: var(--teaching-bg); }
 
-.card--miracles .card-icon { background: var(--miracles-bg); color: var(--miracles); }
-.card--miracles .card-info h3 { color: var(--miracles); }
-.card--miracles .ritual-steps li::before { background: var(--miracles); }
+.card--miracles { --cat: var(--miracles); --cat-bg: var(--miracles-bg); }
 
-.card--passion .card-icon { background: var(--passion-bg); color: var(--passion); }
-.card--passion .card-info h3 { color: var(--passion); }
-.card--passion .ritual-steps li::before { background: var(--passion); }
+.card--passion { --cat: var(--passion); --cat-bg: var(--passion-bg); }
 
-.card--resurrection .card-icon { background: var(--resurrection-bg); color: var(--resurrection); }
-.card--resurrection .card-info h3 { color: var(--resurrection); }
-.card--resurrection .ritual-steps li::before { background: var(--resurrection); }
+.card--resurrection { --cat: var(--resurrection); --cat-bg: var(--resurrection-bg); }
 
 /* Synoptic comparison table */
 .gospel-compare th {

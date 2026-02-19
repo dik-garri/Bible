@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--hebrews .card-icon { background: var(--hebrews-bg); color: var(--hebrews); }
-.card--hebrews .card-info h3 { color: var(--hebrews); }
-.card--hebrews .ritual-steps li::before { background: var(--hebrews); }
+.card--hebrews { --cat: var(--hebrews); --cat-bg: var(--hebrews-bg); }
 
-.card--james .card-icon { background: var(--james-bg); color: var(--james); }
-.card--james .card-info h3 { color: var(--james); }
-.card--james .ritual-steps li::before { background: var(--james); }
+.card--james { --cat: var(--james); --cat-bg: var(--james-bg); }
 
-.card--peter .card-icon { background: var(--peter-bg); color: var(--peter); }
-.card--peter .card-info h3 { color: var(--peter); }
-.card--peter .ritual-steps li::before { background: var(--peter); }
+.card--peter { --cat: var(--peter); --cat-bg: var(--peter-bg); }
 
-.card--john .card-icon { background: var(--john-bg); color: var(--john); }
-.card--john .card-info h3 { color: var(--john); }
-.card--john .ritual-steps li::before { background: var(--john); }
+.card--john { --cat: var(--john); --cat-bg: var(--john-bg); }
 
-.card--jude .card-icon { background: var(--jude-bg); color: var(--jude); }
-.card--jude .card-info h3 { color: var(--jude); }
-.card--jude .ritual-steps li::before { background: var(--jude); }
+.card--jude { --cat: var(--jude); --cat-bg: var(--jude-bg); }
 
 /* Comparison table header */
 .epistles-compare th {

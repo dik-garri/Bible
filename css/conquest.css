@@ -13,25 +13,15 @@
 }
 
 /* Card color overrides */
-.card--prepare .card-icon { background: var(--prepare-bg); color: var(--prepare); }
-.card--prepare .card-info h3 { color: var(--prepare); }
-.card--prepare .ritual-steps li::before { background: var(--prepare); }
+.card--prepare { --cat: var(--prepare); --cat-bg: var(--prepare-bg); }
 
-.card--crossing .card-icon { background: var(--crossing-bg); color: var(--crossing); }
-.card--crossing .card-info h3 { color: var(--crossing); }
-.card--crossing .ritual-steps li::before { background: var(--crossing); }
+.card--crossing { --cat: var(--crossing); --cat-bg: var(--crossing-bg); }
 
-.card--battle .card-icon { background: var(--battle-bg); color: var(--battle); }
-.card--battle .card-info h3 { color: var(--battle); }
-.card--battle .ritual-steps li::before { background: var(--battle); }
+.card--battle { --cat: var(--battle); --cat-bg: var(--battle-bg); }
 
-.card--land .card-icon { background: var(--land-bg); color: var(--land); }
-.card--land .card-info h3 { color: var(--land); }
-.card--land .ritual-steps li::before { background: var(--land); }
+.card--land { --cat: var(--land); --cat-bg: var(--land-bg); }
 
-.card--covenant .card-icon { background: var(--covenant-bg); color: var(--covenant); }
-.card--covenant .card-info h3 { color: var(--covenant); }
-.card--covenant .ritual-steps li::before { background: var(--covenant); }
+.card--covenant { --cat: var(--covenant); --cat-bg: var(--covenant-bg); }
 
 /* Conquest comparison table */
 .conquest-compare th {

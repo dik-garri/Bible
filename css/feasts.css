@@ -21,41 +21,23 @@
 }
 
 /* Card color overrides */
-.card--sabbath .card-icon { background: var(--sabbath-bg); color: var(--sabbath); }
-.card--sabbath .card-info h3 { color: var(--sabbath); }
-.card--sabbath .ritual-steps li::before { background: var(--sabbath); }
+.card--sabbath { --cat: var(--sabbath); --cat-bg: var(--sabbath-bg); }
 
-.card--newmoon .card-icon { background: var(--newmoon-bg); color: var(--newmoon); }
-.card--newmoon .card-info h3 { color: var(--newmoon); }
-.card--newmoon .ritual-steps li::before { background: var(--newmoon); }
+.card--newmoon { --cat: var(--newmoon); --cat-bg: var(--newmoon-bg); }
 
-.card--passover .card-icon { background: var(--passover-bg); color: var(--passover); }
-.card--passover .card-info h3 { color: var(--passover); }
-.card--passover .ritual-steps li::before { background: var(--passover); }
+.card--passover { --cat: var(--passover); --cat-bg: var(--passover-bg); }
 
-.card--firstfruits .card-icon { background: var(--firstfruits-bg); color: var(--firstfruits); }
-.card--firstfruits .card-info h3 { color: var(--firstfruits); }
-.card--firstfruits .ritual-steps li::before { background: var(--firstfruits); }
+.card--firstfruits { --cat: var(--firstfruits); --cat-bg: var(--firstfruits-bg); }
 
-.card--pentecost .card-icon { background: var(--pentecost-bg); color: var(--pentecost); }
-.card--pentecost .card-info h3 { color: var(--pentecost); }
-.card--pentecost .ritual-steps li::before { background: var(--pentecost); }
+.card--pentecost { --cat: var(--pentecost); --cat-bg: var(--pentecost-bg); }
 
-.card--trumpets .card-icon { background: var(--trumpets-bg); color: var(--trumpets); }
-.card--trumpets .card-info h3 { color: var(--trumpets); }
-.card--trumpets .ritual-steps li::before { background: var(--trumpets); }
+.card--trumpets { --cat: var(--trumpets); --cat-bg: var(--trumpets-bg); }
 
-.card--atonement .card-icon { background: var(--atonement-bg); color: var(--atonement); }
-.card--atonement .card-info h3 { color: var(--atonement); }
-.card--atonement .ritual-steps li::before { background: var(--atonement); }
+.card--atonement { --cat: var(--atonement); --cat-bg: var(--atonement-bg); }
 
-.card--tabernacles .card-icon { background: var(--tabernacles-bg); color: var(--tabernacles); }
-.card--tabernacles .card-info h3 { color: var(--tabernacles); }
-.card--tabernacles .ritual-steps li::before { background: var(--tabernacles); }
+.card--tabernacles { --cat: var(--tabernacles); --cat-bg: var(--tabernacles-bg); }
 
-.card--cycles .card-icon { background: var(--cycles-bg); color: var(--cycles); }
-.card--cycles .card-info h3 { color: var(--cycles); }
-.card--cycles .ritual-steps li::before { background: var(--cycles); }
+.card--cycles { --cat: var(--cycles); --cat-bg: var(--cycles-bg); }
 
 /* Sukkot sacrifice table */
 .sukkot-table {
