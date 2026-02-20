@@ -1,0 +1,21 @@
+{
+    "name": "Библия — Справочники",
+    "short_name": "Справочники",
+    "description": "25 интерактивных справочников по книгам Библии.",
+    "start_url": "/biblemap/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4338ca",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/biblemap/og.png",
+            "sizes": "1200x630",
+            "type": "image/png"
+        }
+    ]
+}
